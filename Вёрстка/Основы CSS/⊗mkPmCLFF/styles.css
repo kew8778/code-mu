@@ -1,0 +1,35 @@
+h1 {
+    font-family: 'Times New Roman';
+}
+
+h2 {
+    font-family: Arial;
+}
+
+h3 {
+    font-family: Georgia;
+}
+
+h4 {
+    font-family: Verdana;
+}
+
+h5 {
+    font-family: 'Trebuchet MS';
+}
+
+h6 {
+    font-family: Impact;
+}
+
+p {
+    font-family: 'Arial Black';
+}
+
+ul {
+    font-family: 'Comic Sans MS';
+}
+
+ol {
+    font-family: 'Courier New';
+}

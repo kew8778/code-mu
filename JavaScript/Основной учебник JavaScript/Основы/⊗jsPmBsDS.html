@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Строки с цифрами в JavaScript</title>
+        <script>
+            "use strict";
+
+            // #1
+            let str = '12345';
+
+            let sumStr = Number(str[0]) + Number(str[1]) + Number(str[2]) + Number(str[3]) + Number(str[4]);
+            console.log(sumStr); // 15
+
+            // #2
+            let num = 12345;
+
+            let numStr = String(num); // '12345'
+            let sumNum = Number(numStr[0]) + Number(numStr[1]) + Number(numStr[2]) + Number(numStr[3]) + Number(numStr[4]);
+            console.log(sumNum); // 15
+
+            // #3
+            let multiNum = numStr[0] * numStr[1] * numStr[2] * numStr[3] * numStr[4];
+            console.log(multiNum); // 120
+
+            // #4
+            numInvert = +(numStr[4] + numStr[3] + numStr[2] + numStr[1] + numStr[0]);
+            console.log(numInvert); // 54321
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
