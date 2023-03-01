@@ -1,4 +1,4 @@
-"use script"
+"use strict";
 
 // #5
 function func({color, width, height}) {

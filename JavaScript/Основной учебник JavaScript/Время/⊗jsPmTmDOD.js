@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #1
 let date1 = new Date(2000, 8, 1);

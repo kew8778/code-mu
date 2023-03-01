@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #1
 alert(new Date().getDate()); // 24

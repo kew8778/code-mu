@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #1
 let daysOfWeek = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];

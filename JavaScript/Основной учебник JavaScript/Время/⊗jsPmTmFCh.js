@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #1
 let str = '2025-12-31';

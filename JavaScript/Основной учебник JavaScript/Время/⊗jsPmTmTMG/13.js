@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #13
 let now = new Date();

@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #1
 let date1 = '2020-11-31';

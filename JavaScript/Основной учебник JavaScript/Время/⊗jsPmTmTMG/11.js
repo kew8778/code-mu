@@ -1,5 +1,4 @@
-"use script";
-
+'use strict';
 // #11
 let now = new Date();
 let beginningOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());

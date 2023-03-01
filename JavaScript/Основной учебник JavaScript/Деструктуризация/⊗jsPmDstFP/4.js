@@ -1,4 +1,4 @@
-"use script"
+"use strict";
 
 // #4
 function func(department, [name, surname], [year, month, day]) {

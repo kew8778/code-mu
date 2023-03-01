@@ -1,4 +1,4 @@
-"use script"
+"use strict";
 
 // #2
 function func([name, surname, info]) {

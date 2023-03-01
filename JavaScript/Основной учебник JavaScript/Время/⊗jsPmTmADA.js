@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #1
 console.log(new Date(2018, 1, 35)); // 7 марта 2018

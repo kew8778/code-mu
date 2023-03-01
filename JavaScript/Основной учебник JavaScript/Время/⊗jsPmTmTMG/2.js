@@ -1,4 +1,4 @@
-"use script";
+'use strict';
 
 // #2
 let toDay = new Date();

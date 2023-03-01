@@ -1,4 +1,4 @@
-"use script"
+"use strict";
 
 // #3
 function func([name, surname, department, position = 'джуниор']) {
