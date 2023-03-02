@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №6
+        <p id="p1">Привет</p>
+        <input id="button" type="submit" value="добавить !">
+
+        <script>
+            "use strict";
+
+            document.querySelector('#button').addEventListener('click', () => {
+                let p1 = document.querySelector('#p1');
+                p1.textContent = p1.textContent + '!';
+            });
+            
+        </script>
+    </body>
+</html>

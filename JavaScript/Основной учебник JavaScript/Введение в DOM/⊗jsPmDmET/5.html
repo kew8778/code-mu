@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №5
+        <p id="num">5</p>
+        <input id="plusOne" type="submit" value="прибавить +1">
+
+        <script>
+            "use strict";
+
+            document.querySelector('#plusOne').addEventListener('click', () => {
+                let num = document.querySelector('#num').textContent;
+                document.querySelector('#num').textContent = ++num;
+            });
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №1
+        <input id="elem" type="email">
+        <input id="button" type="submit" value="кнопка">
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('#button');
+            let elem = document.querySelector('#elem');
+
+            button.addEventListener('click', () => alert(elem.type));
+            
+        </script>
+    </body>
+</html>

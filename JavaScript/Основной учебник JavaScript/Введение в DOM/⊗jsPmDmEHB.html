@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Привязывание обработчиков к элементам в JavaScript</title>
+    </head>
+    <body>
+        <input id="button1" type="submit">
+        <input id="button2" type="submit">
+        <input id="button3" type="submit">
+
+        <script>
+            "use strict";
+
+            document.querySelector('#button1').addEventListener('click', () => alert(1)); // 1
+            document.querySelector('#button2').addEventListener('click', () => alert(2)); // 2
+            document.querySelector('#button3').addEventListener('click', () => alert(3)); // 3
+            
+        </script>
+    </body>
+</html>

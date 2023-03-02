@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №3
+        <a id="link" href="https://code.mu/ru/javascript/book/prime/dom/basis/attributes-via-properties/">ссылка</a>
+        <input id="button" type="submit" value="показать ссылку">
+        <p id="url"></p>
+
+        <script>
+            "use strict";
+
+            let link = document.querySelector('#link');
+            let button = document.querySelector('#button');
+            let p = document.querySelector('#url');
+
+            button.addEventListener('click', () => p.textContent = link.href);
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №8
+        <img src="">
+        <input id="button1" type="submit" value="картинка 1">
+        <input id="button2" type="submit" value="картинка 2">
+
+        <script>
+            "use strict";
+
+            let img = document.querySelector('img');
+            let button1 = document.querySelector('#button1');
+            let button2 = document.querySelector('#button2');
+
+            button1.addEventListener('click', () => img.src = 'https://code.mu/images/coder/job.png');
+            button2.addEventListener('click', () => img.src = 'https://code.mu/content/markup/book/prime/html/images/&/image/smile.png');
+            
+        </script>
+    </body>
+</html>

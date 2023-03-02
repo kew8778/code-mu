@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Один обработчик ко многим элементам в JavaScript</title>
+    </head>
+    <body>
+        <p id="elem1">text</p>
+        <p id="elem2">text</p>
+        <p id="elem3">text</p>
+        <p id="elem4">text</p>
+        <p id="elem5">text</p>
+        
+        <script>
+            "use strict";
+
+            function func() {
+	            console.log('message');
+            }
+
+            for (let i = 1; i <= 5; i++) {
+                document.querySelector('#elem' + i).addEventListener('click', func);
+            }
+            
+        </script>
+    </body>
+</html>

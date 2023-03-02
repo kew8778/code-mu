@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №4
+        <p class="num1">28</p>
+        <p class="num2">36</p>
+        <p class="num3">77</p>
+        <div class="sum"></div>
+        <input class="calc" type="submit" value="вывести сумму чисел">
+
+        <script>
+            "use strict";
+
+            document.querySelector('.calc').addEventListener('click', calc);
+
+            function calc() {
+                let num1 = +document.querySelector('.num1').textContent;
+                let num2 = +document.querySelector('.num2').textContent;
+                let num3 = +document.querySelector('.num3').textContent;
+
+                document.querySelector('.sum').textContent = num1 + num2 + num3; // 141
+            }
+            
+        </script>
+    </body>
+</html>

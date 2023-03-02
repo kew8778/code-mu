@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №5
+        <img src="https://code.mu/images/coder/job.png" alt="">
+        <input type="submit" value="url картинки">
+        <p></p>
+
+        <script>
+            "use strict";
+
+            let img = document.querySelector('img');
+            let button = document.querySelector('input');
+            let p = document.querySelector('p');
+
+            button.addEventListener('click', () => p.textContent = img.src);
+            
+        </script>
+    </body>
+</html>

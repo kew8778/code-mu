@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №3
+        <div class="div1">
+            546
+        </div>
+        <div class="div2">
+            923
+        </div>
+        <input type="submit" value="Подсъчет суммы">
+
+        <script>
+            "use strict";
+
+            document.querySelector('input').addEventListener('click', () => {
+
+                let num1 = +document.querySelector('.div1').textContent;
+                let num2 = +document.querySelector('.div2').textContent;
+
+                alert(num1 + num2); // 1469
+            })
+            
+        </script>
+    </body>
+</html>

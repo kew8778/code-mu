@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Обработчики разных событий в JavaScript</title>
+    </head>
+    <body>
+        <input class="button1" type="submit" value="button1">
+        <input class="button2" type="submit" value="button2">
+        <input class="button3" type="submit" value="button3">
+        <input class="button4" type="submit" value="button4">
+        
+        <script>
+            "use strict";
+
+            // #1
+            document.querySelector('.button1').addEventListener('dblclick', () => console.log('кнопка 1'));
+
+            // #2
+            document.querySelector('.button2').addEventListener('mouseover', () => console.log('кнопка 2'));
+
+            // #3
+            document.querySelector('.button3').addEventListener('mouseout', () => console.log('кнопка 3'));
+
+            // #4
+            let button4 = document.querySelector('.button4');
+
+            button4.addEventListener('mouseover', () => console.log('курсор наведён на кнопку 4'));
+            button4.addEventListener('mouseout', () => console.log('курсор ушёл от кнопки 4'));
+            
+        </script>
+    </body>
+</html>

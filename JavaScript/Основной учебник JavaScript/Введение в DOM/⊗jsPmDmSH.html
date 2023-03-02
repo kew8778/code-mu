@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Несколько обработчиков одного события в JavaScript</title>
+    </head>
+    <body>
+        <p id="elem">text</p>
+        
+        <script>
+            "use strict";
+
+            function func1() {
+	            console.log('1');
+            }
+
+            function func2() {
+	            console.log('2');
+            }
+
+            function func3() {
+	            console.log('3');
+            }
+
+            let idElem = document.querySelector('#elem');
+
+            idElem.addEventListener('click', func1);
+            idElem.addEventListener('click', func2);
+            idElem.addEventListener('click', func3);
+            
+        </script>
+    </body>
+</html>

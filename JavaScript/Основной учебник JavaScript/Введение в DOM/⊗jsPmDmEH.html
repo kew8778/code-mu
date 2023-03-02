@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>
+            текст абзаца )))
+        </p>
+        <input class="button1" type="submit" value="задача 1">
+        <input class="button2" type="submit" value="задача 2">
+
+        <script>
+            "use strict";
+
+            // #1
+            let button1 = document.querySelector('.button1');
+            let p = document.querySelector('p');
+
+            button1.addEventListener('click', () => {
+                console.log(p.innerHTML);
+
+            })
+
+            // #2
+            let button2 = document.querySelector('.button2');
+
+            button2.addEventListener('click', () => {
+                p.innerHTML = '<b>жирный текст</b>';
+            })
+            
+        </script>
+    </body>
+</html>
