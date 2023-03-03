@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <p>2</p>
+        <p>4</p>
+        <p>6</p>
+        <p>8</p>
+
+        <script>
+            "use strict";
+
+            let tagsP = document.querySelectorAll('p');
+
+            for (let num of tagsP) {
+                num.addEventListener('click', func);
+            }
+
+            function func() {
+                this.textContent **= 2;
+            }
+            
+        </script>
+    </body>
+</html>

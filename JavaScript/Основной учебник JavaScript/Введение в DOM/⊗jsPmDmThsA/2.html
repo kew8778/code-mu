@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>Задача №2</p>
+        <input id="input1" type="text" value="2">
+        <input id="input2" type="text" value="4">
+        <input id="input3" type="text" value="6">
+
+        <script>
+            "use strict";
+
+            let input1 = document.querySelector('#input1').addEventListener('blur', func);
+            let input2 = document.querySelector('#input2').addEventListener('blur', func);
+            let input3 = document.querySelector('#input3').addEventListener('blur', func);
+
+            function func() {
+                this.value **= 2;
+            }
+            
+        </script>
+    </body>
+</html>

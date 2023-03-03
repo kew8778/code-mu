@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+        <input type="submit" value="волшебная кнопка">
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('input');
+            button.addEventListener('click', func);
+
+            function func() {
+                let tagsP = document.querySelectorAll('p');
+                let i = 0;
+
+                for (let p of tagsP) {
+                    p.textContent += i;
+                    i++;
+                }
+            }
+            
+        </script>
+    </body>
+</html>

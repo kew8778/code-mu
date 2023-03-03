@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input type="text" value="2">
+        <input type="text" value="3">
+        <input type="text" value="5">
+
+        <script>
+            "use strict";
+
+            function func() {
+	            this.value = Number(this.value) + 1;
+            }
+
+            let tagsInput = document.querySelectorAll('input');
+
+            for (let num of tagsInput) {
+                num.addEventListener('blur', func);
+            }
+            
+        </script>
+    </body>
+</html>

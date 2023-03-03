@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+
+        <script>
+            "use strict";
+
+            let divs = document.querySelectorAll('div');
+
+            for (let div of divs) {
+	            div.addEventListener('click', function() {
+                    this.textContent++;
+                });
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>Задача №1</p>
+        <p id="p1">Абзац с текстом 1</p>
+        <p id="p2">Абзац с текстом 2</p>
+        <p id="p3">Абзац с текстом 3</p>
+        <p id="p4">Абзац с текстом 4</p>
+        <p id="p5">Абзац с текстом 5</p>
+
+        <script>
+            "use strict";
+
+            let arrP = [p1, p2, p3, p4, p5];
+            let i = 1;
+
+            for (let p of arrP) {
+                let p = document.querySelector('#p' + i);
+                p.addEventListener('click', func);
+                i++;
+            }
+
+            function func() {
+                this.textContent += '!';
+            }
+
+        </script>
+    </body>
+</html>

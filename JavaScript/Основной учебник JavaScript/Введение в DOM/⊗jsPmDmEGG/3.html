@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <input id="num" type="text" value="2">
+        <input id="num" type="text" value="4">
+        <input id="num" type="text" value="5">
+        <input id="num" type="text" value="0">
+        <p></p>
+        <input id="button" type="submit" value="волшебная кнопка">
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('#button');
+            button.addEventListener('click', func);
+
+            function func() {
+                let nums = document.querySelectorAll('#num');
+                let sum = 0;
+
+                for (let num of nums) {
+                    sum += +num.value;
+                }
+
+                document.querySelector('p').textContent = sum;
+            }
+            
+        </script>
+    </body>
+</html>

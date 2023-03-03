@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>Задача №2</p>
+        <div id="elem"></div>
+        <input id="input" type="submit" value="задача 2">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('#input');
+            let elem = document.querySelector('#elem');
+
+            input.addEventListener('click', () => elem.className = 'white');
+            
+        </script>
+    </body>
+</html>

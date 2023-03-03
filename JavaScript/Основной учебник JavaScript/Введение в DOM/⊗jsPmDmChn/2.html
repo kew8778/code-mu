@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>Задача №2</p>
+        <img id="image" src="avatar.png" width="300" height="500">
+
+        <script>
+            "use strict";
+
+            /* 
+            добавил переменную для селектора #image, 
+            сократив вызов document.querySelector с трех до одного
+            */
+           
+            let img = document.querySelector('#image');
+            
+            console.log(img.src);
+            console.log(img.width);
+            console.log(img.height);
+            
+        </script>
+    </body>
+</html>

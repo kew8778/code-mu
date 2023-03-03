@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>Задача №3</p>
+        <div id="elem" class="aaa bbb ccc"></div>
+        <input id="input" type="submit" value="задача 3">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('#input');
+            let elem = document.querySelector('#elem');
+
+            input.addEventListener('click', () => {
+                let arr = (elem.className).split(' ');
+            });
+            
+        </script>
+    </body>
+</html>

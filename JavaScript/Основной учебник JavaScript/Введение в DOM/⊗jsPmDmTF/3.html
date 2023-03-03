@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №3
+        <input id="input1" type="text">
+        <input id="input2" type="text">
+        <input id="button" type="submit" value="число в квадрате">
+
+        <script>
+            "use strict";
+
+            let input1 = document.querySelector('#input1');
+            let input2 = document.querySelector('#input2');
+            let button = document.querySelector('#button');
+
+            button.addEventListener('click', () => input2.value = input1.value ** 2);
+            
+        </script>
+    </body>
+</html>

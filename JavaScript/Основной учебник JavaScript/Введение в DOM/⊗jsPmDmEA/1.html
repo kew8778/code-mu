@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <p>Задача №1</p>
+        <div id="elem" class="content no-gap"></div>
+        <input id="input" type="submit" value="задача 1">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('#input');
+            let elem = document.querySelector('#elem');
+
+            input.addEventListener('click', () => alert(elem.className));
+            
+        </script>
+    </body>
+</html>

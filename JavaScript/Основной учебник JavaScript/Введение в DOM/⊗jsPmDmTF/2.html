@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №2
+        <input id="inputField" type="text" value="текст инпута">
+        <input id="button" type="submit" value="текст инпута в абзац">
+        <p id="p1"></p>
+
+        <script>
+            "use strict";
+
+            let inputField = document.querySelector('#inputField');
+            let button = document.querySelector('#button');
+            let p1 = document.querySelector('#p1');
+
+            button.addEventListener('click', () => p1.textContent = inputField.value);
+            
+        </script>
+    </body>
+</html>

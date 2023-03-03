@@ -12,9 +12,10 @@
         <script>
             "use strict";
 
+            let num = document.querySelector('#num');
+
             document.querySelector('#plusOne').addEventListener('click', () => {
-                let num = document.querySelector('#num').textContent;
-                document.querySelector('#num').textContent = ++num;
+                num.textContent++;
             });
             
         </script>

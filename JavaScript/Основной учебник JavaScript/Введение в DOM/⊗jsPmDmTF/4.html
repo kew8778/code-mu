@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        Задача №4
+        <input id="input1" type="text">
+        <input id="input2" type="text">
+        <input id="button" type="submit" value="поменять значения">
+
+        <script>
+            "use strict";
+
+            let input1 = document.querySelector('#input1');
+            let input2 = document.querySelector('#input2');
+            let button = document.querySelector('#button');
+
+            button.addEventListener('click', () => {
+                let val1 = input1.value;
+                let val2 = input2.value;
+                input1.value = val2;
+                input2.value = val1;
+            });
+            
+        </script>
+    </body>
+</html>
