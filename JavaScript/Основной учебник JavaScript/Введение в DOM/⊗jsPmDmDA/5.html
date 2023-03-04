@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №5</h3>
+        <input id="elem" data-min="5" data-max="10">
+
+        <script>
+            "use strict";
+
+            let elem = document.querySelector('#elem');
+
+            elem.addEventListener('blur', function() {
+                let min = elem.dataset.min;
+                let max = elem.dataset.max;
+                let length = elem.value.length;
+
+                if (length < min || length > max) {
+                    alert('Вы ввели неправильное значение');
+                }
+            });
+            
+        </script>
+    </body>
+</html>

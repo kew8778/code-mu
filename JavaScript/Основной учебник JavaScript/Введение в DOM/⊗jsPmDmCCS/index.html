@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p id="p">
+            Тестовый абзац !!!
+        </p>
+        <input id="button-decor" type="submit" value="перечеркнуть">
+        <input id="button-weight" type="submit" value="сделать жирным">
+        <input id="button-colored" type="submit" value="сделать красным">
+
+        <script>
+            "use strict";
+
+            let p = document.querySelector('#p');
+            let buttonDecor = document.querySelector('#button-decor');
+            let buttonWeight = document.querySelector('#button-weight');
+            let buttonColor = document.querySelector('#button-colored');
+
+            buttonDecor.addEventListener('click', function() {
+                p.classList.toggle('decorText');
+            })
+
+            buttonWeight.addEventListener('click', function() {
+                p.classList.toggle('weigthFont');
+            })
+
+            buttonColor.addEventListener('click', function() {
+                p.classList.toggle('colorText');
+            })
+            
+        </script>
+    </body>
+</html>

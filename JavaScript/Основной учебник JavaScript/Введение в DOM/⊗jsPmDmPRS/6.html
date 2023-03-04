@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №6</h3>
+        <header>
+            <div class="www">
+                <p class="www">
+                    <span id="elem"></span>
+                </p>
+            </div>
+        </header>
+
+        <script>
+            "use strict";
+
+            let elem = document.querySelector('#elem');
+
+            console.log(elem.closest('.www')); // <p class="www">...</p>
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <div id="elem"></div>
+
+        <h3>Задача №2</h3>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+
+        <h3>Задача №3</h3>
+        <p class="www">elem 1</p>
+        <p class="www">elem 2</p>
+        <p class="www">elem 3</p>
+
+        <script>
+            "use strict";
+
+            // #1
+            document.getElementById('elem').textContent = 'текст';
+
+            // #2
+            let tagsLi = document.getElementsByTagName('li');
+
+            for (let li of tagsLi) {
+                li.style.color = 'red';
+            }
+
+            // #3
+            let classesWww = document.getElementsByClassName('www');
+
+            for (let elem of classesWww) {
+                elem.style.color = 'red';
+            }
+            
+        </script>
+    </body>
+</html>

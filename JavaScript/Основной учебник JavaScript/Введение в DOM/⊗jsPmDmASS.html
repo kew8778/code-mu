@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <div id="div1"></div>
+        <input id="button1" type="submit" value="Задача №1">
+
+        <h3>Задача №2</h3>
+        <div id="div2">Div с тестом</div>
+        <input id="button2" type="submit" value="Задача №2">
+
+        <h3>Задача №3</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <input id="button3" type="submit" value="Задача №3">
+
+        <script>
+            "use strict";
+
+            // #1
+            let div1 = document.querySelector('#div1');
+            let button1 = document.querySelector('#button1');
+
+            button1.addEventListener('click', function() {
+                div1.style.width = '100px';
+                div1.style.height = '50px';
+                div1.style.border = '2px solid black';
+            })
+
+            // #2
+            let div2 = document.querySelector('#div2');
+            let button2 = document.querySelector('#button2');
+
+            button2.addEventListener('click', function() {
+                div2.style.fontSize = '20px';
+                div2.style.borderTop = '2px solid green';
+                div2.style.backgroundColor = 'pink';
+            })
+
+            // #3
+            let tagsLi = document.querySelectorAll('li');
+            let button3 = document.querySelector('#button3');
+
+            button3.addEventListener('click', function() {
+                for (let li of tagsLi) {
+                    li.style.cssFloat = 'left';
+                }
+            })
+
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+        <script>
+            "use strict";
+
+            let tagsLi = document.querySelectorAll('li');
+            
+            for (let li of tagsLi) {
+                    li.addEventListener('click', func);
+            }
+
+            function func() {
+                if (this.textContent < 10) {
+                    this.textContent++;
+                } else {
+                    this.removeEventListener('click', func);
+                }
+                
+            }
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <input type="submit" value="1">
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('input');
+
+            button.addEventListener('click', func);
+
+            function func() {
+                if (this.value >= 10) {
+                    this.removeEventListener('click', func);
+                } else {
+                    this.value++;
+                }            
+            }
+            
+        </script>
+        </script>
+    </body>
+</html>

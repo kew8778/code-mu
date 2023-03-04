@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №7</h3>
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+        <p>text</p>
+
+        <script>
+            "use strict";
+
+            let tagsP = document.querySelectorAll('p');
+
+            let i = 1;
+            for (let p of tagsP) {
+                p.setAttribute('data-num', i);
+                i++;
+            }
+            
+        </script>
+    </body>
+</html>

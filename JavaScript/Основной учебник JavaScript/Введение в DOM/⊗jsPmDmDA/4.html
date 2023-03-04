@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №4</h3>
+        <input id="elem" data-length="5">
+
+        <script>
+            "use strict";
+
+            let elem = document.querySelector('#elem');
+
+            elem.addEventListener('blur', function() {
+                if (elem.value.length != elem.dataset.length) {
+                    alert('Вы ввели неправильное значение');
+                }
+            })
+            
+        </script>
+    </body>
+</html>

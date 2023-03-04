@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №7, №8, №9</h3>
+        <ul>
+            <li>text</li>
+            <li>text</li>
+            <li id="elem">text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+
+        <script>
+            "use strict";
+
+            let elem = document.querySelector('#elem');
+
+            // #7
+            elem.previousElementSibling.textContent += '!';
+
+            // #8
+            elem.nextElementSibling.textContent += '!';
+
+            // #9
+            elem.nextElementSibling.nextElementSibling.textContent += '!';
+            
+        </script>
+    </body>
+</html>

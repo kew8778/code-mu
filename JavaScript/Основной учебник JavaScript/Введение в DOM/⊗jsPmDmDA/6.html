@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №6</h3>
+        <div id="elem" data-product-price="1000" data-product-amount="5">
+            товар яблоки
+        </div>
+
+        <script>
+            "use strict";
+
+            let elem = document.querySelector('#elem');
+
+            elem.addEventListener('click', calcPurchasePrice);
+
+            function calcPurchasePrice() {
+                let price = elem.dataset.productPrice;
+                let amount = elem.dataset.productAmount;
+                
+                elem.textContent += ' ' + (price * amount);
+                elem.removeEventListener('click', calcPurchasePrice); // 1 раз показываем
+            }
+            
+        </script>
+    </body>
+</html>

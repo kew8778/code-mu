@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <a href="https://code.mu/ru/javascript/book/prime/dom/basis/handlers-unbinding/">code.mu</a>
+        <input type="submit" value="волшебная кнопка">
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('input');
+            let link = document.querySelector('a');
+
+            button.addEventListener('click', func);
+
+            function func() {
+                link.textContent += '(' + link.href + ')';
+                this.removeEventListener('click', func); 
+            }
+            
+        </script>
+    </body>
+</html>
