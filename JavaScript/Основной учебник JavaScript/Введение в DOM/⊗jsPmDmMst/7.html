@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №7</h3>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <button>click</button>
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('button');
+            let elems = document.querySelectorAll('p');
+
+	        button.addEventListener('click', function() {
+                let sum = 0;
+
+                for (let elem of elems) {
+                    sum += +elem.textContent;
+                }
+
+		        console.log(sum); // 6
+	        });
+
+            
+        </script>
+    </body>
+</html>

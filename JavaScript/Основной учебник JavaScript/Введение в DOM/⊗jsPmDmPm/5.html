@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №5</h3>
+        <input id="fullName" type="text">
+        <input id="surName" type="text">
+        <input id="firstName" type="text">
+        <input id="patronymic" type="text">
+
+        <script>
+            "use strict";
+
+            let fullName = document.querySelector('#fullName');
+            let surName = document.querySelector('#surName');
+            let firstName = document.querySelector('#firstName');
+            let patronymic = document.querySelector('#patronymic');
+
+            fullName.addEventListener('blur', function() {
+                let arrFullName = fullName.value.split(' ');
+
+                surName.value = arrFullName[0];
+                firstName.value = arrFullName[1];
+                patronymic.value = arrFullName[2];
+            })
+            
+        </script>
+    </body>
+</html>

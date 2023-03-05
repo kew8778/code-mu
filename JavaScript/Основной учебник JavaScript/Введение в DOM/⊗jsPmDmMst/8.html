@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №8</h3>
+        <input>
+        <input>
+        <input>
+
+        <button>click</button>
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('button');
+            let elems = document.querySelectorAll('input');
+
+            button.addEventListener('click', function() {
+                let sum = 0;
+
+                for (let elem of elems) {
+	                sum += +elem.value;
+                
+                }
+	            console.log(sum);
+            });
+           
+        </script>
+    </body>
+</html>

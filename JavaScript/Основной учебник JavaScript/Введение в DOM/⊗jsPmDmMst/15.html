@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №15</h3>
+        <input id="inp">
+
+        <script>
+            "use strict";
+
+            let inp = document.querySelector('#inp');
+
+            inp.addEventListener('blur', function() {
+	            let digits = inp.value.split('');
+	            let sum = 0;
+	
+	            for (let digit of digits) {
+		            sum += +digit;
+	            }
+	
+	            console.log(sum);
+            });
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №7</h3>
+        <input type="text">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+
+            input.addEventListener('blur', function() {
+                let arrWords = input.value.split(' ');
+                
+                console.log(arrWords.length);
+            });
+         
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <p>text</p>
+        <button>click</button>
+
+        <script>
+            "use strict";
+
+            let button = document.querySelector('button');
+            let elem = document.querySelector('p');
+
+            button.addEventListener('click', function() {
+	            elem.innerHTML = '<b>' + elem.innerHTML + '</b>';
+            });
+            
+        </script>
+    </body>
+</html>

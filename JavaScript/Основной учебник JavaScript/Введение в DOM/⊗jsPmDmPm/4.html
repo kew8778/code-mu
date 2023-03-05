@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №4</h3>
+        <input type="text">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+
+            input.addEventListener('blur', function() {
+                let sumNums = 0;
+                let arrNums = input.value.split(','); // если без пробела после запятой
+
+                for (let num of arrNums) {
+                    sumNums += +num;
+                }
+
+                let res = sumNums / arrNums.length;
+
+                console.log(res);
+            })
+            
+        </script>
+    </body>
+</html>

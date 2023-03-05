@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №7 - №10</h3>
+        <div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+
+        <script>
+            "use strict";
+
+            let elem = document.querySelector('#elem');
+            let elems = elem.childNodes;
+
+            // #7
+            for (let node of elems) {
+                console.log(node.textContent);
+            }
+
+            // #8
+            for (let node of elems) {
+                if (node.nodeType == 8 || node.nodeType == 3) {
+                    console.log(node.textContent);
+                }
+            }
+
+            // #9
+            for (let node of elems) {
+                if (node.nodeType == 3 || node.nodeType == 1) {
+                    console.log(node.textContent);
+                }
+            }
+
+            // #10
+            for (let node of elems) {
+                node.textContent += node.nodeType;
+            }
+            
+        </script>
+    </body>
+</html>

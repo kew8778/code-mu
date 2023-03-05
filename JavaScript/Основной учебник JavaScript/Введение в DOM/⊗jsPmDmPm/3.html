@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <input type="text">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+
+            input.addEventListener('blur', function() {
+                let sumDigits = 0;
+
+                for (let digit of input.value.split('')) {
+                    sumDigits += +digit;
+                }
+
+                console.log(sumDigits);
+            })
+            
+        </script>
+    </body>
+</html>

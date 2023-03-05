@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input type="text">
+        <p></p>
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+            let p = document.querySelector('p');
+
+            input.addEventListener('blur', function() {
+                p.textContent = input.value;
+            })
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1, №2, №3</h3>
+        <p>
+            text 1
+            <b>text 2</b>
+            text 3
+            <i>text 4</i>
+            text 5
+        </p>
+
+        <script>
+            "use strict";
+
+            // #1
+            let p = document.querySelector('p');
+
+            console.log(p.lastElementChild); // <i>text 4</i>
+            console.log(p.lastChild); // 'text 5'
+
+            // #2
+            let b = document.querySelector('b');
+
+            console.log(b.nextElementSibling); // <i>text 4</i>
+            console.log(b.nextSibling); // 'text 3'
+
+            // #3
+            let i = document.querySelector('i');
+            
+            console.log(i.previousElementSibling); // <b>text 2</b>
+            console.log(i.previousSibling); // 'text 3'
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul>
+            <li>2000</li>
+            <li>2004</li>
+            <li>2021</li>
+            <li>2022</li>
+            <li>2025</li>
+            <li>2031</li>
+        </ul>
+
+        <script>
+            "use strict";
+
+            let tagsLi = document.querySelectorAll('li');
+            let sumYears = 0;
+
+            for (let li of tagsLi) {
+                let year = li.textContent;
+                if (calcSumDigits(year) == 6)
+                    sumYears += +year;
+            }
+
+            function calcSumDigits(year) {
+                let sumDigits = 0;
+                let arrDigits = String(year).split('');
+
+                for (let digit of arrDigits) {
+                    sumDigits += +digit;
+                }
+
+                return sumDigits;
+            }
+
+            console.log(sumYears); // 6057
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <input id="inp1" type="text">
+        <input id="inp2" type="text">
+        <p></p>
+        <input id="button" type="submit" value="посчитать сумму">
+
+        <script>
+            "use strict";
+
+            let inp1 = document.querySelector('#inp1');
+            let inp2 = document.querySelector('#inp2');
+            let p = document.querySelector('p');
+            let button = document.querySelector('#button');
+
+            button.addEventListener('click', function() {
+                p.textContent = Number(inp1.value) + Number(inp2.value);
+            })
+            
+        </script>
+    </body>
+</html>

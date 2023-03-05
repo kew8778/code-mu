@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №6</h3>
+        <input id="fullName" type="text">
+
+        <script>
+            "use strict";
+
+            let fullName = document.querySelector('#fullName');
+
+            fullName.addEventListener('blur', function() {
+                let arrNames = fullName.value.split(' ');
+                
+                for (let i = 0; i < arrNames.length; i++) {
+                    arrNames[i] = modStr(arrNames[i]);
+                }
+
+                function modStr(str) {
+                    str = str.substr(0, 1).toUpperCase() + str.substr(1);
+                    return str;
+                }
+
+                fullName.value = arrNames.join(' ');
+            });
+         
+        </script>
+    </body>
+</html>

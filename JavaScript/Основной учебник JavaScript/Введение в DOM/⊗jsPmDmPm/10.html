@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №10</h3>
+        <input type="text">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+
+            input.addEventListener('blur', function() {
+                console.log(input.value.indexOf('3') !== -1);
+            });
+         
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №4, №5, №6</h3>
+        <div id="elem">txt<b>tag</b><!--com-->txt<b>tag</b><!--com--></div>
+
+        <script>
+            "use strict";
+
+            // #4
+            let elem = document.querySelector('#elem');
+            let elems = elem.childNodes;
+
+            for (let node of elems) {
+                console.log(node);
+            }
+
+            // #5
+            for (let node of elems) {
+                console.log(node.nodeName);
+            }
+
+            // #6
+            for (let node of elems) {
+                if (node.nodeType == 1 || node.nodeType == 3) {
+                    console.log(node);
+                }
+            }
+            
+        </script>
+    </body>
+</html>
