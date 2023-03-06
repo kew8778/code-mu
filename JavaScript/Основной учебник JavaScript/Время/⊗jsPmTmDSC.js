@@ -23,10 +23,9 @@ date2 = '09-23';
 compareDates(date1, date2);
 
 // #3
-let date = '08-07';
+let date = '01-20';
 
 let zodiacSigns = {
-    'Козерог': ['01-01', '01-20'],
     'Водолей': ['01-21', '02-19'],
     'Рыбы': ['02-20', '03-20'],
     'Овен': ['03-21', '04-20'],
@@ -38,12 +37,15 @@ let zodiacSigns = {
     'Весы': ['09-24', '10-23'],
     'Скорпион': ['10-24','11-22'],
     'Стрелец': ['11-23', '12-22'],
-    'Козерог': ['12-23', '12-31'],
 };
 
-for (let sign in zodiacSigns) {
-    if (date >= zodiacSigns[sign][0] && date <= zodiacSigns[sign][1]) {
-        console.log(sign);
-        break;
+if (date < '01-21' || date > '12-22') {
+    console.log('Козерог');
+} else {
+    for (let sign in zodiacSigns) {
+        if (date >= zodiacSigns[sign][0] && date <= zodiacSigns[sign][1]) {
+            console.log(sign);
+            break;
+        }
     }
 }
