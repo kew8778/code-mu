@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №16</h3>     
+        <input id="num" type="text">
+        <input id="plus-one" type="submit" value="+1">
+        <input id="minus-one" type="submit" value="-1">
+
+        <script>
+            "use strict";
+
+            let num = document.querySelector('#num');
+            let plusOne = document.querySelector('#plus-one');
+            let minusOne = document.querySelector('#minus-one');
+            
+            plusOne.addEventListener('click', function() {
+                num.value++;
+            })
+
+            minusOne.addEventListener('click', function(){
+                if (num.value > 0) {
+                    num.value--;
+                }
+            })
+           
+        </script>
+    </body>
+</html>

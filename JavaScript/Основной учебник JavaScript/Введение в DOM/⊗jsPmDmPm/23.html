@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №23</h3>     
+        <input id="inp" type="text">
+        <input id="button" type="submit" value="посчитать факториал числа">
+        <p></p>
+
+        <script>
+            "use strict";
+
+            let inp = document.querySelector('#inp');
+            let button = document.querySelector('#button');
+            let p = document.querySelector('p');
+
+            button.addEventListener('click', function() {
+                let num = inp.value;
+
+                // проверка на натуральность числа:
+                if (num % 1 != 0 || num < 0) {
+                    alert('введите натуральное число');
+                }
+
+                let factorial = 1;
+
+                for (let i = 2; i <= num; i++) {
+                    factorial *= i;
+                }
+
+                p.textContent = factorial;
+            })
+           
+        </script>
+    </body>
+</html>

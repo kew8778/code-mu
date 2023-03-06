@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №20</h3>     
+        <input id="random-str" type="text">
+        <input id="button" type="submit" value="случайная строка">
+
+        <script>
+            "use strict";
+
+            let randomStr = document.querySelector('#random-str');
+            let button = document.querySelector('#button');
+
+            button.addEventListener('click', function() {
+                let res = '';
+                
+                for (let i = 1; i <= 8; i++) {
+                    res += getRandomLetter();
+                }
+
+                // случайные рус буквы с utf-8
+                function getRandomLetter() {
+                    let numUtf8 = Math.floor(Math.random() * 32) + 1072; // значение от 1072 до 1103
+
+                    return String.fromCharCode(numUtf8); // String.fromCharCode() нашёл в гугле
+                }
+
+                randomStr.value = res;
+            })
+           
+        </script>
+    </body>
+</html>

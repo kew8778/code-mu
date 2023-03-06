@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №21</h3>     
+        <input id="inp" type="text">
+        <input id="button" type="submit" value="перемешать символы">
+
+        <script>
+            "use strict";
+
+            let inp = document.querySelector('#inp');
+            let button = document.querySelector('#button');
+
+            button.addEventListener('click', function() {
+                let arrElemsValue = inp.value.split('');
+                let newStr = '';
+                let max = arrElemsValue.length - 1;
+
+                while (max >= 0) {
+                    let randomNum = getRandomInt(max);
+                    newStr += arrElemsValue[randomNum];
+                    arrElemsValue.splice(randomNum, 1);
+                    max--;
+                }
+
+                function getRandomInt(max) {
+	                return Math.floor(Math.random() * (max + 1));
+                }
+
+                inp.value = newStr;
+            })
+           
+        </script>
+    </body>
+</html>

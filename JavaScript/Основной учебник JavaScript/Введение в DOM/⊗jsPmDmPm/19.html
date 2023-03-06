@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №19</h3>     
+        <input type="text">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+
+            input.addEventListener('blur', function() {
+                let num = input.value;
+
+                if (num >= 1 && num <= 100) {
+                    input.style.color = 'green';
+                } else {
+                    input.style.color = 'red';
+                }
+            })
+           
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №24</h3>     
+        <input id="inp1" type="text"> * x <sup>2</sup> + 
+        <input id="inp2" type="text"> * x + 
+        <input id="inp3" type="text"> = 0
+        <br><br>
+        <input id="button" type="submit" value="найти корни уровнения">
+        <p></p>
+
+        <script>
+            "use strict";
+
+            let inp1 = document.querySelector('#inp1');
+            let inp2 = document.querySelector('#inp2');
+            let inp3 = document.querySelector('#inp3');
+            let button = document.querySelector('#button');
+            let p = document.querySelector('p');
+
+            button.addEventListener('click', function() {
+                let a = +inp1.value;
+                let b = +inp2.value;
+                let c = +inp3.value;
+
+                // в школе был 20 лет назад, формулы взял с википедии
+                let dis = b ** 2 - 4 * a * c;
+
+                if (dis < 0) {
+                    p.textContent = 'корней нет';
+                }
+
+                if (dis == 0) {
+                    let x = -(b / (2 * a));
+
+                    p.textContent = 'x = ' + x;
+                }
+
+                if (dis > 0) {
+                    let x1 = (-b + Math.sqrt(dis)) / (2 * a);
+                    let x2 = (-b - Math.sqrt(dis)) / (2 * a);
+
+                    p.textContent = 'x1 = ' + x1 + ', x2 = ' + x2;
+                }
+            })
+           
+        </script>
+    </body>
+</html>

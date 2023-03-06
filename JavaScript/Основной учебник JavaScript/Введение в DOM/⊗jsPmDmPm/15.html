@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №15</h3>     
+        <input type="text">
+
+        <script>
+            "use strict";
+
+            let input = document.querySelector('input');
+            
+            input.addEventListener('blur', function() {
+                let date = input.value.split('.').reverse();
+                date[1] = date[1] - 1;
+
+                let days = ['вс', 'пн', 'вт', 'ср', 'чт', 'пт', 'сб'];
+                let weekday = days[new Date(...date).getDay()];
+
+                console.log(weekday);
+            })
+           
+        </script>
+    </body>
+</html>

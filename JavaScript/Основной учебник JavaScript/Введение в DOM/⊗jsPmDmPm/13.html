@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №13</h3>
+        <a href="https://code.mu/ru/javascript/book/prime/">Основной учебник</a>
+        <a href="http://load.pane.by/">Решения задач</a>
+        <input type="submit" value="кнопка">
+
+        <script>
+            "use strict";
+
+            let tagsA = document.querySelectorAll('a');
+            let button = document.querySelector('input');
+
+            button.addEventListener('click', function() {
+
+                for (let a of tagsA) {
+                    if (a.href.indexOf('http://') == 0) {
+                        a.innerHTML += '&rarr;';
+                    }
+                }
+            })
+            
+        </script>
+    </body>
+</html>

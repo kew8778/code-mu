@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №22</h3>     
+        <input id="inp" type="text">
+        <input id="button" type="submit" value="перевести в градусы Цельсия">
+        <p></p>
+
+        <script>
+            "use strict";
+
+            let inp = document.querySelector('#inp');
+            let button = document.querySelector('#button');
+            let p = document.querySelector('p');
+
+            button.addEventListener('click', function() {
+                p.textContent = (5 / 9 * (+inp.value - 32)).toFixed(1);
+            })
+           
+        </script>
+    </body>
+</html>
