@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <select>
+            <option>2020</option>
+            <option>2021</option>
+            <option>2022</option>
+            <option>2023</option>
+            <option>2024</option>
+            <option>2025</option>
+            <option>2026</option>
+            <option>2027</option>
+            <option>2028</option>
+            <option>2029</option>
+            <option>2030</option>
+        </select>
+        <input type="submit" value="подтвердить выбор">
+
+        <script>
+            'use strict';
+
+            const sel = document.querySelector('select');
+            const btn = document.querySelector('input');
+
+            btn.addEventListener('click', function() {
+                function isLeapYear(year) {
+                    return new Date(year, 1, 29).getMonth() === 1;
+                }
+
+                alert(isLeapYear(sel.value));
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1, №2, №3</h3>
+        <input id="inp" type="text">
+        <input id="btn1" type="submit" value="заблокировать ввод"> <!--задача 1-->
+        <input id="btn2" type="submit" value="разблокировать ввод"> <!--задача 2-->
+        <input id="btn3" type="submit" value="возможность ввода"> <!--задача 3-->
+
+        <script>
+            "use strict";
+
+            let inp = document.querySelector('#inp');
+
+            // #1
+            let btn1 = document.querySelector('#btn1');
+
+            btn1.addEventListener('click', function() {
+                inp.disabled = true;
+            })
+
+            // #2
+            let btn2 = document.querySelector('#btn2');
+
+            btn2.addEventListener('click', function() {
+                inp.disabled = false;
+            })
+
+            // #3
+            let btn3 = document.querySelector('#btn3');
+
+            btn3.addEventListener('click', function() {
+                alert(!(inp.disabled));
+            })
+            
+        </script>
+    </body>
+</html>

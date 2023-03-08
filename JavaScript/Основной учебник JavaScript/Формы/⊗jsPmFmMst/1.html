@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <textarea></textarea>
+        <div></div>
+
+        <script>
+            'use strict';
+
+            const textarea = document.querySelector('textarea');
+            const div = document.querySelector('div');
+
+            textarea.addEventListener('blur', function() {
+	            div.textContent = textarea.value;
+            });
+
+        </script>
+    </body>
+</html>

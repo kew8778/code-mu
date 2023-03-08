@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <select id="list">
+            <option value="1">понедельник</option>
+            <option value="2">вторник</option>
+            <option value="3">среда</option>
+            <option value="4">четверг</option>
+            <option value="5">пятница</option>
+            <option value="6">суббота</option>
+            <option value="7">воскресенье</option>
+        </select>
+
+        <script>
+            'use strict';
+
+            const list = document.querySelector('#list');
+
+            list.addEventListener('change', function() {
+                function isWeecend(NumWeekday) {
+                    return NumWeekday === '6' || NumWeekday === '7';
+                }
+
+                if (isWeecend(list.value)) {
+                    alert('выходной');
+                } else {
+                    alert('рабочий день');
+                }
+            });
+
+        </script>
+    </body>
+</html>

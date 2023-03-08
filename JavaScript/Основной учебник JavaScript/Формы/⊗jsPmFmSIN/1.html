@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input type="text" value="число от 0 до 5">
+        <select name="" id="list">
+            <option value="">100</option>
+            <option value="">200</option>
+            <option value="">300</option>
+            <option value="">400</option>
+            <option value="">500</option>
+            <option value="">600</option>
+        </select>
+
+        <script>
+            'use strict';
+
+            const inp = document.querySelector('input');
+            const list = document.querySelector('#list');
+
+            inp.addEventListener('blur', function() {
+                list.selectedIndex = +inp.value;
+            });
+
+        </script>
+    </body>
+</html>

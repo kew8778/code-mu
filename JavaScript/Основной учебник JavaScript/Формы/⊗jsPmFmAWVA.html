@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <code>elem.disabled = !elem.disabled;</code>
+        <p>
+            В правой части выражения получаем boolen-значение совйства disabled, 
+            и с помощью оператора '!' меняем на противоположное. 
+            Полученное обратное значение присваиваем обратно свойству disabled элементу, 
+            записанного в переменную 'elem'. <br>
+            В итоге выражение меняет состояние элемента с заблокированного на незаблокированное 
+            и наоборот, в зависимости от начального значения. 
+        </p>
+
+        <h3>Задача №2</h3>
+        <input id="inp" type="text">
+        <input id="btn" type="submit" value="заблокировать/разблокировать ввод">
+
+        <script>
+            "use strict";
+
+            let inp = document.querySelector('#inp');
+            let btn = document.querySelector('#btn');
+
+            btn.addEventListener('click', function() {
+                inp.disabled = !inp.disabled;
+            });
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="rad1" type="radio" name="group1" value="a">
+        <input id="rad1" type="radio" name="group1" value="b">
+        <input id="rad1" type="radio" name="group1" value="c">
+        <p></p>
+        <input id="btn" type="submit" value="вывести значение переключателя">
+
+        <script>
+            "use strict";
+
+            let arrGroup1 = document.querySelectorAll('#rad1');
+            let p = document.querySelector('p');
+            let btn = document.querySelector('#btn');
+            
+            btn.addEventListener('click', function() {
+                for (let rad1 of arrGroup1) {
+                    if (rad1.checked) {
+                        p.textContent = rad1.value;
+                    } 
+                }
+
+                if (!(p.textContent)) {
+                    alert('отметьте что-нибудь');
+                }
+            });
+            
+        </script>
+    </body>
+</html>

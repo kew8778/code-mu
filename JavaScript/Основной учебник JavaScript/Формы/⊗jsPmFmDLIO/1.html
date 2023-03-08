@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <select id="list">
+            <option value="">a</option>
+            <option value="">b</option>
+            <option value="" selected>c</option>
+        </select>
+
+        <script>
+            'use strict';
+
+            const list = document.querySelector('#list');
+
+            for (let option of list) {
+                if (option.selected) {
+                    option.text += '!';
+                } else {
+                    option.text += '?';
+                }
+            }
+
+        </script>
+    </body>
+</html>

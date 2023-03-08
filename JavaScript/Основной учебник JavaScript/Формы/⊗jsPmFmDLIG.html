@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <select id="list">
+            <option value="a">1</option>
+            <option value="b">2</option>
+            <option value="c">3</option>
+        </select>
+
+        <script>
+            'use strict';
+
+            const list = document.querySelector('#list');
+
+            for (let option of list) {
+                option.textContent += option.value;
+            }
+
+        </script>
+    </body>
+</html>

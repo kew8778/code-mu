@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <input type="text">
+        <p></p>
+
+        <script>
+            'use strict';
+
+            const inp = document.querySelector('input');
+            const p = document.querySelector('p');
+
+            inp.addEventListener('input', () => {
+                let numSymbol = inp.value.length;
+
+                if (numSymbol <= 5) {
+                    p.textContent = 'Вы можете ввести ' + (5 - numSymbol) + ' символов';
+                } else {
+                    p.textContent = 'Превышение на ' + (numSymbol - 5) + ' символов';
+                }
+            });
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <select id="listMonth">
+            <option value="0">январь</option>
+            <option value="1">февраль</option>
+            <option value="2">март</option>
+            <option value="3">апрель</option>
+            <option value="4">май</option>
+            <option value="5">июнь</option>
+            <option value="6">июль</option>
+            <option value="7">август</option>
+            <option value="8">сентябрь</option>
+            <option value="9">октябрь</option>
+            <option value="10">ноябрь</option>
+            <option value="11">декабрь</option>
+        </select>
+
+        <script>
+            'use strict';
+
+            let thisMonth = new Date().getMonth();
+            const listMonth = document.querySelector('#listMonth');
+
+            listMonth.value = String(thisMonth);
+
+        </script>
+    </body>
+</html>

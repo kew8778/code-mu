@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <input type="checkbox">
+        <button>button</button>
+
+        <script>
+            'use strict';
+
+            const checkbox = document.querySelector('input[type="checkbox"]');
+            const button = document.querySelector('button');
+
+            button.addEventListener('click', function() {
+	            if (checkbox.checked) {
+		            console.log('+++');
+	            } else {
+		            console.log('---');
+	            }
+            });
+
+        </script>
+    </body>
+</html>

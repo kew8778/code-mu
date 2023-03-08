@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №</h3>
+        <input type="checkbox">
+        <div></div>
+        <button>button</button>
+
+        <script>
+            'use strict';
+
+            const checkbox = document.querySelector('input');
+            const btn = document.querySelector('button');
+            const div = document.querySelector('div');
+
+            btn.addEventListener('click', function() {
+	            if (checkbox.checked) {
+		            div.textContent = '111';
+	            } else {
+		            div.textContent = '222';
+	            }
+            });
+
+        </script>
+    </body>
+</html>

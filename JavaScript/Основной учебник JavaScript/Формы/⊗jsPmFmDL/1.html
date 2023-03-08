@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <select>
+            <option>a</option>
+            <option>b</option>
+            <option>c</option>
+        </select>
+        <p></p>
+        <input type="submit" value="подтвердить выбор">
+
+        <script>
+            'use strict';
+
+            const sel = document.querySelector('select');
+            const p = document.querySelector('p');
+            const btn = document.querySelector('input');
+
+            btn.addEventListener('click', function() {
+                p.textContent = sel.value;
+            });
+
+        </script>
+    </body>
+</html>

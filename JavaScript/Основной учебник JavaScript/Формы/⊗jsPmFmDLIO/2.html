@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <select id="list">
+            <option value="">a</option>
+            <option value="">b</option>
+            <option value="">c</option>
+        </select>
+        <input type="submit" value="ометить последний пункт списка">
+
+        <script>
+            'use strict';
+
+            const list = document.querySelector('#list');
+            const btn = document.querySelector('input');
+
+            btn.addEventListener('click', function() {
+                list[list.length - 1].selected = true;
+            });
+
+        </script>
+    </body>
+</html>

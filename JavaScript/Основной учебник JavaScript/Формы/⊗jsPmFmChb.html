@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input type="checkbox" id="check">
+        <input id="btn1" type="submit" value="отметить">
+        <input id="btn2" type="submit" value="убрать метку">
+
+        <h3>Задача №2</h3>
+        <input id="btn3" type="submit" value="привет-пока">
+        <p></p>
+
+        <script>
+            "use strict";
+
+            // #1
+            let check = document.querySelector('#check');
+            let btn1 = document.querySelector('#btn1');
+            let btn2 = document.querySelector('#btn2');
+
+            btn1.addEventListener('click', function() {
+                check.checked = true;
+            })
+
+            btn2.addEventListener('click', function() {
+                check.checked = false;
+            })
+
+            // #2
+            let btn3 = document.querySelector('#btn3');
+            let p = document.querySelector('p');
+
+            btn3.addEventListener('click', function() {
+                if (check.checked) {
+                    p.textContent = 'привет';
+                } else {
+                    p.textContent = 'пока';
+                }
+            })
+            
+        </script>
+    </body>
+</html>

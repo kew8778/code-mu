@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <textarea></textarea>
+        <p></p>
+
+        <script>
+            "use strict";
+
+            let textarea = document.querySelector('textarea');
+            let p = document.querySelector('p');
+
+            textarea.addEventListener('blur', function() {
+                p.textContent = textarea.value;
+            })
+            
+        </script>
+    </body>
+</html>

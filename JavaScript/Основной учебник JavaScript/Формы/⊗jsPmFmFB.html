@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="inp1" type="text">
+        <input id="inp2" type="text">
+
+        <script>
+            'use strict';
+
+            const inp1 = document.querySelector('#inp1');
+            const inp2 = document.querySelector('#inp2');
+
+            inp1.focus(); // фокус по умолчанию
+
+            inp1.addEventListener('input', () => {
+                if (inp1.value.length === 2) {
+                    inp2.focus();
+                }
+            });
+
+            inp2.addEventListener('input', () => {
+                if (inp2.value.length === 2) {
+                    inp2.blur();
+                }
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <select id="listWeekday">
+            <option>понедельник</option>
+            <option>вторник</option>
+            <option>среда</option>
+            <option>четверг</option>
+            <option>пятница</option>
+            <option>суббота</option>
+            <option>воскресенье</option>
+        </select>
+
+        <script>
+            'use strict';
+
+            const listWeekday = document.querySelector('#listWeekday');
+
+            listWeekday.selectedIndex = new Date().getDay() - 1;
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input type="text">
+
+        <script>
+            'use strict';
+            
+            const inp = document.querySelector('input');
+
+            inp.addEventListener('input', () => {
+                if (inp.value.length === 5) {
+                    alert('Вы ввели 5 символов');
+                }
+            });
+
+        </script>
+    </body>
+</html>

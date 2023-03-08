@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <select id="list">
+            <option value="">a</option>
+            <option value="">b</option>
+            <option value="">c</option>
+        </select>
+        <input type="submit" value="показать выбранный пункт">
+
+        <script>
+            'use strict';
+
+            const list = document.querySelector('#list');
+            const btn = document.querySelector('input');
+
+            btn.addEventListener('click', function() {
+                for (let option of list) {
+                    if (option.selected) {
+                        alert(option.text);
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>
