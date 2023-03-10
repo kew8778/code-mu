@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="elem" value="text">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+            elem.addEventListener('blur', parent);
+
+            function parent() {
+	            console.log(this.value); // 'text'
+	
+	            function child() {
+		            console.log(this.value); // TypeError
+	            }
+	            child();
+            }
+
+        </script>
+    </body>
+</html>

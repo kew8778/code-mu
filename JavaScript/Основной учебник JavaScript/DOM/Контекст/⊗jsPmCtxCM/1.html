@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input id="elem1" value="text1">
+        <input id="elem2" value="text2">
+        <input id="elem3" value="text3">
+
+        <script>
+            'use strict';
+
+            function func() {
+	            console.log(this.value);
+            }
+
+            const elems = document.querySelectorAll('input');
+
+            for (let elem of elems) {
+                func.call(elem);
+            }
+
+        </script>
+    </body>
+</html>

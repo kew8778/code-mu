@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="elem" value="hello">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+
+            function func(surname, name) {
+	            console.log(this.value + ', ' + surname + ' ' + name);
+            }
+
+            func.apply(elem, ['Jonh', 'Smit']); // 'hello, John Smit'
+
+        </script>
+    </body>
+</html>

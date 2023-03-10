@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <input id="elem" value="hello">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+
+            function func(surname, name) {
+	            console.log(this.value + ', ' + name + ' ' + surname);
+            }
+
+            func.call(elem, 'Smit', 'Jonh'); // 'hello, John Smit'
+
+        </script>
+    </body>
+</html>

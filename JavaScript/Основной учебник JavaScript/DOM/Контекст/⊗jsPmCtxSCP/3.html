@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <input id="elem" value="3">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+            elem.addEventListener('blur', func);
+
+            function func() {
+	            let square = () => {
+		            return this.value ** 2;
+	            }
+
+                alert( square() );
+            }
+
+        </script>
+    </body>
+</html>

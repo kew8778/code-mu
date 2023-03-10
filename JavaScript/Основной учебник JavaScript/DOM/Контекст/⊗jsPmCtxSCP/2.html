@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №2</h3>
+        <input id="elem" value="3">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+            elem.addEventListener('blur', func);
+
+            function func() {
+	            alert( square(this) );
+	
+	            function square(elem) {
+		            return elem.value ** 2;
+	            }
+            }
+
+        </script>
+    </body>
+</html>

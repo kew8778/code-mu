@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input id="elem" value="3">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+            elem.addEventListener('blur', func);
+
+            function func() {
+                const self = this;
+
+	            alert( square() );
+	
+	            function square() {
+		            return self.value ** 2;
+	            }
+            }
+
+            /* Объэкт this доступен только в основной фукции-колбэк события,
+               для для доступа к this во вложенных функциях следует записать
+               его в переменную, обычно в self
+            */
+
+        </script>
+    </body>
+</html>
