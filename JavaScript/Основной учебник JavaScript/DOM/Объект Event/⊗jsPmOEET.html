@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button id="elem">text</button>
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+
+            elem.addEventListener('click', func);
+            elem.addEventListener('dblclick', func);
+
+            function func(event) {
+                elem.style.backgroundColor = (event.type === 'click') ? 'green': 'red'; 
+            }
+
+        </script>
+    </body>
+</html>

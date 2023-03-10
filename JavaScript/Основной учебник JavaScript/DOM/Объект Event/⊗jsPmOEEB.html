@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="1.css">
+    </head>
+    <body>
+        <h3>Задача №1, №2</h3>
+        <div>
+            <p>
+                Нажми на <b>жирный текст</b>
+            </p>
+        </div>
+
+        <script>
+            'use strict';
+
+            // #1
+            const div = document.querySelector('div');
+            const p = document.querySelector('p');
+            const b = document.querySelector('b');
+
+            b.addEventListener('click', function() {
+                b.style.color = 'green';
+            });
+
+            p.addEventListener('click', function() {
+                p.innerHTML += '!!!';
+            });
+
+            div.addEventListener('click', function() {
+                div.style.backgroundColor = 'red';
+            });
+
+            //#2
+            // 'focus' - не всплывает
+
+        </script>
+    </body>
+</html>

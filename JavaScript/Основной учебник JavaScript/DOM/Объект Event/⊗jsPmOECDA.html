@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <a id="link1" href="https://code.mu/ru/javascript/book/prime/dom/object-Event/cancel-default-action/">Click me !!!</a>
+
+        <h3>Задача №2</h3>
+        <input id="inp1" type="text"> + <input id="inp2" type="text">  
+        <a id="res" href="">Посчитать</a>
+        <p></p>
+
+        <script>
+            'use strict';
+
+            // #1
+            const link1 = document.querySelector('#link1');
+
+            link1.addEventListener('click', function(event) {
+                event.preventDefault();
+                link1.textContent += link1.href;
+            });
+
+            // #2
+            const inp1 = document.querySelector('#inp1');
+            const inp2 = document.querySelector('#inp2');
+            const res = document.querySelector('#res');
+            const p = document.querySelector('p');
+
+            res.addEventListener('click', function(event) {
+                event.preventDefault();
+                let sum = Number(inp1.value) + Number(inp2.value);
+                p.textContent = sum;
+            })
+
+        </script>
+    </body>
+</html>

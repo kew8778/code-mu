@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <p>Кликни по тексту с нажатой клавишей Alt и текст станет красным</p>
+
+        <h3>Задача №2</h3>
+        <ul id="elem">
+	        <li>text</li>
+	        <li>text</li>
+	        <li>text</li>
+	        <li>text</li>
+	        <li>text</li>
+        </ul>
+
+        <script>
+            'use strict';
+
+            // #1
+            const p = document.querySelector('p');
+
+            p.addEventListener('click', function(event) {
+                if (event.altKey) {
+                    p.style.color = 'red';
+                }
+            });
+
+            // #2
+            const ul = document.querySelector('ul');
+            const tagsLi = ul.children;
+
+            for (let li of tagsLi) {
+                li.addEventListener('click', clickOnLi);
+            }
+
+            function clickOnLi() {
+                if (event.ctrlKey) {
+                    this.textContent += '1';
+                }
+
+                if (event.altKey) {
+                    this.textContent += '2';
+                }
+            }
+
+        </script>
+    </body>
+</html>

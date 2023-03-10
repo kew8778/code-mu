@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №5</h3>
+        <input type="text">
+        <p></p>
+
+        <script>
+            'use strict';
+
+            const inp = document.querySelector('input');
+            const p = document.querySelector('p');
+
+            inp.addEventListener('keypress', function(event) {
+                if (event.code === 'Enter') {
+                    p.textContent = inp.value;
+                    inp.value = '';
+                }
+            });
+
+        </script>
+    </body>
+</html>

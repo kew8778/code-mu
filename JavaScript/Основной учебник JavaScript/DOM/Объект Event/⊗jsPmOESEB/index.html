@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="parent">
+            <button>click me</button>
+            <div id="block">
+                text
+            </div>
+        </div>
+
+        <script>
+            'use strict';
+
+            const parent = document.querySelector('#parent');
+            const button = document.querySelector('button');
+            const block  = document.querySelector('#block');
+
+            button.addEventListener('click', function() {
+	            block.classList.add('active');
+                event.stopPropagation();
+            });
+
+            parent.addEventListener('click', function() {
+	            block.classList.remove('active');
+            });
+
+        </script>
+    </body>
+</html>

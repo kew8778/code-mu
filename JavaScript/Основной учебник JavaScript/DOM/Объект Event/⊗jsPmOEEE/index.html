@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <ul id="elem">
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+
+        <script>
+            'use strict';
+
+            const ul = document.querySelector('#elem');
+
+            ul.addEventListener('click', function(event) {
+                let eventElem = event.target;
+
+                if (eventElem.tagName === 'LI') {
+                    eventElem.textContent += '!';
+                } else {
+                    eventElem.innerHTML += '<li>text</li>';
+                }
+            })
+
+        </script>
+    </body>
+</html>

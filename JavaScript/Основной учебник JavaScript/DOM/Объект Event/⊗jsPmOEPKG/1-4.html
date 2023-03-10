@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задачи №1 - №4</h3>
+        <input type="text">
+        <p></p>
+
+        <script>
+            'use strict';
+
+            // #1, #2
+            const inp = document.querySelector('input');
+            const p = document.querySelector('p');
+
+            inp.addEventListener('keypress', function(event) {
+                p.innerHTML += 'символ: "' + event.key + '", код: "' +
+                    event.code + '"<br>';
+            });
+
+            // #3. У клавиши 'Enter' код 'Enter'
+            // #4. У клавиши Backspace нет кода
+
+        </script>
+    </body>
+</html>
