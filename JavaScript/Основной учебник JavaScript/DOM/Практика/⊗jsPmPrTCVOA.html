@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table"></table>
+
+        <script>
+            'use strict';
+
+            let employees = [
+	            {name: 'employee1', age: 30, salary: 400},
+	            {name: 'employee2', age: 31, salary: 500},
+	            {name: 'employee3', age: 32, salary: 600},
+            ];
+
+            const table = document.getElementById('table');
+            
+            for (let obj of employees) {
+                const tr = document.createElement('tr');
+
+                const td1 = document.createElement('td');
+                td1.textContent = obj.name;
+                tr.appendChild(td1);
+
+                const td2 = document.createElement('td');
+                td2.textContent = obj.age;
+
+                td2.addEventListener('click', function() {
+                    td2.textContent = +td2.textContent + 1;
+                });
+
+                tr.appendChild(td2);
+
+                const td3 = document.createElement('td');
+                td3.textContent = obj.salary;
+
+                td3.addEventListener('click', function() {
+                    td3.textContent = (td3.textContent * 1.1).toFixed(2); // округление до копеек
+                });
+
+                tr.appendChild(td3);
+
+                table.appendChild(tr);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="btn" type="submit" value="запустить таймер">
+        <p id="timer">10</p>
+
+        <script>
+            'use strict';
+
+            const btn = document.getElementById('btn');
+            const p = document.getElementById('timer');
+
+            btn.addEventListener('click', startTimer);
+            
+            function startTimer() {
+	            const timerId = setInterval(function() {
+		            p.textContent = +p.textContent - 1;
+
+                    if (+p.textContent === 0) {
+                        clearInterval(timerId);
+                    }
+	            }, 1000);
+
+                this.removeEventListener('click', startTimer);
+            }
+
+        </script>
+    </body>
+</html>

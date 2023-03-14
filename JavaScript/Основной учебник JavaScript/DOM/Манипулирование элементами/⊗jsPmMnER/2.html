@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul id="parent">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <input type="submit" id="button" value="удалить">
+
+        <script>
+            'use strict';
+
+            const ul = document.getElementById('parent');
+            const btn = document.getElementById('button');
+
+            btn.addEventListener('click', function() {
+                ul.lastElementChild.remove();
+            });
+
+        </script>
+    </body>
+</html>

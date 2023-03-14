@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ol id="elem"></ol>
+        <button id="btn">click me</button>
+
+        <script>
+            'use strict';
+
+            const elem = document.getElementById('elem');
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function() {
+                const li = document.createElement('li');
+                li.textContent = 'item';
+
+                li.addEventListener('click', function() {
+                    li.textContent += '!';
+                });
+
+                elem.appendChild(li)
+            });
+
+        </script>
+    </body>
+</html>

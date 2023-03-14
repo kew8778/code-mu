@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="elem1">
+            <p id="elem2"></p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const elem1 = document.getElementById('elem1');
+            const elem2 = document.getElementById('elem2');
+
+            console.log(elem1.contains(elem2)); // true
+
+        </script>
+    </body>
+</html>

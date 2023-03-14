@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table"></table>
+
+        <script>
+            'use strict';
+
+            const table = document.getElementById('table');
+
+            for (let i = 1; i <= 5; i++) {
+                const tr = document.createElement('tr');
+
+                for (let j = 1; j <= 5; j++) {
+                    const td = document.createElement('td');
+
+                    tr.appendChild(td);
+                }
+
+                table.appendChild(tr);
+            }           
+
+        </script>
+    </body>
+</html>

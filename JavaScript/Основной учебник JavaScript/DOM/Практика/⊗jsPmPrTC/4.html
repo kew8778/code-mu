@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        кол-во строк в таблице: <input id="inp1" type="text">
+        <br><br>
+        кол-во ячеек в строке: <input id="inp2" type="text">
+        <br><br>
+        <table id="table" border="1"></table>
+
+        <script>
+            'use strict';
+
+            const inp1 = document.getElementById('inp1');
+            const inp2 = document.getElementById('inp2');
+            const table = document.getElementById('table');
+
+            inp1.addEventListener('blur', addTable);
+            inp2.addEventListener('blur', addTable);
+
+            function addTable() {
+                table.innerHTML = '';
+
+                for (let i = 1; i <= inp1.value; i++) {
+                    const tr = document.createElement('tr');
+
+                    for (let j = 1; j <= inp2.value; j++) {
+                        const td = document.createElement('td');
+                        td.textContent = 'text';
+
+                        tr.appendChild(td);
+                    }
+
+                    table.appendChild(tr);
+                }
+            }
+
+        </script>
+    </body>
+</html>

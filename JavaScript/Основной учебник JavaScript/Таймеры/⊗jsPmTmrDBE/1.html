@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p id="p"></p>
+
+        <script>
+            'use strict';
+
+            const p = document.getElementById('p');
+
+            setTimeout(showWelcome, 10000);
+
+            function showWelcome() {
+                p.textContent = 'Welcome !!!';
+            }
+
+        </script>
+    </body>
+</html>

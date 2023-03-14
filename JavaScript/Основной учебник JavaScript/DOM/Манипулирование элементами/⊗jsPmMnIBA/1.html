@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul id="elem">
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+            <li>text</li>
+        </ul>
+
+        <script>
+            'use strict';
+
+            const ul = document.getElementById('elem');
+
+            const liFirst = document.createElement('li');
+            liFirst.textContent = 'start';            
+            ul.prepend(liFirst);
+
+            const liEnd = document.createElement('li');
+            liEnd.textContent = 'finish';
+            ul.append(liEnd);
+
+        </script>
+    </body>
+</html>

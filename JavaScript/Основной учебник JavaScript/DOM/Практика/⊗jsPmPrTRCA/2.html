@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table" border="1">
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <br>
+        <input id="btn" type="submit" value="Добавить ряд и колонку">
+
+        <script>
+            'use strict';
+
+            const table = document.getElementById('table');
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function() {
+                const trs = table.querySelectorAll('tr');
+
+                let tdsMax = 0;
+
+                for (let tr of trs) {
+                    const td = document.createElement('td');
+                    tr.appendChild(td);
+
+                    const tds = tr.querySelectorAll('td');
+                    tdsMax = (tds.length > tdsMax) ? tds.length : tdsMax;
+                }
+
+                const tr = document.createElement('tr');
+
+                for (let i = 1; i <= tdsMax; i++) {
+                    const td = document.createElement('td');
+                    tr.appendChild(td);
+                }
+
+                table.appendChild(tr);
+            });
+
+        </script>
+    </body>
+</html>

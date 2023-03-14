@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задачи №1 - №4</h3>
+        <div id="elem" style="border: 1px solid red;">
+            <p>text</p>
+            <p>text</p>
+            <p>text</p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const elem = document.getElementById('elem');
+
+            let p1, p2, p3, p4;
+
+            function createElemP(elem) {
+                elem = document.createElement('p');
+                elem.textContent = '!!!';
+
+                return elem;
+            }
+
+            elem.insertAdjacentElement('beforeBegin', createElemP(p1)); // #1
+            elem.insertAdjacentElement('afterEnd', createElemP(p2)); // #2
+            elem.insertAdjacentElement('afterBegin', createElemP(p3)); // #3
+            elem.insertAdjacentElement('beforeEnd', createElemP(p4)); // #4
+
+        </script>
+    </body>
+</html>

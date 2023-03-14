@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="inp" type="text">
+        <input id="btn" type="submit" value="клонировать">
+
+        <script>
+            'use strict';
+
+            const inp = document.getElementById('inp');
+            const btn = document.getElementById('btn');
+
+            let cloneInp;
+
+            btn.addEventListener('click', function() {
+                cloneInp = inp.cloneNode(true);
+                console.log(cloneInp); // <input id="inp" type="text">
+            });
+
+        </script>
+    </body>
+</html>

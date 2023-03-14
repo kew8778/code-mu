@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задачи #1 и #6</h3>
+        <button id="start">start</button>
+        <button id="stop">stop</button>
+
+        <script>
+            'use strict';
+
+            const start = document.getElementById('start');
+            const stop = document.getElementById('stop');
+
+            start.addEventListener('click', outputCountdown);
+
+            let num = 100;
+            let timerId;
+
+            function outputCountdown() {
+
+                timerId = setInterval(function() {
+                    console.log(--num);
+
+                    if (num === 0) {
+                        clearInterval(timerId);
+                    }
+
+                }, 1000);
+
+                this.removeEventListener('click', outputCountdown);
+            }
+
+            stop.addEventListener('click', function() {
+                clearInterval(timerId);
+                start.addEventListener('click', outputCountdown);
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="parent"></div>
+
+        <script>
+            'use strict';
+
+            const arr = [1, 2, 3, 4, 5];
+
+            const parent = document.getElementById('parent');
+
+            for (let elem of arr) {
+	            const p = document.createElement('p');
+	            p.textContent = elem;
+
+                p.addEventListener('click', function() {
+                    p.textContent = +p.textContent + 1;
+                });
+	
+	            parent.appendChild(p);
+            }
+
+        </script>
+    </body>
+</html>

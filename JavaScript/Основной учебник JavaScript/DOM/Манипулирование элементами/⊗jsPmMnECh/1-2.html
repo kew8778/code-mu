@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="elem" class="www"></div>
+
+        <script>
+            'use strict';
+
+            const elem = document.getElementById('elem');
+
+            console.log(elem.matches('.www')); // true
+            console.log(elem.matches('p')) // false
+
+        </script>
+    </body>
+</html>

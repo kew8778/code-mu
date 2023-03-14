@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p id="p"></p>
+
+        <script>
+            'use strict';
+
+            const p = document.getElementById('p');
+
+            setInterval(function() {
+                const now = new Date();
+
+                p.textContent = now.getHours() + ':' +
+                                now.getMinutes() + ':' +
+                                now.getSeconds();
+	        }, 1000);
+
+        </script>
+    </body>
+</html>

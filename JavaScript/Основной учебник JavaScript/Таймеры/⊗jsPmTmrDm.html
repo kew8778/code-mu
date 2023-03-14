@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задачи №1 - №3</h3>
+        <input id="elem" value="10">
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+
+            const teimerId = setInterval(function() {
+	            elem.value = Number(elem.value) - 1;
+
+                if (elem.value === '0') {
+                    clearInterval(teimerId);
+                }
+              
+            }, 1000);
+
+            /* 
+            Задача №1
+            Функция Number в коде преобразовывает строку в elem.value в число,
+            без неё в input выводилось бы NaN
+            */
+
+        </script>
+    </body>
+</html>

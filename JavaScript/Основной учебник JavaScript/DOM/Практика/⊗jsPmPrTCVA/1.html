@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table"></table>
+
+        <script>
+            'use strict';
+
+            const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]];
+
+            const table = document.getElementById('table');
+            
+            for (let arrElem of arr) {
+                const tr = document.createElement('tr');
+
+                for (let elem of arrElem) {
+                    const td = document.createElement('td');
+                    td.textContent = elem;
+                    tr.appendChild(td);
+                }
+
+                table.appendChild(tr);
+            }        
+
+        </script>
+    </body>
+</html>

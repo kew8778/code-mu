@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №3</h3>
+        <pre>
+            &lt;input type="button" id="elem" value="1"&gt;
+
+            let elem = document.querySelector('#elem');
+
+            elem.addEventListener('click', function() {
+                setInterval((function(self) {
+                    return function() {
+                        console.log(self.value);
+                    }
+                })(this), 1000);
+            });
+        </pre>
+        <p>
+            По клику на кнопку вызывается анонимная функция, 
+            внутри которой вызывается таймер setInterval. <br> 
+            Таймер выполняет каждую секунду функцию function(self),
+            вызываемую на месте с переданным в параметр self объект this. <br> 
+            Сама функция function(self) возвращает функцию,
+            выводящая в консоль значение value объекта this
+        </p>
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+        <br>
+        <input id="btn" type="submit" value="Увеличить числа в 2 раза">
+
+        <script>
+            'use strict';
+
+            const table = document.getElementById('table');
+            const btn = document.getElementById('btn');
+            const tds = table.querySelectorAll('td');
+
+            btn.addEventListener('click', function() {
+                for (let td of tds) {
+                    td.textContent *= 2;
+                }
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p id="p">
+            Абзац, меняющий каждую секунду свой цвет )))
+        </p>
+
+        <script>
+            'use strict';
+
+            const p = document.getElementById('p');
+
+            setInterval(function() {
+                p.classList.toggle('colored');
+	        }, 1000);
+
+        </script>
+    </body>
+</html>

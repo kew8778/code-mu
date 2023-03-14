@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let num = 10;
+
+            const timerId = setInterval(function() {
+                console.log(--num);
+
+                if (num === 0) {
+                    clearInterval(timerId);
+                }
+            }, 1000)
+
+        </script>
+    </body>
+</html>

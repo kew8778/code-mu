@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+        <script>
+            'use strict';
+
+            const tagsLi = document.querySelectorAll('li');
+
+            for (let li of tagsLi) {
+                li.addEventListener('click', function() {
+                    li.remove();
+                });
+            }
+
+        </script>
+    </body>
+</html>

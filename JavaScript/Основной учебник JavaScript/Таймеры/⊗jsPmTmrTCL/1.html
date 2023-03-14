@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1</h3>
+        <input type="button" id="elem" value="1">
+
+        <script>
+            'use strict';
+
+            let elem = document.querySelector('#elem');
+
+            elem.addEventListener('click', function() {
+                let self = this;
+
+	            setInterval(function() {
+		            self.value = Number(self.value) + 1;
+	            }, 1000);
+            });
+
+            /*
+            Объект this во вложенных функциях не доступен. Один из способов
+            доступа к this во вложенных функциях является присвоение его 
+            значения в переменную (обычно self), обявленную в основной функции 
+            */
+
+        </script>
+    </body>
+</html>

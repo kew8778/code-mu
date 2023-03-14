@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button id="btn">обратный отсчет</button>
+
+        <script>
+            'use strict';
+
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', outputCountdown);
+
+            let num = 100;
+
+            function outputCountdown() {
+
+                const timerId = setInterval(function() {
+                    console.log(num--);
+
+                    if (num < 0) {
+                        clearInterval(timerId);
+                    }
+
+                }, 1000);
+
+                this.removeEventListener('click', outputCountdown);
+            }
+
+        </script>
+    </body>
+</html>

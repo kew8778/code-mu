@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table" border="1"></table>
+        <br>
+        <input id="inp" type="text" value="4"> - кол-во ячеек вряде
+        <br><br>
+        <input id="btn" type="submit" value="Добавить ряд">
+
+        <script>
+            'use strict';
+
+            const table = document.getElementById('table');
+            const inp = document.getElementById('inp');
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function() {
+                const tr = document.createElement('tr');
+
+                for (let i = 1; i <= inp.value; i++) {
+                    const td = document.createElement('td');
+                    tr.appendChild(td);
+                }
+
+                table.appendChild(tr);
+            });
+
+        </script>
+    </body>
+</html>

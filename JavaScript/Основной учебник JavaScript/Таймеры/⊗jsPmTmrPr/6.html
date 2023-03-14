@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p id="p"></p>
+        <button id="start">Запуск отсчёта</button>
+        <button id="pause">Пауза</button>
+
+        <script>
+            'use strict';
+
+            const p = document.getElementById('p');
+            const start = document.getElementById('start');
+            const pause = document.getElementById('pause');
+
+            start.addEventListener('click', startTimer);
+
+            let timerId;
+            let num = 1;
+            
+            function startTimer() {
+                timerId = setInterval(function() {
+		            p.textContent = num;
+                    num++;
+	            }, 1000);
+
+                this.removeEventListener('click', startTimer);
+            }
+
+            pause.addEventListener('click', stopTimer);
+
+            function stopTimer() {
+                clearInterval(timerId);
+                start.addEventListener('click', startTimer);
+            }
+
+        </script>
+    </body>
+</html>

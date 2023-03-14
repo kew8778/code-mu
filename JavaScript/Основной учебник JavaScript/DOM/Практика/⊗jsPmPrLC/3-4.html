@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задачи №3, №4</h3>
+        <ul id="elem"></ul>
+
+        <script>
+            'use strict';
+
+            const arr = [1, 2, 3, 4, 5];
+
+            const ul = document.getElementById('elem');
+
+            for (let elem of arr) {
+                const li = document.createElement('li');
+                li.textContent = elem;
+
+                li.addEventListener('click', addText);
+
+                ul.appendChild(li);
+            }
+
+            function addText() {
+                this.textContent += '!';
+
+                this.removeEventListener('click', addText);
+            }
+
+        </script>
+    </body>
+</html>

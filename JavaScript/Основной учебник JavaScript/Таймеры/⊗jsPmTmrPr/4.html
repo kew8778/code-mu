@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <input id="inp" type="text" value="">
+        <p id="p"></p>
+
+        <script>
+            'use strict';
+
+            const inp = document.getElementById('inp');
+            const p = document.getElementById('p');
+
+            inp.addEventListener('blur', startTimer);
+            
+            function startTimer() {
+                let num = +inp.value;
+
+                const timerId = setInterval(function() {
+		            p.textContent = num;
+                    num--;
+
+                    if (num < 0) {
+                        clearInterval(timerId);
+                    }
+	            }, 1000);
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задачи №2 - №5</h3>
+        <input type="submit" id="start" value="start">
+        <input type="submit" id="stop"  value="stop">
+
+        <script>
+            'use strict';
+
+            let start = document.querySelector('#start');
+            let stop  = document.querySelector('#stop');
+
+            let timerId;
+
+            start.addEventListener('click', function() {
+	            timerId = setInterval(function() {
+		            let date = new Date;
+		            console.log(date.getMinutes() + ' ' + date.getSeconds());
+	            }, 1000);
+            });
+
+            stop.addEventListener('click', function() {
+	            clearInterval(timerId);
+            });
+
+        </script>
+    </body>
+</html>

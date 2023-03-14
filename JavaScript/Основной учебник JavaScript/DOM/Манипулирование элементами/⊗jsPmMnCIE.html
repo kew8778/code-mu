@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Задача №1, №2</h3>
+        <ol id="elem"></ol>
+        <button id="button">click me</button>
+
+        <script>
+            'use strict';
+
+            //#1
+            const elem = document.getElementById('elem');
+
+            const li = document.createElement('li');
+            li.textContent = 'item';
+
+            elem.appendChild(li);
+
+            //#2
+            const btn = document.getElementById('button');
+
+            btn.addEventListener('click', function() {
+                const li = document.createElement('li');
+                li.textContent = 'item';
+
+                elem.appendChild(li)
+            });
+
+        </script>
+    </body>
+</html>
