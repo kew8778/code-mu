@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul>
+            <li>elem1</li>
+            <li>elem2</li>
+            <li>elem3</li>
+        </ul>
+
+        <script>
+            'use strict';
+
+            const ul = document.querySelector('ul');
+            const lis = document.querySelectorAll('li');
+
+            for (let li of lis) {
+                const link = document.createElement('a');
+                link.href = '';
+                link.textContent = 'удалить пункт';
+
+                link.addEventListener('click', function(event) {
+                    li.remove();
+                    event.preventDefault();
+                });
+
+                li.appendChild(link);
+            }
+
+        </script>
+    </body>
+</html>

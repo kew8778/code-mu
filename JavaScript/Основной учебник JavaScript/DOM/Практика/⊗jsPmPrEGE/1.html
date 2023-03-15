@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+
+        <script>
+            'use strict';
+
+            const lis = document.querySelectorAll('li');
+
+            for (let li of lis) {
+                li.addEventListener('click', function createInput() {
+                    const inp = document.createElement('input');
+                    inp.value = li.textContent;;
+
+                    li.textContent = '';
+                    li.appendChild(inp);
+
+                    inp.addEventListener('change', function(event) {
+                        li.textContent = inp.value;
+                        li.addEventListener('click', createInput);
+                    });
+
+                    li.removeEventListener('click', createInput);
+                });
+            }
+
+        </script>
+    </body>
+</html>

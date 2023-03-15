@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="parent">
+            <p>text1</p>
+	        <p>text2</p>
+	        <p>text3</p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const div = document.getElementById('parent');
+            const ps = div.querySelectorAll('p');
+
+            for (let p of ps) {
+                const span = document.createElement('span');
+                span.textContent = p.textContent;
+                p.textContent = '';
+
+                span.addEventListener('click', createEditInput);
+
+                p.appendChild(span);
+
+                const link = document.createElement('a');
+                link.href = '';
+                link.textContent = 'удалить абзац';
+
+                link.addEventListener('click', function(event) {
+                    p.remove();
+                    event.preventDefault();
+                });
+
+                p.appendChild(link);
+            }
+
+            function createEditInput() {
+                const inp = document.createElement('input');
+                inp.value = this.textContent;;
+
+                this.textContent = '';
+                this.appendChild(inp);
+
+                const span = this;
+
+                inp.addEventListener('change', function(event) {
+                    span.textContent = inp.value;
+                    span.addEventListener('click', createEditInput);
+                });
+
+                this.removeEventListener('click', createEditInput);
+            }
+
+        </script>
+    </body>
+</html>

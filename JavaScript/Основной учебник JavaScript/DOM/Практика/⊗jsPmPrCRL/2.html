@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table">
+            <tr>
+                <td>100</td>
+                <td>200</td>
+            </tr>
+            <tr>
+                <td>300</td>
+                <td>400</td>
+            </tr>
+            <tr>
+                <td>500</td>
+                <td>600</td>
+            </tr>
+        </table>
+
+        <script>
+            'use strict';
+
+            const table = document.getElementById('table');
+            const trs = table.querySelectorAll('tr');
+
+            for (let tr of trs) {
+                const td = document.createElement('td');
+
+                const link = document.createElement('a');
+                link.href = '';
+                link.textContent = 'удалить ряд';
+
+                link.addEventListener('click', function(event) {
+                    tr.remove();
+                    event.preventDefault();
+                });
+
+                td.appendChild(link);
+                tr.appendChild(td);
+            }
+
+        </script>
+    </body>
+</html>

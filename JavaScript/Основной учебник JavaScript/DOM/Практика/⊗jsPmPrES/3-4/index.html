@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+        <script>
+            'use strict';
+
+            const trs = document.querySelectorAll('tr');
+
+            for (let tr of trs) {
+                const tdNew = document.createElement('td');
+
+                const a = document.createElement('a');
+                a.href = '';
+                a.textContent = 'сделать ряд зеленным';
+
+                a.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    tr.classList.toggle('colored-tr');
+                });
+
+                tdNew.appendChild(a);
+                tr.appendChild(tdNew);
+            }
+
+        </script>
+    </body>
+</html>

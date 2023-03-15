@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <p>
+            Абзац с текстом
+        </p>
+        <a href="">Удалить абзац</a>
+
+        <script>
+            'use strict';
+
+            const p = document.querySelector('p');
+            const link = document.querySelector('a');
+
+            link.addEventListener('click', function(event) {
+                p.remove();
+                event.preventDefault();
+            });
+
+        </script>
+    </body>
+</html>

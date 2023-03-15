@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <p>text1</p>
+        <p>text2</p>
+        <p>text3</p>
+
+        <script>
+            'use strict';
+
+            const ps = document.querySelectorAll('p');
+
+            for (let p of ps) {
+                const span = document.createElement('span');
+                span.textContent = p.textContent;
+                p.textContent = '';
+                p.appendChild(span);
+
+                const link = document.createElement('a');
+                link.href = '';
+                link.textContent = 'перечеркунть текст';
+
+                link.addEventListener('click', function(event) {
+                    span.classList.add('decoration');
+                    event.preventDefault();
+                    link.remove();
+                });
+
+                p.appendChild(link);
+            }
+
+        </script>
+    </body>
+</html>

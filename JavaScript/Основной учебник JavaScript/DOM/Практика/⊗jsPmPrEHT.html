@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="parent">
+            <p id="elem">text</p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+            
+            elem.addEventListener('click', function createInput() {
+                const inp = document.createElement('input');
+                inp.value = elem.textContent;;
+
+                elem.textContent = '';
+                elem.appendChild(inp);
+
+                inp.addEventListener('change', function(event) {
+                    elem.textContent = inp.value;
+                    elem.addEventListener('click', createInput);
+                });
+
+                elem.removeEventListener('click', createInput);
+            });
+
+        </script>
+    </body>
+</html>

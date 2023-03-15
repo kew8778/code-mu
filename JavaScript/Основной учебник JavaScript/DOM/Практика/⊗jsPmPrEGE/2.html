@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <table id="table">
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+        </table>
+
+        <script>
+            'use strict';
+
+            const tds = document.querySelectorAll('#table td');
+
+            for (let td of tds) {
+                td.addEventListener('click', function createInput() {
+                    const inp = document.createElement('input');
+                    inp.value = td.textContent;;
+
+                    td.textContent = '';
+                    td.appendChild(inp);
+
+                    inp.addEventListener('change', function(event) {
+                        td.textContent = inp.value;
+                        td.addEventListener('click', createInput);
+                    });
+
+                    td.removeEventListener('click', createInput);
+                });
+            }
+
+        </script>
+    </body>
+</html>

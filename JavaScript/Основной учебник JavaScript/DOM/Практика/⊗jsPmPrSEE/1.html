@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="parent">
+            <p id="elem">text</p>
+            <input id="input">
+        </div>
+
+        <script>
+            'use strict';
+
+            const elem = document.querySelector('#elem');
+            const input = document.querySelector('#input');
+
+            input.value = elem.textContent;
+
+            input.addEventListener('change', function() {
+	            elem.textContent = input.value;
+            });
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <ul id="parent">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        
+        <input type="submit" id="button">
+
+        <script>
+            'use strict';
+
+            const ul = document.getElementById('parent');
+            const btn = document.getElementById('button');
+            const lis = ul.querySelectorAll('li');
+
+            btn.addEventListener('click', function() {
+                let num = +ul.lastElementChild.textContent;
+
+                const li = document.createElement('li');
+                li.textContent = num + 1;
+                li.addEventListener('click', deleteThisElem);
+                
+                ul.appendChild(li);
+            });
+
+            for (let li of lis) {
+                li.addEventListener('click', deleteThisElem);
+            }
+
+            function deleteThisElem() {
+                this.remove();
+            }
+
+        </script>
+    </body>
+</html>
