@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .hide {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="elem">text</p>
+        <input id="btn" type="submit" value="показать/скрыть абзац">
+
+        <script>
+            'use strict';
+
+            const elem = document.getElementById('elem');
+            const btn = document.getElementById('btn');
+
+            btn.addEventListener('click', function() {
+                elem.classList.toggle('hide');
+            });
+
+        </script>
+    </body>
+</html>

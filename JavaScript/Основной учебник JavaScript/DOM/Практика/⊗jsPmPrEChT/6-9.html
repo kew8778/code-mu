@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div id="inset"></div> <!--место для вставки-->
+
+        <script>
+            'use strict';
+
+            let employees = [
+	            {name: 'employee1', age: 30, salary: 400},
+	            {name: 'employee2', age: 31, salary: 500},
+	            {name: 'employee3', age: 32, salary: 600},
+            ]; // заданный объект
+
+            const inset = document.getElementById('inset');
+
+            const table = document.createElement('table');
+            
+            createTableHeader(employees);
+            createTableData(employees);
+
+            inset.appendChild(table);
+
+            addFormForNewTableRow(employees);
+
+            function createTableHeader(arr) {
+                const tr = document.createElement('tr');
+
+                for (let key of Object.keys(arr[0])) {
+                    const th = document.createElement('th');
+                    th.textContent = key;
+                    tr.appendChild(th);
+                }
+
+                table.appendChild(tr);
+            }
+
+            function createTableData(arr) {
+                for (let obj of arr) {
+                    const tr = document.createElement('tr');
+
+                    for (let key in obj) {
+                        const td = document.createElement('td');
+                        td.textContent = obj[key];
+                        td.addEventListener('click', editTableData);
+                        tr.appendChild(td);
+                    }
+
+                    createLinkToDelete(tr, 'удалить ряд');
+
+                    table.appendChild(tr);
+                }
+            }
+
+            function editTableData() {
+                const inp = document.createElement('input');
+                inp.value = this.textContent
+                this.textContent = '';
+                this.appendChild(inp);
+
+                inp.focus();
+                this.removeEventListener('click', editTableData);
+
+                let self = this;
+                inp.addEventListener('blur', function() {
+                    self.textContent = this.value;
+                    self.addEventListener('click', editTableData);
+                    this.remove();
+                });
+            }
+
+            function createLinkToDelete(elemToDelete, linkText) {
+                const link = document.createElement('a');
+                link.href = '';
+                link.textContent = linkText;
+
+                link.addEventListener('click', function(event){
+                    event.preventDefault();
+                    elemToDelete.remove();
+                });
+
+                elemToDelete.appendChild(link);
+            }
+
+            function addFormForNewTableRow(arr) {
+                const newRow = {};
+                
+                for (let key of Object.keys(arr[0])) {
+                    const inp = document.createElement('input');
+                    inp.value = key;
+                    newRow[key] = key;
+                    inp.addEventListener('blur', function() {
+                        newRow[key] = inp.value;
+                    });
+                    inset.appendChild(inp);
+                }
+
+                const btn = document.createElement('button');
+                btn.textContent = 'добавить';
+                btn.addEventListener('click', function() {
+                    createTableData([newRow]);
+                });
+                inset.appendChild(btn);
+            }
+
+        </script>
+    </body>
+</html>

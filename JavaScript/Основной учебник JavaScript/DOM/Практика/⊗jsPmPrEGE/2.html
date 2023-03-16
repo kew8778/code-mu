@@ -35,7 +35,7 @@
                     td.textContent = '';
                     td.appendChild(inp);
 
-                    inp.addEventListener('change', function(event) {
+                    inp.addEventListener('blur', function(event) {
                         td.textContent = inp.value;
                         td.addEventListener('click', createInput);
                     });

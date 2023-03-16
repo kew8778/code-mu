@@ -24,7 +24,7 @@
                     elem.textContent = '';
                     elem.appendChild(inp);
 
-                    inp.addEventListener('change', function(event) {
+                    inp.addEventListener('blur', function(event) {
                         elem.textContent = inp.value;
                         elem.addEventListener('click', createInput);
                     });

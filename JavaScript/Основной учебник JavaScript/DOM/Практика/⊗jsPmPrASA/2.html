@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            td {
+                width: 50px;
+                height: 50px;
+            }
+            .color1 {
+	            background: red;
+            }
+            .color2 {
+	            background: green;
+            }
+            .color3 {
+	            background: yellow;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <script>
+            'use strict';
+
+            let tds = document.querySelectorAll('td');
+
+            let i = 0;
+            let colors = ['color1', 'color2', 'color3'];
+
+            for (let td of tds) {
+	            td.addEventListener('click', function() {
+		            this.classList.add(colors[i]);
+		
+		            i++;
+		            if (i == colors.length) {
+			            i = 0;
+		            }
+	            });
+            }
+
+            /*
+            В массив tds записали все элементы td,
+            в массив colors стили цветов для окрашивания фонов td,
+
+            В цикле перебираем элементы массива tds и каждому td
+            подключаем событие клика. 
+            В функции события добавляем поочередно классы цветов
+            через глобальную переменную i, значение которой указываем
+            в качестве индекса елемента массива цветов.
+            После присвоения цвета элементу увеличиваем i на единицу,
+            чтоб следующему клику/элементу присвоить следущий цвет.
+            При достижении значения i длине массива цветов, сбрасываем 
+            значение в ноль.  
+            */
+
+        </script>
+    </body>
+</html>

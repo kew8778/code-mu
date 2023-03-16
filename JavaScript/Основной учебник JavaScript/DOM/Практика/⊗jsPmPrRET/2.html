@@ -46,7 +46,7 @@
 
                 const span = this;
 
-                inp.addEventListener('change', function(event) {
+                inp.addEventListener('blur', function(event) {
                     span.textContent = inp.value;
                     span.addEventListener('click', createEditInput);
                 });

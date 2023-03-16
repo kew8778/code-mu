@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .decoration {
+                text-decoration: line-through;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="inset"></div> <!--место для вставки-->
+
+        <script>
+            'use strict';
+
+            const arr = ['item1', 'item2', 'item3', 'item4', 'item5']; // заданный массив
+
+            const inset = document.getElementById('inset');
+
+            const ul = document.createElement('ul');
+
+            for (let elem of arr) {
+                createItem(elem);
+            }
+
+            const btn = document.createElement('button');
+            btn.textContent = 'добавить пункт';
+
+            btn.addEventListener('click', function() {
+                createItem('new item');
+            });
+
+            inset.append(ul, btn);
+
+            function createItem(text) {
+                const li = document.createElement('li');
+
+                const span = document.createElement('span');
+                span.textContent = text;
+                span.addEventListener('click', editItem);
+
+                const linkDel = document.createElement('a');
+                linkDel.href = '';
+                linkDel.textContent = 'удалить';
+                linkDel.addEventListener('click', function(event) {
+                    li.remove();
+                    event.preventDefault();
+                });
+
+                const linkDecor = document.createElement('a');
+                linkDecor.href = '';
+                linkDecor.textContent = 'перечеркнуть';
+                linkDecor.addEventListener('click', function(event) {
+                    span.classList.toggle('decoration');
+                    event.preventDefault();
+                });
+
+                li.append(span, linkDel, linkDecor);
+                ul.appendChild(li);
+            }
+
+            function editItem() { 
+                const inp = document.createElement('input');
+                inp.value = this.textContent;
+                this.textContent = '';
+
+                this.appendChild(inp);
+                inp.focus();
+
+                let self = this;
+
+                inp.addEventListener('blur', function() {
+                    self.textContent = inp.value;
+                    self.addEventListener('click', editItem);
+                });
+
+                this.removeEventListener('click', editItem);
+            }
+
+        </script>
+    </body>
+</html>

@@ -19,7 +19,7 @@
                 const inp = document.createElement('input');
                 inp.value = elem.textContent;
 
-                inp.addEventListener('change', function() {
+                inp.addEventListener('blur', function() {
 	                elem.textContent = inp.value;
                 });
 

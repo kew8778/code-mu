@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            td {
+                width: 50px;
+                height: 50px;
+            }
+
+            .clik-on-elem {
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <script>
+            'use strict';
+
+            const tds = document.querySelectorAll('td');
+
+            for (let td of tds) {
+                td.addEventListener('click', function() {
+                    this.classList.toggle('clik-on-elem');
+                });
+            }
+
+        </script>
+    </body>
+</html>
