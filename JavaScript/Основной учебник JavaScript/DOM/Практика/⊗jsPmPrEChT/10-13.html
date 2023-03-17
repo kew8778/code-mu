@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .elem-of-data {
+                margin-right: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="ulOfEmployees"></div> <!--место для вставки-->
+
+        <script>
+            'use strict';
+
+            let employees = [
+	            {name: 'employee1', age: 30, salary: 400},
+	            {name: 'employee2', age: 31, salary: 500},
+	            {name: 'employee3', age: 32, salary: 600},
+            ]; // заданный объект
+
+            const listParent = document.getElementById('ulOfEmployees');
+
+            createUlFromArrOfObjects(employees, listParent);
+
+            function createUlFromArrOfObjects(arrOfObjects, listParent) {
+                const ul = document.createElement('ul');
+
+                for (let objOfArr of arrOfObjects) {
+                    createLi(objOfArr, ul);
+                }
+
+                listParent.appendChild(ul);
+
+                addFormAddingData(arrOfObjects, ul);
+            }
+
+            function createLi(objWithData, list) {
+                const li = document.createElement('li');
+
+                for (let key in objWithData) {
+                    const elem = document.createElement('span');
+
+                    elem.classList.add('elem-of-data');
+                    elem.textContent = objWithData[key];
+
+                    elem.addEventListener('click', editElem);
+
+                    li.appendChild(elem);
+                }
+
+                li.appendChild(createLinkToDeleteElem(li));
+
+                list.appendChild(li);
+            }
+
+            function editElem() {
+                const input = document.createElement('input');
+
+                input.value = this.textContent;
+                this.textContent = '';
+
+                this.removeEventListener('click', editElem);
+
+                const self = this;
+                input.addEventListener('blur', function() {
+                    self.textContent = this.value;
+                    self.addEventListener('click', editElem);
+                    this.remove();
+                });
+
+                this.appendChild(input);
+                input.focus();
+            }
+
+            function createLinkToDeleteElem(elemtoBeDeleted) {
+                const link = document.createElement('a');
+                link.href = '';
+                link.textContent = 'удалить';
+
+                link.addEventListener('click', function(event){
+                    event.preventDefault();
+                    elemtoBeDeleted.remove();
+                });
+
+                return link;
+            }
+
+            function addFormAddingData(arrOfObjects, list) {
+                const form = document.createElement('form');
+
+                const newObj = {};
+                const keysNewObj = Object.keys(arrOfObjects[0]);
+
+                for (let key of keysNewObj) {
+                    const inp = document.createElement('input');
+                    inp.value = key;
+                    newObj[key] = key;
+
+                    inp.addEventListener('blur', function() {
+                        newObj[key] = inp.value;
+                    });
+
+                    form.appendChild(inp);
+                }
+
+                const btn = document.createElement('button');
+                btn.textContent = 'добавить';
+
+                btn.addEventListener('click', function(event) {
+                    createLi(newObj, list);
+                    event.preventDefault();
+                });
+
+                form.appendChild(btn);
+
+                list.after(form);
+            }
+
+        </script>
+    </body>
+</html>

@@ -57,14 +57,14 @@
 
             function editTableData() {
                 const inp = document.createElement('input');
-                inp.value = this.textContent
+                inp.value = this.textContent;
                 this.textContent = '';
                 this.appendChild(inp);
 
                 inp.focus();
                 this.removeEventListener('click', editTableData);
 
-                let self = this;
+                const self = this;
                 inp.addEventListener('blur', function() {
                     self.textContent = this.value;
                     self.addEventListener('click', editTableData);
