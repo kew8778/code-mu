@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+        <style>
+            td {
+	            width: 50px;
+	            height: 50px;
+	            border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="elem">
+            <p>1</p>
+            <p>2</p>
+            <p>3</p>
+        </div>
+
+        <script>
+            'use strict';
+
+            function createTable(rows, cols) {
+	            let table = document.createElement('table');
+	
+	            for (let i = 1; i <= rows; i++) {
+                    const tr = document.createElement('tr');
+
+		            for (let j = 1; j <= cols; j++) {
+                        const td = document.createElement('td');
+                        tr.appendChild(td);
+		            }
+
+                    table.appendChild(tr);
+	            }
+	
+	            return table;
+            }
+
+            const elem = document.getElementById('elem');
+            const table = createTable(5, 6);
+            elem.appendChild(table);
+
+        </script>
+    </body>
+</html>

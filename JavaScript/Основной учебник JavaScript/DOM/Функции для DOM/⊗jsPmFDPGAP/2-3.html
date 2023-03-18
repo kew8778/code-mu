@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+    </head>
+    <body>
+        <ul></ul>
+
+        <script>
+            'use strict';
+
+            // #1
+            function appendElem(list, text) {
+                const li = document.createElement('li');
+                li.textContent = text;
+                list.appendChild(li);
+            }
+
+            // #2
+            const textsForLi = ['text1', 'text2', 'text3'];
+
+            const ul = document.querySelector('ul');
+
+            for (let text of textsForLi) {
+                appendElem(ul, text);
+            }
+
+        </script>
+    </body>
+</html>

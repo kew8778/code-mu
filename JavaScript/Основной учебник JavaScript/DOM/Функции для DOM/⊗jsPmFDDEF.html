@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+    </head>
+    <body>
+        <p></p>
+        <input type="text">
+        <script>
+            'use strict';
+
+            // #1
+            function setText(selector, text) {
+                const elem = document.querySelector(selector);
+                elem.textContent = text;
+            }
+
+            setText('p', 'Hello');
+
+            // #2
+            function setAttr(selector, nameAttr, text) {
+                const elem = document.querySelector(selector);
+                elem.setAttribute(nameAttr, text);
+            }
+
+            setAttr('input', 'value', 'text');
+
+        </script>
+    </body>
+</html>

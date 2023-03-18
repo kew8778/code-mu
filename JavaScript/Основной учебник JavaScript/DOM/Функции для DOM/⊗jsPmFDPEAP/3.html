@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+    </head>
+    <body>
+        <input type="text">
+
+        <script>
+            'use strict';
+
+            function setValue(elem, text) {
+                elem.value = text;
+            }
+
+            const elem = document.querySelector('input');
+
+            setValue(elem, 'введите число');
+
+            console.log(elem.value); // 'введите число'
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+        <style>
+            td {
+	            width: 50px;
+	            height: 50px;
+	            border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="elem"></div>
+
+        <script>
+            'use strict';
+
+            const div = document.querySelector('#elem');
+
+            const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+            const table = createTableByArr(arr);
+
+            div.appendChild(table);
+
+            function createTableByArr(twoDimensionalArr) {
+	            let table = document.createElement('table');
+	
+	            for (let subArr of twoDimensionalArr) {
+                    const tr = document.createElement('tr');
+
+		            for (let elem of subArr) {
+                        const td = document.createElement('td');
+                        td.textContent = elem;
+                        tr.appendChild(td);
+		            }
+
+                    table.appendChild(tr);
+	            }
+	
+	            return table;
+            }
+
+        </script>
+    </body>
+</html>

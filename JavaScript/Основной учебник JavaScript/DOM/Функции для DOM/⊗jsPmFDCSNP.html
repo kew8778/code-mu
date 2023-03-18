@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+    </head>
+    <body>
+        <p>a</p>
+        <p>b</p>
+        <p>c</p>
+
+        <script>
+            'use strict';
+
+            function forEach(selector, func) {
+                const elems = document.querySelectorAll(selector);
+
+                for (let i = 0; i < elems.length; i++) {
+		            func(elems[i], i);
+	            }
+            }
+
+            forEach('p', function(elem, index) {
+	            elem.textContent = index + elem.textContent;
+            });
+
+        </script>
+    </body>
+</html>

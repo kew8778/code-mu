@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+    </head>
+    <body>
+        <p>text1</p>
+        <p>text2</p>
+
+        <script>
+            'use strict';
+
+            // #1
+            function appendText(elem, text) {
+                elem.textContent += text;
+            }
+
+            // #2
+            const elems = document.querySelectorAll('p');
+
+            for (let elem of elems) {
+                appendText(elem, '!');
+            }
+
+        </script>
+    </body>
+</html>
