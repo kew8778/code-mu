@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=UTF-8">
+    </head>
+    <body>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+        <button>Найти сумму</button>
+
+        <script>
+            'use strict';
+
+            ;(function(selectors, selector) {
+                const nums = document.querySelectorAll(selectors);
+
+                const btn = document.querySelector(selector);
+
+                btn.addEventListener('click', function() {
+                    let sum = 0;
+
+                    for (let num of nums) {
+                        sum += Number(num.value);
+                    }
+
+                    console.log(sum);
+                });
+            })('input', 'button');
+
+        </script>
+    </body>
+</html>
