@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <p>
+                Стороны прямоуголиника: <br><br>
+                <input id="inp1" type="text"> и <input id="inp2" type="text"> <br><br>
+                <button id="btn">посчитать</button>
+            </p>
+            <p>
+                Периметр квадрата: <span id="perimeter"></span><br>
+                Площадь квадрата: <span id="area"></span>
+            </p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const inp1 = document.getElementById('inp1');
+            const inp2 = document.getElementById('inp2');
+            const btn = document.getElementById('btn');
+            const perimeter = document.getElementById('perimeter');
+            const area = document.getElementById('area');
+
+            inp1.focus();
+
+            btn.addEventListener('click', setRectangleValues);
+
+            function setRectangleValues() {
+                const side1 = +inp1.value;
+                const side2 = +inp2.value;
+
+                checkNum(side1);
+                checkNum(side2);
+
+                perimeter.textContent = (side1 + side2) * 2;
+                area.textContent = side1 * side2;
+            }
+
+            function checkNum(num) {
+                if (num < 0 || num + 0 !== num) {
+                    alert(
+                        'неверное значение,\n' + 
+                        'допускаются только положительные числа,\n' + 
+                        'дробные числа должны быть через точку'
+                    );
+                }
+            }
+
+        </script>
+    </body>
+</html>

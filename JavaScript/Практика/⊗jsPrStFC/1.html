@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div>
+            <p>
+                Сторона квадрата: <input id="inp" type="text">
+                <button id="btn">посчитать</button>
+            </p>
+            <p>
+                Периметр квадрата: <span id="perimeter"></span><br>
+                Площадь квадрата: <span id="area"></span>
+            </p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const inp = document.getElementById('inp');
+            const btn = document.getElementById('btn');
+            const perimeter = document.getElementById('perimeter');
+            const area = document.getElementById('area');
+
+            inp.focus();
+
+            btn.addEventListener('click', setValuesOfSquare);
+
+            function setValuesOfSquare() {
+                const side = +inp.value;
+
+                checkNum(side);
+
+                perimeter.textContent = side * 4;
+                area.textContent = side ** 2;
+            }
+
+            function checkNum(num) {
+                if (num < 0 || num + 0 !== num) {
+                    alert(
+                        'неверное значение,\n' + 
+                        'допускаются только положительные числа,\n' + 
+                        'дробные числа должны быть через точку'
+                    );
+                }
+            }
+
+        </script>
+    </body>
+</html>

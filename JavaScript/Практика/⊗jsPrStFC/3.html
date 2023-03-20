@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .error {
+                color: red;
+            }
+
+            .error-of {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>
+                Диметр <input id="inp1" type="text"> или радиус 
+                <input id="inp2" type="text"> круга <br>
+                <span id="error" class="error error-of">неверное значение, 
+                    допускаются только положительные числа,
+                    дробные числа должны быть через точку</span>
+            </p>
+            <p>
+                Длина окружности: <span id="circumference"></span><br>
+                Площадь круга: <span id="area"></span>
+            </p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const inp1 = document.getElementById('inp1');
+            const inp2 = document.getElementById('inp2');
+            const error = document.getElementById('error');
+            const circumference = document.getElementById('circumference');
+            const area = document.getElementById('area');
+
+            setEvents(inp1);
+            setEvents(inp2);
+
+            function setEvents(elem) {
+                elem.addEventListener('focus', function() {
+                    this.addEventListener('input', calcCircle);
+                });
+
+                elem.addEventListener('blur', function() {
+                    this.removeEventListener('input', calcCircle);
+                });                
+            }
+
+            function calcCircle() {
+                if (isCorrectValue(+this.value)) {
+                    error.classList.remove('error-of');
+                   
+                    return;
+                }
+            
+                error.classList.add('error-of');
+                
+                syncInputs(this);
+                
+                const radius = +inp2.value;
+
+                circumference.textContent = Math.PI * radius * 2;
+                area.textContent = Math.PI * radius ** 2;               
+            }
+
+            function isCorrectValue(num) {
+                    return (num < 0 || num + 0 !== num);
+            }
+
+            function syncInputs(elem) {
+                if (elem === inp1) {
+                    inp2.value = inp1.value / 2;
+                } else {
+                    inp1.value = inp2.value * 2;
+                }
+            }
+
+        </script>
+    </body>
+</html>

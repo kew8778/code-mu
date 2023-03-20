@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            .error {
+                color: red;
+            }
+            .error-of {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>
+                Стороны треугольника: <br>
+                <input id="inp1" type="text">
+                <span data-error="inp1" class="error error-of"> - неверное значение, 
+                    допускаются только положительные числа,
+                    дробные числа должны быть через точку</span><br> 
+                <input id="inp2" type="text">
+                <span data-error="inp2" class="error error-of"> - неверное значение, 
+                    допускаются только положительные числа,
+                    дробные числа должны быть через точку</span><br>
+                <input id="inp3" type="text">
+                <span data-error="inp2" class="error error-of"> - неверное значение, 
+                    допускаются только положительные числа,
+                    дробные числа должны быть через точку</span><br>
+            </p>
+            <p>
+                <button id="btn">Расчитать</button>
+            </p>
+            <p>
+                Плащадь треугольника: <span id="area"></span><br>
+            </p>
+        </div>
+
+        <script>
+            'use strict';
+
+            const inp1 = document.getElementById('inp1');
+            const inp2 = document.getElementById('inp2');
+            const inp3 = document.getElementById('inp3');
+            const btn = document.getElementById('btn');
+            const area = document.getElementById('area');
+
+            inp1.focus();
+
+            setEvent(inp1);
+            setEvent(inp2);
+            setEvent(inp3);
+
+            btn.addEventListener('click', calc);
+
+            function setEvent(elem) {
+                elem.addEventListener('input', checkCorrectValue);            
+            }
+
+            function checkCorrectValue() {
+                const num = +this.value;
+                const error = this.nextElementSibling;
+                console.log(error);
+
+                if (num < 0 || num + 0 !== num) {
+                    error.classList.remove('error-of');
+                } else {
+                    error.classList.add('error-of');
+                }
+            }
+
+            function calc() {
+                const a = +inp1.value;
+                const b = +inp2.value;
+                const c = +inp3.value;
+
+                const p = (a + b + c) / 2;
+
+                const s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+
+                area.textContent = s;
+            }
+
+        </script>
+    </body>
+</html>
