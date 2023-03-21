@@ -60,7 +60,6 @@
             function checkCorrectValue() {
                 const num = +this.value;
                 const error = this.nextElementSibling;
-                console.log(error);
 
                 if (num < 0 || num + 0 !== num) {
                     error.classList.remove('error-of');

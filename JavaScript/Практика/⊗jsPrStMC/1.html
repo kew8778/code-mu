@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            code {
+                font-size: 130%;
+                font-style: italic;
+                font-weight: bold;
+                color: blue;
+            }
+            .error {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Квадаратное уравнение</h3>
+        <p>Общий вид:<br>
+            <code>ax<sup>2</sup> + bx + c = 0<br>
+                a &#8800; 0</code></p>
+        <p>Введите значения:<br>
+            <code>a = </code><input id="inp1" type="text"><br>         
+            <code>b = </code><input id="inp2" type="text"><br>          
+            <code>c = </code><input id="inp3" type="text"></p>
+        <p><button id="btn">Расчитать</button></p>
+        <p><code id="res"></code></p>
+
+        <script>
+            'use strict';
+
+            const inp1 = document.getElementById('inp1');
+            const inp2 = document.getElementById('inp2');
+            const inp3 = document.getElementById('inp3');
+            const btn = document.getElementById('btn');
+            const res = document.getElementById('res');
+
+            btn.addEventListener('click', outputRes);
+
+            function outputRes() {
+                const abc = getValues();
+
+                if (isNums(abc) && abc[0] !== 0) {
+                    outputSolvedEquation(abc);
+                } else {
+                    outputError(abc);
+                };
+            }
+
+            function getValues() {
+                const a = +inp1.value;
+                const b = +inp2.value;
+                const c = +inp3.value;
+
+                return [a, b, c];
+            }
+
+            function isNums(abc) {
+                for (let elem of abc) {
+                    if (Number.isNaN(elem)) {
+                        return false;
+                    } 
+                }
+
+                return true;
+            }
+
+            function outputSolvedEquation(abc) {
+                const D = calcDiscriminant(...abc);
+
+                if (D < 0) {
+                    res.textContent = 'Действительных корней нет';
+                } else if (D === 0) {
+                    res.textContent = 'x = ' + getX(...abc);
+                } else {
+                    res.innerHTML = 'x<sub>1</sub> = ' + getX1(...abc, D) +
+                        '<br>x<sub>2</sub> = ' + getX2(...abc, D);
+                }                
+            }
+
+            function calcDiscriminant(a, b, c) {
+                return b ** 2 - 4 * a * c;
+            }
+
+            function getX(a, b, c) {
+                return -(b / (2 * a));
+            }
+
+            function getX1(a, b, c, D) {
+                return (-b + Math.sqrt(D)) / (2 * a);
+            }
+
+            function getX2(a, b, c, D) {
+                return (-b - Math.sqrt(D)) / (2 * a);
+            }
+
+            function outputError(abc) {
+                if (abc[0] === 0) {
+                    res.innerHTML = getTextError1();
+                    return;
+                }
+
+                const elemsError = ['a', 'b', 'c'];
+
+                for (let i = 0; i < 3; i++) {
+                    if (Number.isNaN(abc[i])) {
+                        res.innerHTML = getTextError2(elemsError[i]);
+                        return;
+                    }
+                }                        
+            }
+
+            function getTextError1() {
+                return 'Поле <span class="error">a</span> не заполнено или ' +
+                'равно 0, <br>Значение <span class="error">a</span> в ' +
+                'квадратных уравнениях не может равняться нулю';
+            }
+
+            function getTextError2(nameValue) {
+                return 'В поле ' + '<span class="error">' + nameValue + 
+                    '</span> ошибка,<br>' +
+                    'допускаются только числа,<br>' +
+                    'отрицательные числа без пробела после минуса,<br>' +
+                    'дробные числа через точку';
+            }
+
+        </script>
+    </body>
+</html>
