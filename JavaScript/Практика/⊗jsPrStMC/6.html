@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Наименьшее число, которое делится на каждое из двух чисел</h3>
+        <p>Первое число: <input id="inp1" type="text"><br></p>
+        <p>Второе число: <input id="inp2" type="text"><br></p>
+        <p><button id="btn">Показать результат</button></p>
+        <p id="res"></p>
+
+        <script>
+            'use strict';
+
+            const inp1 = document.getElementById('inp1');
+            const inp2 = document.getElementById('inp2');
+            const btn = document.getElementById('btn');
+            const res = document.getElementById('res');
+
+            // проверку на корректность ввода чисел в input не делаю !!!
+            // для больших чисел нужно оптимизировать алгоритм
+
+            btn.addEventListener('click', function() {
+                res.textContent = getResNum();
+            });
+
+            function getResNum() {
+                const num1 = +inp1.value;
+                const num2 = +inp2.value;
+
+                const largesNum = Math.max(num1, num2);
+
+                let resNum = largesNum;
+
+                while (true) {
+                    if (resNum % num1 === 0 && resNum % num2 === 0) {
+                        return resNum;
+                    }
+
+                    resNum++;
+                }
+            }
+
+        </script>
+    </body>
+</html>

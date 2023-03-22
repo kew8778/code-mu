@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Список делителей числа</h3>
+        <p>Введите число: <input type="text"><br></p>
+        <p><button id="btn">Показать список делителей</button></p>
+        <p id="res"></p>
+
+        <script>
+            'use strict';
+
+            const inp = document.querySelector('input');
+            const btn = document.getElementById('btn');
+            const res = document.getElementById('res');
+
+            // проверку на корректность ввода чисел в input не делал !!!
+            // для больших чисел нужно оптимизировать алгоритм
+
+            btn.addEventListener('click', function() {
+                res.textContent = getArrDivisors(+inp.value).join(', ');
+            });
+
+            function getArrDivisors(num) {
+                const arrDivisors = [];
+                
+                for (let i = 1; i <= (num / 2); i++) {
+                    if (num % i === 0) {
+                        arrDivisors.push(i);
+                    }
+                }
+
+                return arrDivisors;
+            }
+
+        </script>
+    </body>
+</html>
