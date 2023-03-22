@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h3>Анализ текста</h3>
+        <textarea></textarea> <br>
+        Параметры: <br>
+        <input type="checkbox" checked> - кол-во слов в тексте <br>
+        <input type="checkbox" checked> - кол-во символов в тексте <br>
+        <input type="checkbox" checked> - кол-во символов без пробелов <br>
+        <input type="checkbox" checked> - плотность символов в тексте <br>
+        <p id="res"></p>
+
+        <script>
+            'use strict';
+
+            const area = document.querySelector('textarea');
+            const arrChecks = document.querySelectorAll('input');
+            const res = document.getElementById('res');
+
+            area.addEventListener('blur', outputRes);
+            
+            function outputRes() {                
+                const text = area.value;
+                
+                const arrFunctionsForOutput = [
+                    outputNumWords,
+                    outputNumChars,
+                    outputNumCharsNoSpaces,
+                    outputDensityChars,
+                ];
+
+                res.innerHTML = ''; // очистка предыдущего вывода анализа
+
+                for (let i = 0; i < arrChecks.length; i++) {
+                    if (arrChecks[i].checked) {
+                        arrFunctionsForOutput[i](text);
+                    }
+                }
+            }
+
+            function outputNumWords(text) {
+                const numWords = text.split(' ').length;
+                addLineBreak();                
+                res.innerText += 'Слов: ' + numWords;
+            }
+
+            function addLineBreak() {
+                if (res.innerHTML !== '') {
+                    res.innerHTML += '<br>';
+                }
+            }
+
+            function outputNumChars(text) {
+                const numChars = text.length;
+                addLineBreak();
+                res.innerText += 'Символов: ' + numChars;
+            }
+
+            function outputNumCharsNoSpaces(text) {
+                const numCharsNoSpaces = text.split(' ').join('').length;                
+                addLineBreak();
+                res.innerText += 'Символов без пробелов: ' + numCharsNoSpaces;
+            }
+
+            function outputDensityChars(text) {
+                const objDensityChars = getObjDensityChars(text);
+
+                addLineBreak();
+                res.innerHTML += 'Плотность символов в тексте в процентах:'
+
+                for (let char in objDensityChars) {
+                    res.innerHTML += '<br>' + char + ': ' +
+                        objDensityChars[char];
+                }
+            }
+
+            function getObjDensityChars(text) {
+                const objDensityChars = {};
+                const objNumChars = getObjNumChars(text);
+                const numCharsNoSpaces = text.split(' ').join('').length;
+
+                for (let char in objNumChars) {
+                    objDensityChars[char] = (
+                        objNumChars[char] / numCharsNoSpaces * 100
+                        ).toFixed(2);
+                }
+
+                return objDensityChars;
+            }
+
+            function getObjNumChars(text) {
+                const objNumChars = {};
+
+                for (let char of text.split(' ').join('')) {
+                    if (objNumChars[char] === undefined) {
+                        objNumChars[char] = 1;
+                    } else {
+                        objNumChars[char] += 1;
+                    }
+                }
+
+                return objNumChars;
+            }
+
+        </script>
+    </body>
+</html>
