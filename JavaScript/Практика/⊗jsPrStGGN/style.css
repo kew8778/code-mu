@@ -1,0 +1,41 @@
+.play {
+    text-align: center;
+}
+
+.btn {
+    font-size: 20px;
+    color: red;
+    background-color: greenyellow;
+    padding: 5px;
+    width: 150px;
+}
+
+.btn:hover {
+    background-color: green;
+    font-weight: bold;
+}
+
+.hidden-num {
+    margin: 5px auto 0;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: black;
+    padding: 5px;
+    width: 150px;
+    height: 30px;
+}
+
+.red,
+.show {
+    color: red;
+}
+
+.inp {
+    font-size: 20px;
+    padding: 5px;
+    width: 150px;
+}
+
+.none {
+    display: none;
+}
