@@ -1,0 +1,32 @@
+.body {
+    margin: 0;
+}
+
+.block {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.keyboard {
+    border: 1px solid #000000;
+}
+
+td {
+    width: 40px;
+    height: 40px;
+
+    text-align: center;
+    color: #FFFFFF;
+
+    background-color: #800000;
+    border: 2px solid #006400;
+}
+
+td:hover {
+    background-color: #D2691E;
+}
+
+td:active {
+    background-color: #F4A460;
+}
