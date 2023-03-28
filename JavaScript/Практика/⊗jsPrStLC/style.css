@@ -1,0 +1,47 @@
+.body {
+    margin: 0;
+}
+
+.calendar {
+    text-align: center;
+}
+
+.calendar__link__previous-month {
+    margin-right: 100px;
+    text-decoration: none;
+    font-size: 200%;
+}
+
+.calendar__link__next-month {
+    margin-left: 100px;
+    text-decoration: none;
+    font-size: 200%;
+}
+
+.calendar__month,
+.calendar__year {
+    font-size: 200%;
+}
+
+.calendar__dates {
+    padding-left: 0;
+    display: flex;
+    list-style-type: none;
+    justify-content: center;
+}
+
+.calendar__date {
+    font-size: 120%;
+    width: 30px;
+    height: 25px;
+    border: 1px solid #ff0000;
+    padding-top: 5px;
+}
+
+.date-now {
+    background-color: #7fff00;
+}
+
+.none {
+    display: none;
+}
