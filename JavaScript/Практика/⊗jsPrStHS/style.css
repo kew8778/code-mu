@@ -1,0 +1,22 @@
+.events {
+    text-align: center;
+}
+
+.events__input {
+    width: 300px;
+}
+
+.events__table {
+    margin: 10px auto;
+    width: 800px;
+}
+
+.events__table td {
+    padding: 10px;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.none {
+    display: none;
+}
