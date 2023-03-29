@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Гороскоп на JS</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body class="body">
+        <div class="horoscope">
+            <h1>Гороскоп на сегодня, завтра, послезавтра</h1>
+            <p>
+                Введите в поле ниже дату Вашего дня рождения в формате
+                дд.мм, например 27.08 (для 27-го августа) и нажмите Enter
+            </p>
+            <input class="horoscope__input" type="text">
+            <p>
+                <label><input class="horoscope__choice" type="radio" name="day" value="today" checked>сегодня</label>
+                <label><input class="horoscope__choice" type="radio" name="day" value="tomorrow">завтра</label>
+                <label><input class="horoscope__choice" type="radio" name="day" value="dayAfter">послезавтра</label>
+            </p>
+            <p class="horoscope__output"></p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
