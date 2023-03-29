@@ -1,0 +1,20 @@
+.prediction {
+    text-align: center;
+}
+
+.prediction__title,
+.prediction__text {
+    font-size: 250%;
+}
+
+.prediction__btn {
+    font-size: 150%;
+}
+
+.good {
+    color: #008000;
+}
+
+.bad {
+    color: #ff0000;
+}
