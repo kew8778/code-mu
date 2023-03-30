@@ -1,0 +1,26 @@
+.auto-completion {
+    position: relative;
+}
+
+.auto-completion__inp {
+	padding: 5px;
+	font-size: 18px;
+}
+
+.auto-completion__list {
+	position: absolute;
+
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	background-color: white;
+}
+.auto-completion__list li {
+	border: 1px solid gray;
+	font-size: 18px;
+	padding: 5px;
+}
+.auto-completion__list li:hover {
+	border: 1px solid black;
+	cursor: pointer;
+}
