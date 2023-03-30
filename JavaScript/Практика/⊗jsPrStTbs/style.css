@@ -1,0 +1,32 @@
+.block {
+	margin: 0 auto;
+	width: 400px;
+}
+
+.menu__link {
+	margin-right: 5px;
+	display: inline-block;
+	padding: 10px;
+	color: black;
+	text-decoration: none;
+	border: 1px solid gray;
+}
+
+.menu__link:hover {
+	background: #f8f8f8;
+}
+
+.menu__link__active {
+	border-color: transparent;
+	background: #f2f2f2;
+}
+
+.tabs__tab:not(.tabs__tab__active) {
+	display: none;
+}
+
+.tabs__tab {
+	padding: 10px;
+	background: #f2f2f2;
+	height: 300px;
+}
