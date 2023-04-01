@@ -1,0 +1,31 @@
+.accordion {
+	margin: 0 auto;
+	width: 400px;
+}
+.accordion__tab {
+	margin-bottom: 10px;
+}
+
+.tab__link {
+	display: block;
+	padding: 10px;
+	color: black;
+	text-decoration: none;
+	text-align: center;
+	background: #f8f8f8;
+	border: 1px solid gray;
+}
+.tab__link:hover {
+	background: #f2f2f2;
+}
+
+.accordion__tab:not(.accordion__tab__active) .tab__text {
+	display: none;
+}
+.tab__text {
+	border: 1px dashed gray;
+	border-top: none;
+	
+	padding: 10px;
+	height: 300px;
+}
