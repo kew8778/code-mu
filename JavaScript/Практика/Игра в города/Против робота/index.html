@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Игра в города против робота</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="game">
+            <h1 class="game__title">Игра в города против робота</h1>
+            <div class="game__condition condition">
+                <h3 class="condition__title">Правила</h3>
+                <ul class="condition__list">
+                    <li>В базе 321 городов РФ</li>
+                    <li>Название города нужно вводить с большой буквы</li>
+                    <li>Следующий город начинается на последнюю букву предыдущего города</li>
+                    <li>Города не повторяются</li>
+                    <li>Если город заканчивается на "ь", "ъ", "ы" или "ц" - берётся предыдущая буква</li>
+                    <li>В базе есть города, состоящие из нескольких слов через пробел или дефис</li>
+                </ul>
+            </div>
+            Введите свой ответ: <input class="game__inp">
+            <p class="game__message"></p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
