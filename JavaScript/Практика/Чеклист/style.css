@@ -1,0 +1,26 @@
+.checklist {
+    width: 600px;
+    margin: 5px auto;
+}
+
+.item__task,
+.item__done,
+.item__remove {
+    margin: 5px;
+}
+
+.item__done,
+.item__remove {
+    color: blue;
+	cursor: pointer;
+}
+
+.item__done:hover,
+.item__remove:hover {
+    text-decoration: underline;
+}
+
+
+.item__task__done {
+    text-decoration: line-through;
+}
