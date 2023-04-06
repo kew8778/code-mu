@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Калькулятор продуктов на JS</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="parent">
+            <h1>Калькулятор продуктов</h1>
+
+            <div class="form">
+                <input class="form__name form__inp" placeholder="название">
+                <input class="form__price form__inp" placeholder="цена">
+                <input class="form__amount form__inp" placeholder="количество">
+                <input class="form__add form__inp" type="button" value="добавить">
+            </div>
+            
+            <h2>Таблица продуктов:</h2>
+            <table class="table">
+                <tr>
+                    <th>название</th>
+                    <th>цена</th>
+                    <th>кол-во</th>
+                    <th>сумма</th>
+                    <th>удалить</th>
+                </tr>
+            </table>
+            <p class="result">
+                общий итог: <span class="total">0</span>
+            </p>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
