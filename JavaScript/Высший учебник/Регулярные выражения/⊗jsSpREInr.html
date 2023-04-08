@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Введение</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            const str1 = 'ahb acb aeb aeeb adcb axeb';
+            const str2 = 'aba aca aea abba adca abea';
+
+            // #1
+            console.log(str1.replace(/a.b/g, '!')); // ! ! ! aeeb adcb axeb
+
+            // #2
+            console.log(str2.replace(/a..a/g, '!')); // aba aca aea ! ! !
+
+            // #3
+            console.log(str2.replace(/ab.a/g, '!')); // aba aca aea ! adca !
+
+        </script>
+    </body>
+</html>

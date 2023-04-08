@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Экранировка спецсимволов</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'a.a aba aea';
+
+            console.log(str.replace(/a\.a/g, '!')); // ! aba aea
+
+            // #2
+            str = '2+3 223 2223';
+
+            console.log(str.replace(/2\+3/g, '!')); // ! 223 2223
+
+            // #3
+            str = '23 2+3 2++3 2+++3 345 567';
+
+            console.log(str.replace(/2\++3/g, '!')); // 23 ! ! ! 345 567
+
+            // #4
+            str = '23 2+3 2++3 2+++3 445 677';
+
+            console.log(str.replace(/2\+*3/g, '!')); // ! ! ! ! 445 677
+
+            // #5
+            str = '*+ *q+ *qq+ *qqq+ *qqq qqq+';
+
+            console.log(str.replace(/\*q+\+/g, '!')); // *+ ! ! ! *qqq qqq+
+
+            // #6
+            str = '[abc] {abc} abc (abc) [abc]';
+
+            console.log(str.replace(/\[...\]/g, '!')); // ! {abc} abc (abc) !
+
+        </script>
+    </body>
+</html>

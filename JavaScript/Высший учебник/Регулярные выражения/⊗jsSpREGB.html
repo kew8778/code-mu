@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Группирующие скобки</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            const str = 'ab abab abab abababab abea';
+
+            // #1
+            console.log(str.replace(/(ab)+/g, '!')); // ! ! ! ! !ea
+
+        </script>
+    </body>
+</html>

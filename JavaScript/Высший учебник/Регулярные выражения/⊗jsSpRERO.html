@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Операторы повторения</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            const str = 'aa aba abba abbba abca abea';
+            console.log(str);
+
+            // #1
+            console.log(str.replace(/ab+a/g, '!')); // aa ! ! ! abca abea
+
+            // #2
+            console.log(str.replace(/ab*a/g, '!')); // ! ! ! ! abca abea
+
+            // #3
+            console.log(str.replace(/ab?a/g, '!')); // ! ! abba abbba abca abea
+
+            // #4
+            console.log(str.replace(/ab*a/g, '!')); // ! ! ! ! abca abea
+
+        </script>
+    </body>
+</html>

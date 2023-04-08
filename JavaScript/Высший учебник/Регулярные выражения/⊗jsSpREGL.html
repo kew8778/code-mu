@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Ограничение жадности</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let str = 'aba accca azzza wwwwa';
+
+            console.log(str.replace(/a.+?a/g, '!')); // ! ! ! wwwwa
+
+        </script>
+    </body>
+</html>
