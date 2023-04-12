@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>^ внутри []</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = '^xx axx ^zz bkk @ss';
+
+            console.log(str.replace(/[@^][a-z]{2}/g, '!')); // ! axx ! bkk !
+
+            // #2
+            str = '^xx axx ^zz bkk @ss';
+            
+            console.log(str.replace(/[^^@\s][a-z]{2}/g, '!')); // ^xx ! ^zz ! @ss
+
+            // #3
+            str = '^xx axx ^zz bkk';
+            
+            console.log(str.replace(/[^^\s][a-z]{2}/g, '!')); // ^xx ! ^zz !
+            
+        </script>
+    </body>
+</html>

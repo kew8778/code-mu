@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>\d, \D, \w, \W, \s, \S внутри []</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = '12 3 a .. 4a aa';
+
+            console.log(str.replace(/[\d.]+/g, '!')); // ! ! a ! !a aa
+
+            // #2
+            str = 'rtyu 4444 44 aaa tt';
+            
+            console.log(str.replace(/[^\da-g]{3,7}/g, '!')); // !4444 44 aaa!
+            
+        </script>
+    </body>
+</html>

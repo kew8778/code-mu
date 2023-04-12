@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Метод test</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'http://...';
+            console.log(/^http:\/\//.test(str)); // true
+
+            str = '...http://';
+            console.log(/a/.test(str)); // false
+
+            // #2
+            str = 'https://aaa';
+            console.log(/^http[s]?:\/\//.test(str)); // true
+
+            str = 'aaahttps://';
+            console.log(/^http[s]?:\/\//.test(str)); // false
+
+            str = 'http://aaa';
+            console.log(/^http[s]?:\/\//.test(str)); // true
+
+            str = 'aaahttp://';
+            console.log(/^http[s]?:\/\//.test(str)); // false
+
+            // #3
+            str = 'aaa.php';
+            console.log(/\.(txt|html|php)$/.test(str)); // true
+
+            str = 'aaa.jpg';
+            console.log(/\.(txt|html|php)$/.test(str)); // false
+
+            // #4
+            str = 'aaa.jpg';
+            console.log(/\.(jpg|jpeg)$/.test(str)); // true
+
+            str = 'aaa.jpeg';
+            console.log(/\.jpe?g$/.test(str)); // true
+
+            // #5
+            str = 'aaa.png';
+            console.log(/\.(jpe?g|png)$/.test(str)); // true
+
+            str = 'aaa.jpg';
+            console.log(/a/.test(str)); // true
+
+            // #6
+            str = '123';
+            console.log(/^\d{1,12}$/.test(str)); // true
+
+            str = '123r4';
+            console.log(/^\d{1,12}$/.test(str)); // false
+
+            str = '123456789012345';
+            console.log(/^\d{1,12}$/.test(str)); // false
+
+            // #7
+            str = '1987-08-07';
+            console.log(/^\d{4}-\d{2}-\d{2}$/.test(str)); // true
+
+            str = '1987.8.7';
+            console.log(/^\d{4}-\d{2}-\d{2}$/.test(str)); // false
+
+            // #8
+            str = '1987.08.07';
+            console.log(/^\d{4}\.\d{2}\.\d{2}$/.test(str)); // true
+
+            str = '1987-08-07';
+            console.log(/^\d{4}\.\d{2}\.\d{2}$/.test(str)); // false
+
+            // #9
+            str = '12:45:03';
+            console.log(/^([01]\d|2[0-4]):[0-5]\d:[0-5]\d$/.test(str)); // true
+
+            str = '25:45:03';
+            console.log(/^([01]\d|2[0-4]):[0-5]\d:[0-5]\d$/.test(str)); // false
+
+            // #10
+            str = '123abc@google.com';
+            console.log(/^[\da-zA-Z]{1,64}@[\da-zA-Z]+\.[a-z]{2,}$/.test(str)); // true
+
+            str = '123,,abc@google.com';
+            console.log(/^[\da-zA-Z]{1,64}@[\da-zA-Z]+\.[a-z]{2,}$/.test(str)); // false
+
+            // #11
+            str = '123--name.domen';
+            console.log(/^[\da-zA-Z][\da-zA-Z-]{0,62}[\da-zA-Z]\.[a-z]{2,}$/.test(str)); // true
+
+            str = '123--name?.domen';
+            console.log(/^[\da-zA-Z][\da-zA-Z-]{0,62}[\da-zA-Z]\.[a-z]{2,}$/.test(str)); // false
+            
+        </script>
+    </body>
+</html>

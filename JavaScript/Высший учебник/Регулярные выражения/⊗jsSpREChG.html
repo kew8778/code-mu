@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Группы символов</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'a1a a2a a3a a4a a5a aba aca';
+
+            console.log(str.replace(/a\da/g, '!')); // ! ! ! ! ! aba aca
+
+            // #2
+            str = 'a1a a22a a333a a4444a a55555a aba aca';
+            
+            console.log(str.replace(/a\d+a/g, '!')); // ! ! ! ! ! aba aca
+
+            // #3
+            str = 'aa a1a a22a a333a a4444a a55555a aba aca';
+            
+            console.log(str.replace(/a\d*a/g, '!')); // ! ! ! ! ! ! aba aca
+
+            // #4
+            str = 'avb a1b a2b a3b a4b a5b abb acb';
+            
+            console.log(str.replace(/a\Db/g, '!')); // ! a1b a2b a3b a4b a5b ! !
+
+            // #5
+            str = 'ave a#b a2b a$b a4b a5b a-b acb';
+            
+            console.log(str.replace(/a\Wb/g, '!')); // ave ! a2b ! a4b a5b ! acb
+            
+            // #6
+            str = 'ave a#a a2a a$a a4a a5a a-a aca';
+            
+            console.log(str.replace(/\s/g, '!')); // ave!a#a!a2a!a$a!a4a!a5a!a-a!aca
+
+        </script>
+    </body>
+</html>

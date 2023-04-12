@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Спецсимволы внутри []</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'aba aea aca aza axa a.a a+a a*a';
+
+            console.log(str.replace(/a[.+*]a/g, '!')); // aba aea aca aza axa ! ! !
+
+            // #2
+            str = 'xaz x.z x3z x@z x$z xrz';
+            
+            console.log(str.replace(/x[^.@$]z/g, '!')); // ! x.z ! x@z x$z !
+            
+        </script>
+    </body>
+</html>

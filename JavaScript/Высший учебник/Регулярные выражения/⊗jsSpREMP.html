@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Карманы для метода match</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+            let arr;
+
+            // #1
+            str = 'sss domain.ru zzz';
+
+            arr = str.match(/([\da-zA-Z][\da-zA-Z-]{0,62}[\da-zA-Z])\.([a-z]{2,})/);
+
+            console.log(arr[0]); // domain.ru
+            console.log(arr[1]); // domain
+            console.log(arr[2]); // ru
+
+            // #2
+            str = '31.12.2025';
+            
+            arr = str.match(/(\d{2})\.(\d{2})\.(\d{4})/);
+
+            console.log(arr[0]); // 31.12.2025
+            console.log(arr[1]); // 31
+            console.log(arr[2]); // 12
+            console.log(arr[3]); // 2025
+
+        </script>
+    </body>
+</html>

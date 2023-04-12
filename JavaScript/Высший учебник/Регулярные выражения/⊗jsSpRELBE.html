@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Начало и конец строки</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str = 'abc def xyz';
+
+            // #1
+            console.log(str.replace(/^\S+/g, '!')); // ! def xyz
+
+            // #2
+            console.log(str.replace(/\S+$/g, '!')); // abc def !
+            
+        </script>
+    </body>
+</html>

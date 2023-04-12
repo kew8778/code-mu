@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Или |</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str = 'aeeea aeea aea axa axxa axxxa';
+
+            // #1
+            console.log(str.replace(/ae+a|ax+a/g, '!')); // ! ! ! ! ! !
+
+            // #2
+            console.log(str.replace(/ae{2}a|ax+a/g, '!')); // aeeea ! aea ! ! !
+            
+        </script>
+    </body>
+</html>

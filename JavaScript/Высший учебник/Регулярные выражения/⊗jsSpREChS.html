@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Набор символов []</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'aba aea aca aza axa';
+
+            console.log(str.replace(/a[bex]a/g, '!')); // ! ! aca aza !
+
+            // #2
+            str = 'a1a a3a a7a a9a aba';
+            
+            console.log(str.replace(/a[3-6]a/g, '!')); // a1a ! a7a a9a aba
+
+            // #3
+            str = 'aba aea afa aha aga';
+            
+            console.log(str.replace(/a[a-g]a/g, '!')); // ! ! ! aha !
+
+            // #4
+            str = 'aba aea afa aha aga';
+            
+            console.log(str.replace(/a[a-fj-z]a/g, '!')); // ! ! ! aha aga
+
+            // #5
+            str = 'aAa aea aEa aJa a3a';
+            
+            console.log(str.replace(/a[a-fA-D]a/g, '!')); // ! ! aEa aJa a3a
+            
+            // #6
+            str = 'aAXa aeffa aGha aza ax23a a3sSa';
+            
+            console.log(str.replace(/a[a-z]+a/g, '!')); // aAXa ! aGha ! ax23a a3sSa
+
+            // #7
+            str = 'aAXa aeffa aGha aza ax23a a3sSa';
+
+            console.log(str.replace(/a[a-zA-Z]+a/g, '!')); // ! ! ! ! ax23a a3sSa
+
+            // #8
+            str = 'aAXa aeffa aGha aza ax23a a3sSa';
+
+            console.log(str.replace(/a[a-z0-9]+a/g, '!')); // aAXa ! aGha ! ! a3sSa
+
+        </script>
+    </body>
+</html>

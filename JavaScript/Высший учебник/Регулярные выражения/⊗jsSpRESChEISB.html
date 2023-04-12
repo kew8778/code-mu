@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>[] внутри []</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'x[]z x{}z x.z x()z';
+
+            console.log(str.replace(/x[(){}\[\]]+z/g, '!')); // ! ! x.z !
+
+            // #2
+            str = '[abc] {abc} abc (abc) [abc]';
+            
+            console.log(str.replace(/[({\[].*?[)}\]]/g, '!')); // ! ! abc ! !
+            
+        </script>
+    </body>
+</html>

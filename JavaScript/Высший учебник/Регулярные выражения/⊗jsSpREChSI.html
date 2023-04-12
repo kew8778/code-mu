@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Инвертирование ^</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = '1e2 1x2 132 1w2';
+
+            console.log(str.replace(/1[^ex]2/g, '!')); // 1e2 1x2 ! !
+
+            // #2
+            str = 'x2z x7z x1z x8z xcz x22z';
+            
+            console.log(str.replace(/x[^2-7]z/g, '!')); // x2z x7z ! ! ! x22z
+
+            // #3
+            str = 'xAz xAAz x1z x8z xcz x22z';
+            
+            console.log(str.replace(/x[^A-Z]+?z/g, '!')); // xAz xAAz ! ! ! !
+
+            // #4
+            str = 'xAz xAAz xsdz xs5z x6z x77z';
+            
+            console.log(str.replace(/x[^a-zA-Z1-5]+?z/g, '!')); // xAz xAAz xsdz xs5z ! !
+
+        </script>
+    </body>
+</html>
