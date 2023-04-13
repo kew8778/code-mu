@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Регулярка в split</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            // #1
+            const str = '2025-12-31 12:59:59';
+
+            console.log(str.split(/[-:\s]/)); // ['2025', '12', '31', '12', '59', '59']
+            console.log(str.split(/\D/)); // ['2025', '12', '31', '12', '59', '59']
+            
+        </script>
+    </body>
+</html>

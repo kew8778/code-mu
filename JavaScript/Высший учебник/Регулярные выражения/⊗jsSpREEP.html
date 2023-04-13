@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Карманы в самой регулярке</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'aaa bbb ccc xyz';
+
+            console.log(str.replace(/([a-z])\1\1/g, '!')); // ! ! ! xyz
+
+            // #2
+            str = 'a aa aaa aaaa aaaaa';
+
+            console.log(str.replace(/([a-z])\1+/g, '!')); // a ! ! ! !
+
+            // #3
+            str = 'aaa aaa bbb bbb ccc ddd';
+
+            console.log(str.replace(/(\S+)\s\1+/g, '!')); // ! ! ccc ddd
+            
+        </script>
+    </body>
+</html>

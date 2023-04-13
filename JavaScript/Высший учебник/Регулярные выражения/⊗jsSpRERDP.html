@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Карманы по умолчанию в методе replace</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'a1b2c3';
+
+            str = str.replace(/\d/g, '$&$&');
+
+            console.log(str); // a11b22c33
+
+            // #2
+            str = 'sss site.ru zzz site.com kkk';
+
+            str = str.replace(
+                /[\da-zA-Z][\da-zA-Z-]{0,62}[\da-zA-Z]\.[a-z]{2,}/g,
+                '<a href="http://$&">$&</a>'
+            );
+
+            console.log(str); // sss <a href="http://site.ru">site.ru</a> zzz <a href="http://site.com">site.com</a> kkk
+            
+        </script>
+    </body>
+</html>

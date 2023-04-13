@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Карманы в методе replace</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = '12 34 56 78';
+
+            str = str.replace(/(\d)(\d)/g, '$2$1');
+
+            console.log(str); // 21 43 65 87
+
+            // #2
+            str = '31.12.2025';
+
+            str = str.replace(/(\d{2})\.(\d{2})\.(\d{4})/g, '$3.$2.$1');
+
+            console.log(str); // 2025.12.31
+            
+        </script>
+    </body>
+</html>

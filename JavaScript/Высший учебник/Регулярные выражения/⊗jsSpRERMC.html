@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Коллбэк в методе replace</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+
+            // #1
+            str = 'aaa [2] bbb [3] ccc [12] ddd';
+
+            str = str.replace(/\[(\d+)\]/g, function(match0, match1) {
+                return match1 * 2;
+            });
+
+            console.log(str); // aaa 4 bbb 6 ccc 24 ddd
+
+            // #2
+            str = '123 456 789';
+            
+            str = str.replace(/\d+/g, function(match) {
+                return [...match].reverse().join('');
+            });
+
+            console.log(str); // ['href', 'class', 'id']
+
+            // #3
+            str = '31.12.2025 30.11.2024 29.10.2023';
+            
+            str = str.replace(/(\d{2})\.(\d{2})\.(\d{4})/g, '$3-$2-$1');
+
+            console.log(str); // ['href', 'class', 'id']
+            
+        </script>
+    </body>
+</html>

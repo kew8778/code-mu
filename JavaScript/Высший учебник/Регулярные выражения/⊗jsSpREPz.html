@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Головоломки</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            // #1
+            let year;
+
+            function isYearFrom1900To2100(year) {
+                console.log(/((19|20)\d{2}|2100)/.test(year));
+            }
+
+            isYearFrom1900To2100(2020); // true
+            isYearFrom1900To2100(1899); // false
+            isYearFrom1900To2100(1900); // true
+            isYearFrom1900To2100(2100); // true
+            isYearFrom1900To2100(2101); // false
+
+            // #2
+            let time;
+
+            function isCorrectTime(time) {
+                console.log(/[0-5]\d:[0-5]\d/.test(time));
+            }
+            
+            isCorrectTime('15:59'); // true
+            isCorrectTime('00:00'); // true
+            isCorrectTime('60:15'); // false
+            isCorrectTime('15:62'); // false
+            isCorrectTime('02:30'); // true
+
+            // #3 Задание неточное, сделелал как понял
+            let str = 'aa-a aa-a bbbb ccc ddd bbbb, ddd cccc eee eee.';
+
+            str = str.replace(
+                /([^\s.,!?]+)([\.,?!]?\s)(?=(\1[\.,?!]?(\s|$)|.*\s\1[\.,?!]?(\s|$)))/g,
+                ''
+            );
+
+            console.log(str); // aa-a ccc bbbb, ddd cccc eee.
+
+            // #4
+            str = 'aab vccd frg gth ddf';
+
+            str = str.replace(/\S*(\S)\1\S*(?:\s|$)/g, '');
+
+            console.log(str); // frg gth
+
+        </script>
+    </body>
+</html>

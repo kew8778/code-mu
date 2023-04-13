@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Просмотр вперёд</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let str;
+            let arr;
+
+            // #1
+            str = 'func1() func2() func3()';
+
+            arr = str.match(/[\w-]+(?=\()/g);
+
+            console.log(arr); // ['func1', 'func2', 'func3']
+
+            // #2
+            str = '<a href="" class="eee" id="zzz">';
+
+            arr = str.match(/[\w-]+(?==")/g);    
+
+            console.log(arr); // ['href', 'class', 'id']
+            
+        </script>
+    </body>
+</html>
