@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Применение коллекций Map. Задача №2</title>
+    </head>
+
+    <body>
+        <input type="text" placeholder="число">
+        <input type="text" placeholder="число">
+        <input type="text" placeholder="число">
+
+        <script>
+            'use strict';
+
+            const inputs = document.querySelectorAll('input');
+
+            const map = new Map;
+
+            for (let input of inputs) {
+                const arrOfNums = [];
+
+                map.set(input, arrOfNums);
+
+                input.addEventListener('keypress', rememberNum);
+                input.addEventListener('blur', outputNums);
+            }
+
+            function rememberNum() {
+                if (event.key === 'Enter') {
+                    map.get(this).push(+this.value);
+
+                    this.value = '';
+                }
+            }
+
+            function outputNums() {
+                console.log(map.get(this));
+            }
+
+        </script>
+    </body>
+</html>

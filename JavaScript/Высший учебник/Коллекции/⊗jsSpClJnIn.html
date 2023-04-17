@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Введение в формат JSON</title>
+    </head>
+
+    <body>
+
+        <script>
+            'use strict';
+
+            // #1
+            let arr = [1, 2, 3, 'a', 'b', 'c'];
+
+            let json = '[1, 2, 3, "a", "b", "c"]';
+
+            // #2
+
+            let obj = {
+	            a: 1,
+	            b: 2,
+	            c: 'eee',
+	            d: true,
+            };
+
+            json = `{
+                a: 1,
+	            b: 2,
+	            c: "eee",
+	            d: true
+            }`;
+
+            // #3
+            obj = {
+	            a: ['a', 'b', 'c',],
+	            b: '111',
+	            c: 'eee',
+            };
+
+            json = `{
+                a: ["a", "b", "c"],
+	            b: "111",
+	            c: "eee"
+            }`;
+
+        </script>
+    </body>
+</html>

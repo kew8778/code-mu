@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Перебор коллекций Set циклом</title>
+    </head>
+
+    <body>
+
+        <script>
+            'use strict';
+
+            const set = new Set([1, 2, 3]);
+
+            let sum = 0;
+
+            for (let num of set) {
+                sum += num;
+            }
+
+            console.log(sum); // 6
+
+        </script>
+    </body>
+</html>

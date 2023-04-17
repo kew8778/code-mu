@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Применение коллекций Map. Задача №1</title>
+    </head>
+
+    <body>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+        <script>
+            'use strict';
+
+            const inputs = document.querySelectorAll('input');
+
+            const map = new Map;
+            let num = 1;
+
+            for (let input of inputs) {
+                map.set(input, num);
+                input.addEventListener('click', addNumToInp);
+                num++;
+            }
+
+            function addNumToInp() {
+                this.value += map.get(this);
+            }
+
+        </script>
+    </body>
+</html>

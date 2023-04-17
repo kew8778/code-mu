@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Отделение ключей и значений в коллекциях Map</title>
+    </head>
+
+    <body>
+
+        <script>
+            'use strict';
+
+            const map = new Map;
+
+            map.set({a: 1, b: 2}, ['a', 'b']);
+            map.set({c: 3, d: 4}, ['c', 'd']);
+            map.set({e: 5, f: 6}, ['e', 'f']);
+
+            // #1
+            for (let key of map.keys()) {
+                console.log(key);
+            }
+
+            // #2
+            for (let value of map.values()) {
+                console.log(value);
+            }
+
+        </script>
+    </body>
+</html>

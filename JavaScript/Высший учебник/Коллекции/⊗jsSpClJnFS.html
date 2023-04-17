@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Преобразование структур данных JS в формат JSON</title>
+    </head>
+
+    <body>
+        <ul>
+            <li>city1</li>
+            <li>city2</li>
+            <li>city3</li>
+            <li>city4</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Отчество</th>
+            </tr>
+            <tr>
+                <td>Иванов</td>
+                <td>Иван</td>
+                <td>Иванович</td>
+            </tr>
+            <tr>
+                <td>Петров</td>
+                <td>Петр</td>
+                <td>Петрович</td>
+            </tr>
+            <tr>
+                <td>Сидоров</td>
+                <td>Сидр</td>
+                <td>Сидорович</td>
+            </tr>
+        </table>
+
+        <script>
+            'use strict';
+
+            // #1
+            let json = ['user1', 'user2', 'user3', 'user4', 'user5'];
+
+            json = JSON.stringify(json);
+            console.log(json); // '["user1","user2","user3","user4","user5"]'
+
+            // #2
+
+            json = [];
+
+            for (let li of document.querySelector('ul').children) {
+                json.push(li.textContent);
+            }
+
+            json = JSON.stringify(json);
+            console.log(json); // '["city1","city2","city3","city4"]'
+
+            // #3
+            json = [];
+
+            for (let tr of document.querySelectorAll('table tr')) {
+                const tdsOfTr = tr.querySelectorAll('td');
+
+                if (tdsOfTr.length === 0) {
+                    continue;
+                }
+
+                const obj = {
+                    surname: tdsOfTr[0].textContent,
+                    name: tdsOfTr[1].textContent,
+                    patronymic: tdsOfTr[2].textContent,
+                };
+
+                json.push(obj);
+            }
+
+            json = JSON.stringify(json);
+            console.log(json); // '[{"surname":"Иванов","name":"Иван","patronymic":"Иванович"},{"surname":"Петров","name":"Петр","patronymic":"Петрович"},{"surname":"Сидоров","name":"Сидр","patronymic":"Сидорович"}]'
+
+        </script>
+    </body>
+</html>

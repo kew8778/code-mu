@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Преобразование JSON в структуру данных JS</title>
+    </head>
+
+    <body>
+
+        <script>
+            'use strict';
+
+            // #1
+            let json = '[1,2,3,4,5]';
+
+            let sum = 0;
+
+            for (let num of JSON.parse(json)) {
+                sum += num;
+            }
+
+            console.log(sum); // 15
+
+            // #2
+
+            json = `{
+	            "data1": [1,2,3],
+	            "data2": [4,5,6],
+	            "data3": [7,8,9]
+            }`;
+
+            let obj = JSON.parse(json);
+            sum = 0;
+
+            for (let key in obj) {
+                for (let num of obj[key]) {
+                    sum += num;
+                }
+            }
+
+            console.log(sum); // 45
+
+            // #3
+            json = '["user1","user2","user3","user4","user5"]';
+
+            const body = document.querySelector('body');
+
+            const ul = document.createElement('ul');
+
+            for (let elem of JSON.parse(json)) {
+                const li = document.createElement('li');
+                li.textContent = elem;
+                ul.appendChild(li);
+            }
+
+            body.appendChild(ul);
+
+            // #4
+            json = `[
+	            {
+		            "name": "user1",
+		            "age": 25,
+		            "salary": 1000
+	            },
+	            {
+		            "name": "user2",
+		            "age": 26,
+		            "salary": 2000
+	            },
+	            {
+		            "name": "user3",
+		            "age": 27,
+		            "salary": 3000
+	            }
+            ]`;
+
+            const arrOfObj = JSON.parse(json);
+
+            const table = document.createElement('table');
+
+            setTableHeader(Object.keys(arrOfObj[0]));
+            enteringDataIntoTable(arrOfObj);
+
+            body.appendChild(table);
+
+            function enteringDataIntoTable(arrOfObj) {
+                for (let obj of arrOfObj) {
+                    const tr = document.createElement('tr');
+
+                    for (let key in obj) {
+                        const td = document.createElement('td');
+                        td.textContent = obj[key];
+                        tr.appendChild(td);
+                    }
+
+                    table.appendChild(tr);
+                }
+            }
+
+            function setTableHeader(arr) {
+                const tr = document.createElement('tr');
+
+                for (let elem of arr) {
+                    const th = document.createElement('th');
+                    th.textContent = elem;
+                    tr.appendChild(th);
+                }
+
+                table.appendChild(tr);
+            };
+
+        </script>
+    </body>
+</html>

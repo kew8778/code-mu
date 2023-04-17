@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Однократное сохранение</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            const time = localStorage.getItem('time');
+            const now = new Date().getTime();
+            let diff;
+
+            if (!time) {
+                localStorage.setItem('time', now);
+                diff = 0;
+            } else {
+                diff = now - time;
+            }
+
+            alert(diff + ' миллисекунд');
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Удаление дублей с помощью коллекций Set</title>
+    </head>
+
+    <body>
+        <p>aaa</p>
+        <p>bbb</p>
+        <p>ccc</p>
+        <p>ddd</p>
+        <p>eee</p>
+
+        <button>click me</button>
+
+        <script>
+            'use strict';
+
+            // #1
+            function removeDuplicates(arr) {
+                return [...new Set(arr)];
+            }
+
+            console.log(removeDuplicates(['a', 'b', 'a'])); // ['a', 'b']
+
+            // #2
+
+            const tegsP = document.querySelectorAll('p');
+            const btn = document.querySelector('button');
+
+            const set = new Set;
+
+            for (let p of tegsP) {
+                p.addEventListener('click', function() {
+                    set.add(this);
+                });
+            }
+
+            btn.addEventListener('click', function() {
+                for (let p of set) {
+                    p.textContent += ' !!!';
+                }
+            });
+
+        </script>
+    </body>
+</html>

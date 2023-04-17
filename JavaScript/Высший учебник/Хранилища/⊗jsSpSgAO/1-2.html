@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Хранение массивов и объектов в локальном хранилище</title>
+    </head>
+
+    <body>
+        <input type="text">
+        <input type="text">
+        <input type="text">
+
+        <button>Сохранить</button>
+
+        <script>
+            'use strict';
+
+            const inps = document.querySelectorAll('input');
+            const btn = document.querySelector('button');
+            let texts = JSON.parse(localStorage.getItem('texts'));
+
+            if (texts) {
+                setTextForInputs();
+            } else {
+                texts = [];
+            }
+
+            btn.addEventListener('click', function() {
+                getTextForInputs();
+                localStorage.setItem('texts', JSON.stringify(texts));
+            });
+
+            function setTextForInputs() {
+                for (let i = 0; i < inps.length; i++) {
+                    inps[i].value = texts[i];
+                }
+            }
+
+            function getTextForInputs() {
+                for (let i = 0; i < inps.length; i++) {
+                    texts[i] = inps[i].value;
+                }
+            }           
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Однократное сохранение</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            const birthday = localStorage.getItem('birthday');
+
+            if (birthday === null) {
+                askBirthday();
+            } else if (isBirthdayToday(birthday)) {
+                alert('Поздравляем Вас с Днём Варенья !!!');
+            }
+
+            function askBirthday() {
+                const text = 'Введите дату Вашего Дня рождения в формате ' +
+                    'дд.мм.гггг.\nнапример 07.08.1987';
+
+                const dateOfBirthday = prompt(text);
+
+                // проверку коретности ввода не делаю
+
+                if (dateOfBirthday !== null) {
+                    localStorage.setItem('birthday', dateOfBirthday)
+                }
+            }
+
+            function isBirthdayToday(birthday) {
+                const arrBirthday = birthday.split('.');
+
+                const now = new Date();
+
+                if (+arrBirthday[0] === now.getDate()) {
+                    return +arrBirthday[1] === now.getMonth() + 1;
+                }
+            }
+
+        </script>
+    </body>
+</html>

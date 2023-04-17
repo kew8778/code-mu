@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Изменение данных в JSON на JS</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            // #1
+            let json = '["user1","user2","user3","user4","user5"]';
+
+            let arr = JSON.parse(json);
+            arr.push('user6');
+            json = JSON.stringify(arr);
+
+            console.log(json); // '["user1","user2","user3","user4","user5","user6"]'
+
+            // #2
+            json = '["user1","user2","user3","user4","user5"]';
+
+            arr = JSON.parse(json);
+            arr[1] = 'user6';
+            json = JSON.stringify(arr);
+
+            console.log(json); // '["user1","user6","user3","user4","user5"]'
+
+            // #3
+            json = `[
+	            {
+		            "name": "user1",
+		            "age": 25,
+		            "salary": 1000
+	            },
+	            {
+		            "name": "user2",
+		            "age": 26,
+		            "salary": 2000
+	            },
+	            {
+		            "name": "user3",
+		            "age": 27,
+		            "salary": 3000
+	            }
+            ]`;
+
+            arr = JSON.parse(json);
+            arr.push(
+                {
+                    "name": "user4",
+		            "age": 28,
+		            "salary": 4000
+                }
+            );
+            json = JSON.stringify(arr);
+
+        </script>
+    </body>
+</html>

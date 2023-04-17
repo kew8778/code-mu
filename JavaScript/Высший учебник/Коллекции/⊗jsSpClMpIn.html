@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Коллекции Map</title>
+    </head>
+    <body>
+
+        <script>
+            'use strict';
+
+            // #1
+            const arr1 = ['a', 'b'];
+            const arr2 = ['c', 'd'];
+            const arr3 = ['e', 'f'];
+
+            const map = new Map;
+
+            map.set(arr1, 'str1');
+            map.set(arr2, 'str2');
+            map.set(arr3, 'str3');
+
+            console.log(map.get(arr1)); // 'str1'
+            console.log(map.get(arr2)); // 'str2'
+            console.log(map.get(arr3)); // 'str3'
+
+            // #2
+            const obj1 = {a: 1, b: 2};
+            const obj2 = {a: 3, b: 4};
+            const obj3 = {a: 5, b: 6};
+
+            const map2 = new Map;
+
+            map2.set(obj1, arr1);
+            map2.set(obj2, arr2);
+            map2.set(obj3, arr3);
+
+            console.log(map2.get(obj1)); // ['a', 'b']
+            console.log(map2.get(obj2)); // ['c', 'd']
+            console.log(map2.get(obj3)); // ['e', 'f']
+
+        </script>
+    </body>
+</html>

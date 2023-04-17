@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Хранение массивов и объектов в локальном хранилище</title>
+    </head>
+
+    <body>
+        <input type="text" placeholder="фамилия">
+        <input type="text" placeholder="имя">
+        <input type="text" placeholder="возраст">
+
+        <button>Добавить</button>
+
+        <script>
+            'use strict';
+           
+            // #1
+            let users = [
+	            {
+		            surname: 'surname1',
+		            name: 'name1',
+		            age: 31,
+	            },
+	            {
+		            surname: 'surname2',
+		            name: 'name2',
+		            age: 32,
+	            },
+	            {
+		            surname: 'surname3',
+		            name: 'name3',
+		            age: 33,
+	            },
+            ];
+
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // #2
+            const inps = document.querySelectorAll('input');
+            const btn = document.querySelector('button');
+
+            btn.addEventListener('click', function() {
+                const user = {};
+
+                user.surname = inps[0].value;
+                user.name = inps[1].value;
+                user.age = inps[2].value;
+
+                const users = JSON.parse(localStorage.getItem('users'));
+                users.push(user);
+                localStorage.setItem('users', JSON.stringify(users));
+            });
+
+        </script>
+    </body>
+</html>

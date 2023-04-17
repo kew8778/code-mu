@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Сохранение и получение данных</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            const nums = {
+                'key1': '10',
+                'key2': '20',
+                'key3': '30',
+            };
+
+            for (let key in nums) {
+                localStorage.setItem(key, nums[key]);
+            }
+
+            for (let key in nums) {
+                console.log(localStorage.getItem(key));
+            }
+
+        </script>
+    </body>
+</html>

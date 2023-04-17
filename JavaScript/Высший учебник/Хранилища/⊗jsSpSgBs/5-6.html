@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Перезапись, удаление данных</title>
+    </head>
+
+    <body>
+        <p class="counter"></p>
+
+        <script>
+            'use strict';
+
+            const counter = document.querySelector('.counter');
+
+            let num = localStorage.getItem('value');
+
+            counter.textContent = +num;
+
+            if (num < 100) {
+                num++;
+                localStorage.setItem('value', num);
+            } else {
+                localStorage.removeItem('value');
+            }
+
+        </script>
+    </body>
+</html>

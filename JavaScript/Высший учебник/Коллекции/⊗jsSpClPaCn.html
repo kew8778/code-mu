@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Преобразование псевдомассивов</title>
+    </head>
+    <body>
+        <p>абзац1</p>
+        <p>абзац2</p>
+        <p>абзац3</p>
+        <p>абзац4</p>
+
+        <script>
+            'use strict';
+
+            const tegsP = document.querySelectorAll('p');
+
+            // #1
+            const newArr1 = [];
+
+            for (let p of tegsP) {
+                newArr1.push(p);
+            }
+
+            const newArr2 = [...tegsP];
+
+            const newArr3 = Array.from(tegsP);
+
+            console.log(Array.isArray(tegsP)); // false
+            console.log(Array.isArray(newArr1)); // true
+            console.log(Array.isArray(newArr2)); // true
+            console.log(Array.isArray(newArr3)); // true
+
+            // #2
+            const newArr4 = [...tegsP].slice(1, -1);
+
+            console.log(newArr4[0]); // <p>абзац2</p>
+            console.log(newArr4[newArr4.length - 1]); // <p>абзац3</p>
+
+        </script>
+    </body>
+</html>
