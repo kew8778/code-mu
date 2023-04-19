@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Конструкция try-catch</title>
+    </head>
+
+    <body>
+        <div class="inset"></div>
+
+        <script>
+            'use strict';
+
+            const inset = document.querySelector('.inset');
+
+            function outputList(json) {
+                const arr = JSON.parse(json);
+
+                const ul = document.createElement('ul');
+
+                for (let elem of arr) {
+                    const li = document.createElement('li');
+                    li.textContent = elem;
+                    ul.appendChild(li);
+                }
+
+                inset.appendChild(ul);
+            }
+
+            function catchError(func, param) {
+                try { 
+                    func(param);
+                    alert('Всё ОК )))');
+                } catch (error) {
+                    alert('Шеф ошибка !!!');
+                }
+            }
+
+            catchError(outputList, '[1,2,3]'); // Всё ОК )))
+            catchError(outputList, [1, 2, 3,]); // Шеф ошибка !!!
+
+        </script>
+    </body>
+</html>

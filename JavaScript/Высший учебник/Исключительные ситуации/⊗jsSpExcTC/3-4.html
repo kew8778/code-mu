@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Конструкция try-catch</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            // 3
+            let str = 'некая строка';
+            
+            try {
+                localStorage.setItem('key', str);
+                alert('успешно сохранено!');
+            } catch (error) {
+                alert('ошибка!');
+            }
+
+            // 4
+            let json = '[1,2,3,4,5]';
+
+            let arr;
+            try {
+                arr = JSON.parse(json);
+            } catch (error) {
+                alert('Не возможно преобразовать json в arr');
+            }
+
+            let sum = 0;
+            for (let elem of arr) {
+	            sum += +elem;
+            }
+
+            alert(sum);
+
+        </script>
+    </body>
+</html>

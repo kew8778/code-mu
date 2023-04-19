@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Конструкция try-catch</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            function getArr(json) {
+	            return JSON.parse(json);
+            }
+
+            let arr;
+
+            try {
+                arr = getArr('[1,2,3,4,5]');
+                console.log(arr);
+            } catch (error) {
+                alert('Ошибка :(');
+            }
+
+        </script>
+    </body>
+</html>
