@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Выбрасывание исключительных ситуаций</title>
+    </head>
+
+    <body>
+        <div id="product" data-product="яблоко" data-price="1000" data-amount="5"></div>
+
+        <script>
+            'use strict';
+
+            // #1, #5
+            function sqrt(num) {
+                if (num < 0) {
+                    throw {
+                        name: 'rootOfNegativeNumberError',
+                        message: 'Ошибка извлечения корня из отрицательного числа',
+                    };
+                } else {
+                    return Math.sqrt(num);
+                }
+            }
+
+            try {
+                alert(sqrt(-1));
+            } catch (error) {
+                alert('Нельзя извлечь корень из отрцательного числа');
+                console.log(error.name);
+                console.log(error.message);
+            }
+
+            // #2
+            try {
+	            throw new TypeError('текст исключения');
+            } catch (error) {
+	            console.log(error.name); // TypeError
+	            console.log(error.message); // текст исключения
+            }
+
+            // #4
+            function div(a, b) {
+	            if (b !== 0) {
+		            return a / b;
+	            } else {
+		            throw {
+                        name: 'DivisionByZeroError',
+                        message: 'Ошибка деления на ноль',
+                    };
+	            }
+            }
+
+            // #6
+            function getCost(elem) {
+	            if (elem.dataset.price && elem.dataset.amount) {
+		            return elem.dataset.price * elem.dataset.amount;
+	            }
+
+                if (!(elem.dataset.price)) {
+                    throw {
+                        name: 'noPriceError',
+                        message: 'отсутствует или некоректная цена товара',
+                    };
+                }
+
+                if (!(elem.dataset.amount)) {
+                    throw {
+                        name: 'noAmountError',
+                        message: 'отсутствует или некоректное кол-во товара',
+                    };
+                }
+            }
+
+        </script>
+    </body>
+</html>
