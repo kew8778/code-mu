@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 1.5</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let res = 0;
+
+            for (let i = 1; i <= 100; i++) {
+                res += i;
+            }
+
+            console.log(res); // 5050
+
+            // #2
+            res = 0;
+
+            for (let i = 2; i <= 100; i += 2) {
+                res += i;
+            }
+
+            console.log(res); // 2550
+
+            // #3
+            res = 0;
+
+            for (let i = 1; i <= 100; i += 2) {
+                res += i;
+            }
+
+            console.log(res); // 2500
+
+            // #4
+            let num1 = 4;
+            let num2 = 3;
+
+            console.log(num1 % num2); // 1
+
+            // #5
+            let str = 'asdfghjkl';
+
+            for (let i = str.length - 1; i >= 0; i--) {
+                console.log(str[i]);
+            }
+
+        </script>
+    </body>
+</html>

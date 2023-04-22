@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 1.10</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let arr = [];
+
+            for (let i = 0; i < 10; i++) {
+                arr.push(Math.ceil(Math.random() * 100));
+            }
+
+            console.log(arr); // 
+
+            // #2
+            let num = 12345;
+
+            const strFromNum = String(num);
+
+            for (let i = strFromNum.length - 1; i >= 0; i--) {
+                console.log(strFromNum[i]);
+            }
+
+            // #3
+            arr = [1, 2, 3, 4, 5, 6];
+
+            for (let i = 0; i < arr.length; i += 2) {
+                console.log([arr[i], arr[i + 1]]);
+            }
+
+            // #4
+            let arr1 = [1, 2, 3];
+            let arr2 = [4, 5, 6];
+
+            console.log([...arr1, ...arr2]); // [1, 2, 3, 4, 5, 6]
+
+        </script>
+    </body>
+</html>

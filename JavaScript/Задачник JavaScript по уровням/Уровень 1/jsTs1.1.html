@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 1.1</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            let num = 1; // заданное число
+            let str = 'abc'; // заданная строка
+            let str2 = 'aaa';
+
+            // #1
+            if (num < 0) {
+                console.log('число отрицательное');
+            } else {
+                console.log('число положительное');
+            }
+
+            // #2
+            console.log(str.length);
+
+            // #3
+            console.log(str[str.length - 1]);
+
+            // #4
+            if (num % 2 === 0) {
+                console.log('число четное');
+            } else {
+                console.log('число нечетное');
+            }
+            
+            // #5
+            if (str[0] === str2[0]) {
+                console.log('буквы совпадают');
+            } else {
+                console.log('буквы несовпадают');
+            }
+
+            // #6
+            let res = str[str.length - 1];
+
+            if (res.match(/ь|Ь/)) {
+                console.log(res);
+            } else {
+                console.log(str[str.length - 2]);
+            }
+
+        </script>
+    </body>
+</html>

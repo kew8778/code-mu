@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 1.9</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let arr = [
+                'http://aaa',
+                'http://bbb',
+                'ccc',
+                'ddd',
+                'http://eee',
+            ];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (!(arr[i].startsWith('http://'))) {
+                    arr.splice(i, 1);
+                    i--;
+                }
+            }
+
+            console.log(arr); // ['http://aaa', 'http://bbb', 'http://eee']
+
+            // #2
+            arr = [
+                'aaa.html',
+                'bbb.html',
+                'ccc',
+                'ddd',
+                'eee.html',
+            ];
+            
+            for (let i = 0; i < arr.length; i++) {
+                if (!(arr[i].endsWith('.html'))) {
+                    arr.splice(i, 1);
+                    i--;
+                }
+            }
+
+            console.log(arr); // ['aaa.html', 'bbb.html', 'eee.html']
+
+            // #3
+            arr = [1, 2, 3, 4, 5];
+
+            for (let i = 0; i < arr.length; i++) {
+                arr[i] = arr[i] / 10 * 11; 
+            }
+
+            console.log(arr); // [1.1, 2.2, 3.3, 4.4, 5.5]
+
+        </script>
+    </body>
+</html>
