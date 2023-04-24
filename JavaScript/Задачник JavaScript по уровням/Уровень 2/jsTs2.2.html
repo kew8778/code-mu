@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.2</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let arr = ['0', '2', '7', '-3', '-1'];
+            let sum = 0;
+
+            for (let num of arr) {
+                if (num < 0) {
+                    sum++;
+                }
+            }
+
+            console.log(sum); // 2
+
+            // #2
+            arr = arr.filter((elem) => elem >= 0);
+
+            console.log(arr); // ['0', '2', '7']
+
+            // #3
+            let str = 'abcdefgh';
+
+            str = str.substr(0, str.length - 2) + str.substr(-1, 1);
+
+            console.log(str); // abcdefh
+
+            // #4
+            str = 'asdf0ASXCV0ASDF0ASD';
+
+            console.log(str.search(0)); // 4
+
+            // #5
+            arr = [1, 2, 3, 4, 5, 6];
+            let sum1 = 0;
+            let sum2 = 0;
+
+            for (let i = 0; i < arr.length; i++) {
+                if (i >= arr.length / 2) {
+                    sum2 += arr[i];
+                } else {
+                    sum1 += arr[i];
+                }
+            }
+
+            console.log(sum1/sum2); // 0.4
+
+        </script>
+    </body>
+</html>

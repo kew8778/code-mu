@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.10</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = 's245c34r';
+
+            console.log(str.match(/[a-zA-Z]/g).length <= 3); // true
+
+            // #2
+            let num = 123456789;
+
+            console.log(String(num).match(/[02468]/g).reverse()[0]); // 8
+
+            // #3
+            str = 'abcde abcde abcde';
+
+            str = str.replace(/(^|\s)(\S)/g, '$1!');
+
+            console.log(str); // !bcde !bcde !bcde
+
+            // #4
+            let arr = [1, 2, 3, 3, 4, 5];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (arr[i] === arr[i + 1]) {
+                    console.log(true);
+                    break;
+                }
+            } 
+
+        </script>
+    </body>
+</html>

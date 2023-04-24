@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.8</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = 'dfcnFjdnxcGmcm';
+
+            let num = 0;
+
+            for (let letter of str) {
+                if (letter === letter.toUpperCase()) {
+                    num++;
+                }
+            }
+
+            console.log(num <= 2); // true
+
+            // #2
+            str = '1 22 333 4444 22 5555 1';
+
+            str = str.split(' ').filter(function(elem) {
+                return elem.length <= 3;
+            }).join(' ');
+
+            console.log(str); // 1 22 333 22 1
+
+            // #3
+            let arr1 = [1, 2, 3];
+            let arr2 = ['a', 'b', 'c'];
+
+            const newArr = [].concat(arr1.slice(0, 2), arr2, arr1.slice(2));
+
+            console.log(newArr); // [1, 2, 'a', 'b', 'c', 3]
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.4</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = 'adc65sdcx89cxx6';
+
+            console.log(str.search(/\d/)); // 3
+
+            // #2
+            let obj = {
+                key1: 'value1',
+                key2: 'value2',
+                key3: 'value3',
+            };
+
+            const keys = [];
+            const values = [];
+
+            for (let key in obj) {
+                keys.push(key);
+                values.push(obj[key]);
+            }
+
+            console.log(keys); // ['key1', 'key2', 'key3']
+            console.log(values); // ['value1', 'value2', 'value3']
+
+            // #3
+            let num = 12345678908988;
+
+            console.log(String(num).match(/[02468]/g).length); // 8
+
+            // #4
+            str = 'abcde';
+
+            str = str.replace(/./g, function(letter, ind) {
+                if (ind % 2 === 0) {
+                    return letter.toUpperCase();
+                } else {
+                    return letter;
+                }
+            });
+
+            console.log(str); // AbCdE
+
+            // #5
+            str ='aaa bbb ccc';
+
+            str = str.replace(/(^|\s)(.)/g, function(str, str1, str2) {
+                return str1 + str2.toUpperCase(); 
+            });
+
+            console.log(str); // Aaa Bbb Ccc
+
+        </script>
+    </body>
+</html>

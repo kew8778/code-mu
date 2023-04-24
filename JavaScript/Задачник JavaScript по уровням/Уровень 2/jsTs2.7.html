@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.7</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = 'a bc def ghij';
+
+            str = str.replace(/\S+/g, function(found) {
+                if (found.length <= 3) {
+                    return found.toUpperCase();
+                } else {
+                    return found;
+                }
+            });
+
+            console.log(str); // A BC DEF ghij
+
+            // #2
+            let letter = 'A';
+
+            if (letter === letter.toUpperCase()) {
+                console.log('верхний регистр');
+            } else {
+                console.log('нижний регистр');
+            }
+
+            // #3
+            let num = 123789;
+
+            num = String(num).split('').filter(function(elem) {
+                return (elem % 2 === 0);
+            }).join('');
+
+            console.log(num); // 28
+
+        </script>
+    </body>
+</html>

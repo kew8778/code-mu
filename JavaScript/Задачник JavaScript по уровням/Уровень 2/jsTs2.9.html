@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.9</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let num = 123456;
+
+            let str = String(num);
+            let res = 0;
+
+            for (let i = 0; i < str.length; i += 2) {
+                res += Number(str[i] + str[i + 1]);
+            }
+
+            console.log(res); // 102
+
+            // #2
+            let arr = [1, 2, 3, 4, 5];
+
+            for (let i = arr.length - 1; i >= 0; i--) {
+                console.log(arr[i]);
+            }
+
+        </script>
+    </body>
+</html>

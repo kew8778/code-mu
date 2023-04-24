@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.1</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = 'sd0rg0ffff0';
+
+            console.log(str.search('0')); // 2
+
+            // #2
+            for (let i = 1; i <= 1000; i++) {
+                const str = String(i);
+                const sum = +str[0] + +str[1];
+
+                if (sum === 5) {
+                    console.log(i);
+                }
+            }
+
+            // #3
+            function deleteElem(arr, elem) {
+                arr.splice(arr.indexOf(elem), 1);
+            }
+
+            let arr = ['a', 'b', 'c', 'd', 'e'];
+            deleteElem(arr, 'd');
+            console.log(arr); // ['a', 'b', 'c', 'e']
+
+            // #4
+            arr = [1, 2, 3, 4, 5, 6];
+
+            let sum = 0;
+
+            for (let i = 0; i < arr.length / 2; i++) {
+                sum += arr[i];
+            }
+
+            console.log(sum); // 6
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 2.3</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str1 = 'abc';
+            let str2 = 'cde';
+
+            console.log(str1.endsWith(str2[0])); // true
+
+            // #2
+            let str = 'sd0vbb0xsaf0a';
+
+            let num = 0;
+
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === '0') {
+                    num++;
+                }
+
+                if (num === 3) {
+                    console.log(i); // 11
+                    break;
+                }
+            }
+
+            // #3
+            str = '12,34,56';
+            let sum = 0;
+
+            for (let num of str.split(',')) {
+                sum += +num;
+            }
+
+            console.log(sum); // 102
+
+            // #4
+            let date = '2025-12-31';
+            
+            function convertDate(year, month, day) {
+                return {year: year, month: month, day: day};
+            }
+
+            console.log(convertDate(...date.split('-')));
+
+        </script>
+    </body>
+</html>
