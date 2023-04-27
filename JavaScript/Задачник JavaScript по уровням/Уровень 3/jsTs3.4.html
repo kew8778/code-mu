@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.4</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let num = 10;
+            
+            while (num <= 1000) {
+                if (String(num)[0] % 2 === 0) {
+                    console.log(num);
+                }
+
+                num++;
+            }
+
+            // #2
+            let arr = [1, 2, 3, 4, 5, 6];
+
+            for (let i = 1; i < arr.length; i += 2) {
+                const elem2 = arr[i];
+                arr[i] = arr[i - 1];
+                arr[i - 1] = elem2;
+            }
+
+            console.log(arr); // [2, 1, 4, 3, 6, 5]
+
+            // #3
+            let obj = {
+	            1: {
+		            1: 11,
+		            2: 12,
+		            3: 13,
+	            },
+	            2: {
+		            1: 21,
+		            2: 22,
+		            3: 23,
+	            },
+	            3: {
+		            1: 24,
+		            2: 25,
+		            3: 26,
+	            },
+            };
+
+            let sum = 0;
+
+            for (let key in obj) {
+                const subObj = obj[key];
+
+                for (let key in subObj) {
+                    sum += subObj[key];
+                }
+            }
+
+            console.log(sum); // 177
+
+        </script>
+    </body>
+</html>

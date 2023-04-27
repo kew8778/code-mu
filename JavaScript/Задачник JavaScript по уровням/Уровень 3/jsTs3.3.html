@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.3</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let arr = ['acd', 'dhfcb', 'f', 'fg', 'sdhv'];
+
+            arr = arr.filter(function(elem) {
+                return (elem.length <= 3);
+            });
+
+            console.log(arr); // ['acd', 'f', 'fg']
+
+            // #2
+            let num = 1357;
+
+            let res = String(num).split('').every(function(elem) {
+                return (elem % 2 !== 0);
+            });
+
+            console.log(res); // true
+
+            // #3
+            let str = 'abcba';
+
+            console.log(str === str.split('').reverse().join('')); // true
+
+            // #4
+            arr = [
+	            [
+		            [11, 12, 13],
+		            [14, 15, 16],
+		            [17, 17, 19],
+	            ],
+	            [
+		            [21, 22, 23],
+		            [24, 25, 26],
+		            [27, 27, 29],
+	            ],
+	            [
+		            [31, 32, 33],
+		            [34, 35, 36],
+		            [37, 37, 39],
+	            ],
+            ];
+
+            let sum = 0;
+
+            for (let subArr1 of arr) {
+                for (let subArr2 of subArr1) {
+                    for (let num of subArr2) {
+                        sum += num;
+                    }
+                }
+            }
+
+            console.log(sum); // 672
+
+        </script>
+    </body>
+</html>

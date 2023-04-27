@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.9</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = '1234567890';
+
+            console.log(/^\d+$/.test(str)); // true
+
+            // #2
+            str = '240628640';
+
+            console.log(/^[24680]+$/.test(str)); // true
+
+            // #3
+            let arr = [20, 0, 200, 40000, 10];
+
+            arr = arr.filter( (elem) => String(elem).match(/0/g).length < 2 );
+
+            console.log(arr); // [20, 0, 10]
+
+            // #4
+            let nums = [];
+
+            for (let i = 1; i <= 1000; i++) {
+                let sum = 0;
+                let str = String(i);
+
+                for (let j = 0; j < str.length; j++) {
+                    sum += Number(str[j]);
+                }
+
+                if (sum === 13) {
+                    nums.push(i);
+                }
+            }
+
+            console.log(nums);
+
+            // #5
+            arr = [];
+
+            let num = 1;
+
+            for (let i = 1; i <= 3; i++) {
+                let subArr = [];
+
+                for (let j = 1; j <= 3; j++) {
+                    subArr.push(num);
+                    num++;
+                }
+
+                arr.push(subArr);
+            }
+
+            console.log(arr);
+
+        </script>
+    </body>
+</html>

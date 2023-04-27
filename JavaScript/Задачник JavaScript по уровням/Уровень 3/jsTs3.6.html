@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.6</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let arr = [12, 345, 4567, 2, 2222, 34];
+
+            arr = arr.filter(function(elem) {
+                return String(elem).length <= 3;
+            });
+
+            console.log(arr); // [12, 345, 2, 34]
+
+            // #2
+            let num = 12345;
+
+            console.log(String(num).split('').every( (elem) => elem > 0 )); // true
+            console.log( !(/0/g.test(String(num))) ); // true
+
+            // #3
+            arr = [123, 456, 789];
+
+            const arrNew = [];
+
+            for (let i = 0; i < arr.length; i++) {
+                let str = String(arr[i]);
+
+                for (let j = 0; j < str.length; j++) {
+                    arrNew.push(+str[j]);
+                }
+            }
+
+            console.log(arrNew); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+            // #4
+            let data = [
+	            {
+		            1: 11,
+		            2: 12,
+		            3: 13,
+	            },
+	            {
+		            1: 21,
+		            2: 22,
+		            3: 23,
+	            },
+	            {
+		            1: 24,
+		            2: 25,
+		            3: 26,
+	            },
+            ];
+
+            let sum = 0;
+
+            for (let obj of data) {
+                for (let key in obj) {
+                    sum += obj[key];
+                }
+            }
+
+            console.log(sum); // 177
+
+        </script>
+    </body>
+</html>

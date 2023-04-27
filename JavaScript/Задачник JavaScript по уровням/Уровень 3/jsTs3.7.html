@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.7</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let str = 'bcd def abc cde fgh efg';
+
+            let arr = str.split(' ');
+            sort(arr);
+            str = arr.join(' ');
+
+            console.log(str); // abc bcd cde def efg fgh
+
+            function sort(arr) {
+                let isSorted = true;
+
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i - 1] > arr[i]) {
+                        isSorted = false;
+
+                        let elem2 = arr[i];
+                        arr[i] = arr[i - 1];
+                        arr[i - 1] = elem2;
+                    }
+                }
+
+                if (isSorted === false) {
+                    sort(arr);
+                }
+            }
+
+            // #2
+            let num = 400;
+
+            let devisors = [];
+
+            for (let i = 1; i <= num; i++) {
+                if (num % i === 0) {
+                    devisors.push(i);
+                }
+            }
+
+            console.log(devisors);
+
+            // #3
+            let num1 = 20;
+            let num2 = 200;
+
+            devisors = [];
+
+            let cond = Math.min(num1, num2);
+
+            for (let i = 1; i <= cond; i++) {
+                if (num1 % i === 0 && num2 % i === 0) {
+                    devisors.push(i);
+                }
+            }
+
+            console.log(devisors); // [1, 2, 4, 5, 10, 20]
+
+            // #4
+            num = 4;
+
+            devisors = [];
+
+            for (let i = 2; i <= num / 2; i++) {
+                if (num % i === 0) {
+                    devisors.push(i);
+                }
+            }
+
+            console.log(devisors.length === 1); // true
+
+            // #5
+            str = '1, 4, 6, 2, 3';
+
+            arr = str.split(', ');
+
+            let max = arr[0];
+
+            for (let elem of str) {
+                if (+elem > max) {
+                    max = +elem;
+                }
+            }
+
+            console.log(max); // 6
+
+            // #6
+            arr = [2, 34, 4, 56, 75, 3, 2];
+
+            for (let i = 0; i < arr.length; i++) {
+                if (String(arr[i]).length === 1) {
+                    arr.splice(i + 1, 0, arr[i]);
+                    i++;
+                }
+            }
+
+            console.log(arr); // [2, 2, 34, 4, 4, 56, 75, 3, 3, 2, 2]
+
+            // #7
+            str = 'абвгдеёжзик';
+
+            str = str.replace(/[аеёиоуыэюяАЕЁИОУЫЭЮЯ]/g, '');
+
+            console.log(str); // бвгджзк
+
+            // #8
+            str = 'adv gtr dgv we s';
+
+            str = str.replace(/(.)(\s|$)/g, function(found, part1, part2) {
+                return part1.toUpperCase() + part2;
+            });
+
+            console.log(str); // adV gtR dgV wE S
+
+            // #9
+            let data = [
+	            {
+		            1: [1, 2, 3],
+		            2: [1, 2, 3],
+		            3: [1, 2, 3],
+	            },
+	            {
+		            1: [1, 2, 3],
+		            2: [1, 2, 3],
+		            3: [1, 2, 3],
+	            },
+	            {
+		            1: [1, 2, 3],
+		            2: [1, 2, 3],
+		            3: [1, 2, 3],
+	            },
+            ];
+
+            let sum = 0;
+
+            for (let obj of data) {
+                for (let key in obj) {
+                    let arr = obj[key];
+                    
+                    for(let num of arr) {
+                        sum += num;
+                    }
+                }
+            }
+
+            console.log(sum); // 54
+
+        </script>
+    </body>
+</html>

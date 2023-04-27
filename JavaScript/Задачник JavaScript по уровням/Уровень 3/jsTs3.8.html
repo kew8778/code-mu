@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.8</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let arr = [123, 234, 345, 34, 3];
+
+            let check = arr.every( (elem) => /3/.test(String(elem)) );
+
+            console.log(check); // true
+
+            // #2
+            let str = 'abcd-efgh';
+
+            str = str.replace(/-/, '_');
+
+            console.log(str); // abcd_efgh
+
+            // #3
+            str = 'abcd_efgh';
+
+            str = str.replace(/(_)(.)/, (pound, part1, part2) => {
+                return part2.toUpperCase();
+            });
+
+            console.log(str); // abcdEfgh
+
+            // #4
+            str = 'abcdEfgh';
+
+            str = str.replace(/[A-Z]/, (pound) => {
+                return '_' + pound.toLowerCase();
+            });
+
+            console.log(str); // abcd_efgh
+
+            // #5
+            arr = [];
+
+            for (let i = 1; i <= 5; i++) {
+                let subArr = [];
+
+                for (let j = 1; j <= 3; j++) {
+                    subArr.push(j);
+                }
+
+                arr.push(subArr);
+            }
+
+            console.log(arr);
+
+        </script>
+    </body>
+</html>

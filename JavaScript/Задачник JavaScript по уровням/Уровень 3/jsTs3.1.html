@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.1</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let num = 123456789;
+
+            let str = String(num);
+            let res = true;
+
+            for (let i = 1; i < str.length; i++) {
+                if (str[i - 1] > str[i]) {
+                    res = false;
+                    break;
+                }
+            }
+
+            console.log(res);
+
+            // #2
+            let arr =[1, '', 2, 3, '', 5];
+
+            arr = arr.join('').split('');
+
+            console.log(arr); // ['1', '2', '3', '5']
+
+            // #3
+            arr = [
+	            [2, 1, 4, 3, 5],
+	            [3, 5, 2, 4, 1],
+	            [4, 3, 1, 5, 2],
+            ];
+
+            function sort(arr) {
+                let res = true;
+
+                for (let i = 1; i < arr.length; i++) {
+                    if (arr[i - 1] > arr[i]) {
+                        res = false;
+                        const first = arr[i - 1];
+                        arr[i - 1] = arr[i];
+                        arr[i] = first;
+                    }
+                }
+
+                if (res) {
+                    return;
+                } else {
+                    sort(arr);
+                }
+            }
+
+            for (let subArr of arr) {
+                sort(subArr);
+            }
+
+            console.log(arr);
+
+            // #4
+            let arr1 = [1, 2, 3];
+            let arr2 = [1, 2, 3, 4, 5];
+
+            
+            const diff = arr1.length - arr2.length;
+
+            if (diff < 0) {
+                arr2.splice(diff, -diff);
+            }
+
+            if (diff > 0) {
+                arr1.splice(-diff, diff);
+            }
+
+            console.log(arr1); // [1, 2, 3]
+            console.log(arr2); // [1, 2, 3]
+
+        </script>
+    </body>
+</html>

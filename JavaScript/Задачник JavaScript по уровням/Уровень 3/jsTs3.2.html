@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 3.2</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            let num = 10;
+
+            while (num <= 1000) {
+                const str = String(num);
+
+                if (str[str.length - 2] % 2 === 0) {
+                    console.log(num);
+                }
+
+                num++;
+            }
+
+            // #2
+            let arr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6];
+
+            for (let i = 4; i < arr.length; i += 4) {
+                arr.splice(i, 1);
+            }
+
+            console.log(arr); // [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 6]
+
+            // #3
+            num = 5;
+
+            let str = '';
+
+            for (let i = 1; i <= num; i++) {
+                str += '0';
+            }
+
+            console.log(str); // 00000
+
+            // #4
+            str = 'aaa bbb ccc eee fff';
+
+            str = str.split(' ').filter(function(elem, ind) {
+                return (ind % 2 === 0);
+            }).join(' ');
+
+            console.log(str); // aaa ccc fff
+
+            // #5
+            arr = [
+	            [1, 2, 3],
+	            [4, 5, 6],
+	            [7, 8, 9],
+            ];
+
+            let sum = 0;
+
+            for (let subArr of arr) {
+                for (let elem of subArr) {
+                    sum += elem;
+                }
+            }
+
+            console.log(sum); // 45
+
+        </script>
+    </body>
+</html>
