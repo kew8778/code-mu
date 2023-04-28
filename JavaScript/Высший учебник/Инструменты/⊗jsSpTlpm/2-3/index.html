@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Пакетные менеджеры</title>
+    </head>
+
+    <body>
+        <div class="jquery"></div>
+
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/lodash/lodash.min.js"></script>
+
+        <script>
+            'use strict';
+
+            // #2
+            $( "div.jquery" ).html("<p>Абзац вставлен через jQuery</p>");
+
+            const div = document.querySelector('.jquery');
+            const p = document.createElement('p');
+            p.textContent = 'А этот через обычный JS';
+            div.appendChild(p);
+
+            // #3
+            const arr = [0, 1, false, 2, '', 3];
+
+            // lodash
+            console.log(_.compact([0, 1, false, 2, '', 3])); // [1, 2, 3]
+
+            // привычный js
+            console.log(arr.filter( (elem) => elem )); // [1, 2, 3]
+
+        </script>
+    </body>
+</html>

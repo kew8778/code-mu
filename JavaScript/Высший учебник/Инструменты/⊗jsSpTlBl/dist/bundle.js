@@ -1,0 +1,1 @@
+(()=>{"use strict";const e=document.querySelector("body"),t=document.createElement("p");t.textContent="Привет Webpack !!!",e.appendChild(t)})();
