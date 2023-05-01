@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Запрет отправки формы в JS</title>
+    </head>
+
+    <body>
+        <form class="form" action="/handler8/" method="post">
+            <input name="email" placeholder="email">
+            <button type="submit">Отправить</button>
+        </form>
+
+        <script>
+            'use strict';
+
+            const form = document.querySelector('.form');
+            const inp = document.querySelector('.form input');
+
+            form.addEventListener('submit', (event) => {
+                if (
+                    !(/^[\da-zA-Z]{1,64}@[\da-zA-Z]+\.[a-z]{2,}$/.test(inp.value))
+                ) {
+                    event.preventDefault();
+                    alert('некоректный email');
+                }
+            });
+
+        </script>
+    </body>
+</html>

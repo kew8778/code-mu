@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Принудительная отправка формы</title>
+    </head>
+
+    <body>
+        <form class="form" action="/handler7/" method="post">
+            <input name="test1" value="1">
+            <input name="test2" value="2">
+            <input name="test3" value="3">
+        </form>
+        
+        <a class="btn" href="/">Отправить</a>
+
+        <script>
+            'use strict';
+
+            const form = document.querySelector('.form');
+            const btn = document.querySelector('.btn');
+
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+                form.submit();
+            });
+
+        </script>
+    </body>
+</html>

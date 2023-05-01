@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Работа с URLSearchParams</title>
+    </head>
+
+    <body>
+        <form class="form" action="/handler9/" method="get">
+            <input name="inp1" value="param1">
+            <input name="inp2" value="param2">
+            <input name="inp3" value="param3">
+            <button type="submit">Кнопка</button>
+        </form>
+
+        <script>
+            'use strict';
+
+            // #1
+            const form = document.querySelector('.form');
+            const btn = form.querySelector('button');
+
+            btn.addEventListener('click', (event) => {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+                console.log(Array.from(formData));
+
+                // #2
+                formData.set('inp4', 'param4');
+                formData.delete('inp2');
+                console.log(Array.from(formData));
+
+                // #3
+                for (let entry of formData.entries()) {
+	                console.log(entry);
+                }
+            });
+
+        </script>
+    </body>
+</html>

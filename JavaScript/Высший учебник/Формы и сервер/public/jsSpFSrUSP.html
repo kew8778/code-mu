@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Работа с URLSearchParams</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            let paramsString = 'test1=param1&test2=param2&test3=param3';
+            let searchParams = new URLSearchParams(paramsString);
+
+            // #1
+            searchParams.append('test3', 'param4');
+
+            console.log(searchParams.toString());
+            // test1=param1&test2=param2&test3=param3&test3=param4
+
+            // #2
+            searchParams.delete('test2');
+
+            console.log(searchParams.toString());
+            // test1=param1&test3=param3&test3=param4
+
+            // #3
+            searchParams.set('test1', 'param5');
+
+            console.log(searchParams.toString());
+            // test1=param5&test3=param3&test3=param4
+
+        </script>
+    </body>
+</html>

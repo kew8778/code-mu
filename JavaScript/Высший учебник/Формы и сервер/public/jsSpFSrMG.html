@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>метод GET</title>
+    </head>
+
+    <body>
+        <h1>Отправка форм методом GET</h1>
+
+        <h2>Среднее арифметическое</h2>
+        <form action="/handler2/" method="GET">
+            <input name="num1" placeholder="число">
+            <input name="num2" placeholder="число">
+            <input name="num3" placeholder="число">
+            <input name="num4" placeholder="число">
+            <input name="num5" placeholder="число">
+            <button type="submit">Посчитать</button>
+        </form>
+
+        <h2>Отправка ФИО на сервер</h2>
+        <form action="/handler3/" method="get">
+            <input name="firstName" placeholder="Имя">
+            <input name="lastName" placeholder="Фамилия">
+            <input name="patronymic" placeholder="Отчество">
+            <button type="submit">Отправить</button>
+        </form>
+
+        <h2>Отправка даты рождения на сервер</h2>
+        <form action="/handler4/" method="get">
+            <input name="birthday" placeholder="гггг-мм-дд">
+            <button type="submit">Отправить</button>
+        </form>
+    </body>
+</html>
