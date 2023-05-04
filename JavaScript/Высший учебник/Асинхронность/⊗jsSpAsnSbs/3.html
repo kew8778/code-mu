@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Асинхронный код через подписки</title>
+    </head>
+
+    <body>
+        <button class="newHour">Оповещание о новом часе</button>
+        <button class="daily-schedule">Оповещание распорядка дня</button>
+
+        <div class="reminder">
+            <p>Напоминалка</p>
+            <input class="reminder__hour" type="number" placeholder="часы">
+            <input class="reminder__minute" type="number" placeholder="минуты">
+            <input class="reminder__message" type="text" placeholder="сообщение">
+            <button class="reminder__btn">Добавить напоминание</button>
+        </div>
+        
+        <script>
+            'use strict';
+
+            const subsribers = {};
+
+            function on(name, callback) {
+	            if (!subsribers[name]) {
+		            subsribers[name] = [];
+	            }
+	
+	            subsribers[name].push(callback);
+            }
+
+            function emit(name, data) {
+	            if (subsribers[name]) {
+		            for (let callback of subsribers[name]) {
+			            callback(data);
+		            }
+	            }
+            }
+
+            // #3
+            setTimeout(function() {
+                setInterval(function() {
+	                emit('nextHour', new Date().getHours());
+                }, 3600000);
+
+                emit('nextHour', new Date().getHours());
+	        }, 3600000 - Date.now() % 3600000);
+
+            // #6
+            setTimeout(function() {
+                setInterval(function() {
+                    nextMinute();
+                }, 60000);
+
+                nextMinute();
+	        }, 60000 - Date.now() % 60000);
+
+            function nextMinute() {
+                const now = new Date();
+                emit('nextMinute', [now.getMinutes(), now.getHours()]);
+            }
+
+            // #4
+            const newHour = document.querySelector('.newHour');
+
+            newHour.addEventListener('click', function onNewHour() {
+                on('nextHour', (hour) => alert(hour + 'часов'));
+
+                this.removeEventListener('click', onNewHour);
+            });
+
+            // #5
+            const btnDailySchedule = document.querySelector('.daily-schedule');
+            const dailySchedule = {
+                'breakfast': 8,
+                'lunch': 13,
+                'dinner': 18,
+                'bedtime': 21,
+            };
+
+            btnDailySchedule.addEventListener('click', function onDailySchedule() {
+                on('nextHour', (hour) => {
+                    for (let item in dailySchedule) {
+                        if (hour === dailySchedule[item]) {
+                            alert(item);
+                        }
+                    }
+                });
+
+                this.removeEventListener('click', onDailySchedule);
+            });
+
+            // #7
+            const breaks = [0, 15, 30, 45];
+
+            on('nextMinute', ([minutes, hours]) => {
+                if (breaks.includes(minutes)) {
+                    alert('Перерыв !!!');
+                }
+            });
+
+            // #8
+            const hourReminder = document.querySelector('.reminder__hour');
+            const minuteReminder = document.querySelector('.reminder__minute');
+            const messageReminder = document.querySelector('.reminder__message');
+            const btnReminder = document.querySelector('.reminder__btn');
+
+            const reminders = [];
+
+            btnReminder.addEventListener('click', () => {
+                reminders.push({
+                    hour: +hourReminder.value,
+                    minute: +minuteReminder.value,
+                    message: messageReminder.value,
+                });
+            });
+
+            on('nextMinute', ([minutes, hours]) => {
+                for (let reminder of reminders) {
+                    if (minutes === reminder.minute && hours === reminder.hour) {
+                        alert(reminder.message);
+                    }
+                }
+            });
+
+            // #9
+            function off(name, callback) {
+                if (subsribers[name]) {
+                    const length = subsribers[name].length;
+
+                    for (let i = 0; i < length; i++) {
+                        if(func === subsribers[name][i]) {
+                            subsribers[name].splice(i, 1);
+                            break;
+                        }
+                    }
+                }
+            }
+
+        </script>
+    </body>
+</html>

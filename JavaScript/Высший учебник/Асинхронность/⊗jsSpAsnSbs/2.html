@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Асинхронный код через подписки</title>
+    </head>
+
+    <body>
+        <p id="message"></p>
+        
+        <ul id="list">
+	        <li>a</li>
+	        <li>b</li>
+	        <li>c</li>
+        </ul>
+
+        <p id="amount"></p>
+        <p id="result"></p>
+
+        <script>
+            'use strict';
+
+            const subsribers = {};
+
+            function on(name, callback) {
+	            if (!subsribers[name]) {
+		            subsribers[name] = [];
+	            }
+	
+	            subsribers[name].push(callback);
+            }
+
+            function emit(name, data) {
+	            if (subsribers[name]) {
+		            for (let callback of subsribers[name]) {
+			            callback(data);
+		            }
+	            }
+            }
+
+            on('loaded', func1);
+            on('loaded', func2);
+            on('loaded', func3);
+            on('loaded', func4);
+
+            setTimeout(function() {
+	            emit('loaded', [1, 2, 3, 4, 5]);
+            }, 3000);
+
+            function func1(arr) {
+                const message = document.getElementById('message');
+                message.textContent = 'Данные полученны';
+            }
+
+            function func2(arr) {
+                const ul = document.getElementById('list');
+
+                for (let elem of arr) {
+                    const li = document.createElement('li');
+                    li.textContent = elem;
+                    ul.appendChild(li);
+                }
+            }
+
+            function func3(arr) {
+                const amount = document.getElementById('amount');
+                amount.textContent = arr.length;
+            }
+
+            function func4(arr) {
+                let sum = 0;
+
+                for (let elem of arr) {
+                    sum += elem;
+                }
+
+                const res = document.getElementById('result');
+                res.textContent = sum;
+            }
+
+        </script>
+    </body>
+</html>
