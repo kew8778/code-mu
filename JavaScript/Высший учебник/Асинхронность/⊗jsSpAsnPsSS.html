@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Промисы в синхронном стиле</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            function getSmth(num) {
+	            return new Promise((resolve, reject) => {
+		            setTimeout(() => resolve(num * num), 1000)
+	            });
+            }
+
+            async function func() {
+                const nums = [2, 3, 4];
+                let sum = 0;
+
+                for (let num of nums) {
+                    sum += await getSmth(num);
+                }
+
+                console.log(sum);
+            }
+
+            func(); // 29
+
+        </script>
+    </body>
+</html>

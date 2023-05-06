@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Работа с массивами промисов</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            function createPromise() {
+                const time = (Math.floor(Math.random() * 10) + 1) * 1000;
+
+                return new Promise( (resolve) => {
+                    setTimeout( () => resolve(time), time);
+                });
+            }
+
+            const promises = [];
+
+            for (let i = 1; i <= 10; i++) {
+                promises.push(createPromise());
+            }
+
+            Promise.race(promises).then( (time) => console.log(time) );
+
+            Promise.all(promises).then( (times) => {
+                let sumTimes = 0;
+
+                for (let time of times) {
+                    sumTimes += time;
+                }
+
+                console.log(sumTimes);
+            });
+
+        </script>
+    </body>
+</html>

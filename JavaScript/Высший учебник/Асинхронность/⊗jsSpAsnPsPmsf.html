@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Промисификация асинхронного кода</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            // #1
+            function loadImage(src) {
+                return new Promise( (resolve, reject) => {
+                    const img = document.createElement('img');
+                    img.src = src;
+
+                    img.addEventListener('load', () => resolve(img));
+                    img.addEventListener('error', () => {
+                        reject('ошибка загрузки картики ' + src);
+                    });
+                });
+            }
+
+            loadImage('i1.jpg').then( (img) => {
+                document.body.appendChild(img);
+            }).catch( (error) => {
+                console.log(error);
+            });
+
+            // #2
+            const paths = ['img1.png', 'img2.png', 'img3.png'];
+
+            const loadImages = [];
+
+            for (let path of paths) {
+                loadImages.push(loadImage(path));
+            }
+
+            Promise.all(loadImages).then( (images) => {
+                for (let image of images) {
+                    document.body.appendChild(image);
+                    console.log(images);
+                }
+            }).catch( (error) => console.log(error) );
+
+            // #3
+            function loadDOM() {
+                return new Promise( (resolve) => {
+                    window.addEventListener('DOMContentLoaded', () => {
+	                    resolve('dom загружен');
+                    });
+                });
+            }
+
+            loadDOM().then( (text) => console.log(text) );
+
+        </script>
+    </body>
+</html>

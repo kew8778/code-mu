@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Введение в промисы</title>
+    </head>
+
+    <body>
+        <script>
+            'use strict';
+
+            // #1
+            const promise = new Promise( (resolve) => {
+                setTimeout( () => resolve('промис'), 5000);
+            });
+
+            promise.then( (text) => alert(text) );
+
+            // #2
+            const promise2 = new Promise( (resolve, reject) => {
+                setTimeout( () => {
+                    const numRandom = Math.floor(Math.random() * 6);
+
+                    if (numRandom !== 0) {
+                        resolve(1 / numRandom);
+                    } else {
+                        reject('Ошибка деления на 0');
+                    }
+                    
+                }, 5000);
+            });
+
+            promise2.then( (res) => alert(res), (err) => alert(err) );
+
+        </script>
+    </body>
+</html>
