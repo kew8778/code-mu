@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Рисование окружностей</title>
+    </head>
+
+    <body>
+        <canvas class="ctx1" width="200" height="200" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx2" width="200" height="200" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx3" width="200" height="200" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx4" width="200" height="200" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx5" width="200" height="200" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx6" width="200" height="200" style="background: #f4f4f4;"></canvas>
+
+        <script>
+            "use strict";
+
+            // #1
+            const ctx1 = document.querySelector('.ctx1').getContext('2d');
+
+            ctx1.arc(100, 100, 50, 0, Math.PI / 180 * 360);
+            ctx1.stroke();
+
+            // #2
+            const ctx2 = document.querySelector('.ctx2').getContext('2d');
+
+            ctx2.arc(100, 100, 50, 0, Math.PI / 180 * 360);
+            ctx2.fill();
+
+            // #3
+            const ctx3 = document.querySelector('.ctx3').getContext('2d');
+
+            ctx3.arc(100, 100, 50, 0, Math.PI / 180 * 180);
+            ctx3.stroke();
+
+            // #4
+            const ctx4 = document.querySelector('.ctx4').getContext('2d');
+
+            ctx4.arc(100, 100, 50, 0, Math.PI / 180 * 180);
+            ctx4.closePath();
+            ctx4.stroke();
+
+            // #5
+            const ctx5 = document.querySelector('.ctx5').getContext('2d');
+
+            ctx5.arc(100, 100, 50, 0, Math.PI / 180 * 180);
+            ctx5.fill();
+
+            // #6
+            const ctx6 = document.querySelector('.ctx6').getContext('2d');
+
+            ctx6.arc(100, 100, 50, (Math.PI / 180 * 10), (Math.PI / 180 * 80));
+            ctx6.fill();
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Циклы в canvas</title>
+    </head>
+
+    <body>
+        <canvas class="ctx1" width="200" height="200" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx2" width="200" height="200" style="background: #f4f4f4;"></canvas>
+
+        <script>
+            "use strict";
+
+            // #1
+            const ctx1 = document.querySelector('.ctx1').getContext('2d');
+
+            for (let i = 1; i <= 10; i++) {
+                ctx1.beginPath();
+	            ctx1.moveTo(50, 40 + 10 * i);
+	            ctx1.lineTo(150, 40 + 10 * i);
+                ctx1.stroke();
+            }
+
+            // #2
+            const ctx2 = document.querySelector('.ctx2').getContext('2d');
+
+            for (let i = 1; i <= 10; i++) {
+                ctx2.beginPath();
+	            ctx2.moveTo(40, 40 + 10 * i);
+	            ctx2.lineTo(150, 40 + 10 * i);
+                ctx2.stroke();
+            }
+
+            for (let i = 1; i <= 10; i++) {
+                ctx2.beginPath();
+	            ctx2.moveTo(40 + 10 * i, 40);
+	            ctx2.lineTo(40 + 10 * i, 150);
+                ctx2.stroke();
+            }
+
+        </script>
+    </body>
+</html>

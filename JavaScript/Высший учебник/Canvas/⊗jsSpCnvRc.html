@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Рисование прямоугольников</title>
+    </head>
+
+    <body>
+        <canvas class="ctx1" width="250" height="250" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx2" width="250" height="250" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx3" width="250" height="250" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx4" width="250" height="250" style="background: #f4f4f4;"></canvas>
+        <canvas class="ctx5" width="250" height="250" style="background: #f4f4f4;"></canvas>
+
+        <script>
+            "use strict";
+
+            // #1
+            const ctx1 = document.querySelector('.ctx1').getContext('2d');
+
+            ctx1.strokeRect(50, 50, 150, 150);
+
+            // #2
+            const ctx2 = document.querySelector('.ctx2').getContext('2d');
+
+            ctx2.fillRect(50, 50, 150, 150);
+
+            // #3
+            const ctx3 = document.querySelector('.ctx3').getContext('2d');
+
+            ctx3.rect(50, 50, 150, 150);
+            ctx3.stroke();
+
+            // #4
+            const ctx4 = document.querySelector('.ctx4').getContext('2d');
+
+            ctx4.rect(50, 50, 150, 150);
+            ctx4.fill();
+
+            // #5
+            const ctx5 = document.querySelector('.ctx5').getContext('2d');
+
+            ctx5.fillRect(50, 50, 150, 150);
+            ctx5.clearRect(100, 100, 50, 50);
+
+        </script>
+    </body>
+</html>
