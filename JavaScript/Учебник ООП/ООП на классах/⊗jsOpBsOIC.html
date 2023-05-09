@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            class Employee {
+	            constructor(name, position, department) {
+		            this.name = name;
+		            this.position = position;
+		            this.department = department;
+	            }
+            }
+
+            class Position {
+                constructor(position) {
+                    this.position = position;
+                }
+            }
+
+            class Department {
+                constructor(department) {
+                    this.department = department;
+                }
+            }
+
+            let position = new Position('Frontend');
+            let department = new Department('Development');
+
+            const employee1 = new Employee('Evgeniy', position, department);
+
+            console.log(employee1.name); // Evgeniy
+            console.log(employee1.position.position); // Frontend
+            console.log(employee1.department.department); // Development
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Employee {
+                #name;
+                #age;
+                #salary
+
+                constructor(name, age, salary) {
+                    this.#name = name;
+                    this.#age = age;
+                    this.#salary = salary;
+                }
+
+                getName() {
+                    return this.#name;
+                }
+
+                getAge() {
+                    return this.#age;
+                }
+
+                getSalary() {
+                    return this.#salary;
+                }
+            }
+
+            const employees = [
+                new Employee('Sany', 24, 30000),
+                new Employee('Danil', 28, 47000),
+                new Employee('Katya', 18, 200000),
+            ];
+
+            for (let employee of employees) {
+                console.log(employee.getName(), employee.getSalary());
+            }
+
+        </script>
+    </body>
+</html>

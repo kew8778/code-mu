@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // ⊗jsOpBsCO
+            // ⊗jsOpBsOP
+            // ⊗jsOpBsMO
+            // ⊗jsOpBsCM
+            // ⊗jsOpBsMP
+            // ⊗jsOpBsPIC
+
+            class Employee {
+                show() {
+                    return this.name + ': ' + this.salary;
+                }
+            };
+
+            const employee1 = new Employee;
+
+            employee1.name = 'Petr';
+            employee1.age = 23;
+            employee1.salary = 15000;
+
+            console.log(employee1.name, employee1.age, employee1.salary); // Petr 23 15000
+
+            const employee2 = new Employee;
+
+            employee2.name = 'Oleg';
+            employee2.age = 28;
+            employee2.salary = 30000;
+
+            console.log(employee1.salary + employee2.salary); // 45000
+
+            console.log(employee2.show()); // Oleg: 30000
+
+        </script>
+    </body>
+</html>

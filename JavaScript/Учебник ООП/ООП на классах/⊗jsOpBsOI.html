@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Student {
+	            constructor(name) {
+		            this.name = name;
+	            }
+            }
+
+            class Employee {
+	            constructor(name) {
+		            this.name = name;
+	            }
+            }
+
+            let users = [
+	            new Student('user1'),
+	            new Employee('user2'),
+	            new Student('user3'),
+	            new Employee('user4'),
+	            new Student('user5'),
+	            new Employee('user6'),
+	            new Student('user7'),
+            ];
+
+            for (let user of users) {
+                console.log(user.name);
+            }
+
+        </script>
+    </body>
+</html>

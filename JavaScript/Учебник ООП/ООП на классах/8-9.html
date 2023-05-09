@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // ⊗jsOpBsMIC
+            // ⊗jsOpBsPD
+            
+            class Student {
+                name = 'Ivan';
+                surn = 'Ivanov';
+                
+                getFirstLetter(str) {
+		            return str[0].toUpperCase();
+	            }
+
+                getInitials() {
+                    return this.getFirstLetter(this.name) + '.' +
+                        this.getFirstLetter(this.surn) + '.';
+                }
+            }
+
+            const student1 = new Student;
+            student1.name = 'Danil';
+            student1.surn = 'Ivanov';
+
+            console.log(student1.getInitials()); // D.I.
+
+        </script>
+    </body>
+</html>

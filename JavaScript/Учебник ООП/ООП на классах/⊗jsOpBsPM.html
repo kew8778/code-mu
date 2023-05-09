@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Employee {
+	            constructor(name, salary) {
+		            this.name = name;
+		            this.salary = salary;
+	            }
+	
+	            getSalary() {
+		            return this.#addSign(this.salary);
+	            }
+	
+	            #addSign(num) {
+		            return num + '$';
+	            }
+            }
+
+        </script>
+    </body>
+</html>

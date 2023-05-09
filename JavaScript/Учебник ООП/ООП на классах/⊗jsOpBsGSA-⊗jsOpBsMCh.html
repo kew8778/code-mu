@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Employee {
+                #name;
+                #age;
+                #salary;
+
+                setAge(age) {
+                    if (age >= 0 && age <= 120) {
+                        this.#age = age;
+                        return this;
+                    } else {
+                        throw new Error('age is incorrect');
+                    }
+                }
+
+                setSalary(salary) {
+                    this.#salary = salary;
+                    return this;
+                }
+
+                getSalary() {
+                    return this.#salary + ' $';
+                }
+
+                getAge() {
+                    return this.#age;
+                }
+            }
+
+            const employee1 = new Employee;
+            employee1.setSalary(10000).setAge(100);
+            console.log(employee1.getSalary());
+            console.log(employee1.getAge());
+
+        </script>
+    </body>
+</html>

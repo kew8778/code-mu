@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            class Validator {
+                isEmail(email) {
+                    return /^[\da-zA-Z]{1,64}@[\da-zA-Z]+\.[a-z]{2,}$/.test(email);
+                }
+
+                isDomain(domain) {
+                    return /^[\da-zA-Z][\da-zA-Z-]{0,62}[\da-zA-Z]\.[a-z]{2,}$/.test(domain);
+                }
+
+                isNumber(num) {
+                    return /^\d+$/.test(num);
+                }
+            }
+
+            const valid = new Validator;
+            
+            let email = '123@ru';
+            console.log(valid.isEmail(email)); // false
+
+            email = 'kew8778@mail.ru';
+            console.log(valid.isEmail(email)); // true
+
+            let domain = '123--name?.domen';
+            console.log(valid.isDomain(domain)); // false
+
+            domain = 'code.mu';
+            console.log(valid.isDomain(domain)); // true
+
+            let num = '123d';
+            console.log(valid.isNumber(num)); // false
+
+            num = '1234567890';
+            console.log(valid.isNumber(num)); // true
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Employee {
+                #name;
+                #age;
+                #salary
+
+                constructor(name, age, salary) {
+                    this.#name = name;
+                    this.#age = age;
+                    this.#salary = salary;
+                }
+
+                getName() {
+                    return this.#name;
+                }
+
+                getAge() {
+                    return this.#age;
+                }
+
+                getSalary() {
+                    return this.#salary;
+                }
+            }
+
+            class EmployeesCollection {
+                #employees;
+
+                constructor() {
+                    this.#employees = [];
+                }
+
+                add(employee) {
+                    this.#employees.push(employee);
+                }
+
+                show() {
+                    for (let employee of this.#employees) {
+                        console.log(
+                            employee.getName(),
+                            employee.getAge(),
+                            employee.getSalary(),
+                        );
+                    }
+                }
+
+                getAllSalary() {
+                    let sum = 0;
+
+                    for (let employee of this.#employees) {
+                        sum += employee.getSalary();
+                    }
+
+                    return sum;
+                }
+
+                getAverageSalary() {
+                    return this.getAllSalary() / this.#employees.length;
+                }
+            }
+
+            const employee1 = new Employee('Anna', 23, 22000);
+            const employee2 = new Employee('Ben', 45, 35000);
+            const employee3 = new Employee('Misha', 33, 57000);
+
+            const arrEmployees = new EmployeesCollection;
+
+            arrEmployees.add(employee1);
+            arrEmployees.add(employee2);
+            arrEmployees.add(employee3);
+
+            arrEmployees.show();
+            console.log(arrEmployees.getAllSalary());
+            console.log(arrEmployees.getAverageSalary());
+
+            let arr = [1, 2, 3];
+
+        </script>
+    </body>
+</html>

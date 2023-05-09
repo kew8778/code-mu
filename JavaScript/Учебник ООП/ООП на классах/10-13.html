@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>ООП на классах</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // ⊗jsOpBsCC
+            // ⊗jsOpBsCP
+            // ⊗jsOpBsCPP
+            // ⊗jsOpBsPP
+
+            class Employee {
+                #name;
+                #age;
+                #salary;
+
+                constructor(name, age, salary) {
+                    this.#name = name;
+                    this.#age = age;
+                    this.#salary = salary;
+                }
+
+                show() {
+                    console.log(this.#name, this.#age, this.#salary);
+                }
+
+                raiseSalary() {
+                    this.#salary += this.#salary / 10;
+                }
+            };
+
+            const employee1 = new Employee('Sanya', 28, 50000);
+            employee1.raiseSalary();
+            employee1.show();
+
+        </script>
+    </body>
+</html>
