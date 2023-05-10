@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Rectangle</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Rectangle {
+                constructor(width, height) {
+                    this.width = width;
+                    this.height = height;
+                }
+
+                getSquare() {
+                    return this.width * this.height;
+                }
+
+                getPerimeter() {
+                    return (this.width + this.height) * 2;
+                }
+
+                getRatio() {
+                    return this.getSquare() / this.getPerimeter();
+                }
+            }
+
+            const rectangle1 = new Rectangle(100, 200);
+
+            console.log(
+                rectangle1.getSquare(),
+                rectangle1.getPerimeter(),
+                rectangle1.getRatio(),
+            );
+
+        </script>
+    </body>
+</html>

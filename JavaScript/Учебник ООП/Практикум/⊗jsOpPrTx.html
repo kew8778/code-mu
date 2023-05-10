@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Text</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Text {
+                constructor(str) {
+                    this.str = str;
+                }
+
+                getNumbSymbols() {
+                    return this.str.length;
+                }
+
+                getNumLetters() {
+                    return this.str.match(/[a-zA-Z]/g).length;
+                }
+
+                getNumSpaces() {
+                    return this.str.match(/\s/g).length;
+                }
+
+                getNumbSymbolsWithoutSpaces() {
+                    return this.getNumbSymbols() - this.getNumSpaces();
+                }
+
+                getArrWords() {
+                    return this.str.match(/[\da-zA-Z]+/g);
+                }
+
+                getArrSentences() {
+                    return this.str.split(/[.!?]/);
+                }
+            }
+
+            const text1 = new Text('abc defg, 123 h5. Ads tr 55');
+
+            console.log(
+                text1.getNumbSymbols(),
+                text1.getNumLetters(),
+                text1.getNumSpaces(),
+                text1.getNumbSymbolsWithoutSpaces(),
+                text1.getArrWords(),
+                text1.getArrSentences(),
+            );
+
+        </script>
+    </body>
+</html>

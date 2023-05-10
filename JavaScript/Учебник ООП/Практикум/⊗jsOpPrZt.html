@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Zate</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Zate {
+                constructor(year, month, day) {
+                    this.year = year;
+                    this.month = month;
+                    this.day = day;
+                    this.date = new Date(year, month - 1, day);
+                }
+
+                getYear() {
+                    return this.year;
+                }
+
+                getMonth() {
+                    return this.month;
+                }
+
+                getDay() {
+                    return this.day;
+                }
+
+                getDayOfWeek() {
+                    const num = this.date.getDay();
+
+                    if (num === 0) {
+                        return 7;
+                    }
+
+                    return num;
+                }
+
+                getNameOfDayOfWeek() {
+                    const namesOfDays = [
+                        'Monday',
+                        'Tuesday',
+                        'Wednesday',
+                        'Thursday',
+                        'Friday',
+                        'Saturday',
+                        'Sunday',
+                    ];
+
+                    return namesOfDays[this.getDayOfWeek() - 1];
+                }
+
+                getNameOfMonth() {
+                    const months = [
+                        'January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+                        'July',
+                        'August',
+                        'September',
+                        'October',
+                        'November',
+                        'December',
+                    ];
+
+                    return months[this.month - 1];
+                }
+            }
+
+            const data1 = new Zate(2023, 5, 10);
+
+            console.log(
+                data1.getYear(),
+                data1.getMonth(),
+                data1.getDay(),
+                data1.getDayOfWeek(),
+                data1.getNameOfDayOfWeek(),
+                data1.getNameOfMonth(),
+            );
+
+        </script>
+    </body>
+</html>

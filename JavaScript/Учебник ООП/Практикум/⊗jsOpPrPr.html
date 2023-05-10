@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Period</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Period {
+                constructor(data1, data2) {
+                    this.data1 = data1;
+                    this.data2 = data2;
+                }
+
+                getDiffInSec() {
+                    return Math.floor( (this.data2 - this.data1) / 1000 );
+                }
+
+                getDiffInMinutes() {
+                    return Math.floor(this.getDiffInSec() / 60);
+                }
+
+                getDiffInHours() {
+                    return Math.floor(this.getDiffInSec() / 3600);
+                }
+
+                getDiffInDays() {
+                    return Math.floor(this.getDiffInHours() / 24);
+                }
+            }
+
+            const data1 = new Date(2023, 4, 10, 11);
+            const data2 = new Date(2023, 5, 11, 11, 38);
+
+            const period1 = new Period(data1.getTime(), data2.getTime());
+
+            console.log(
+                period1.getDiffInSec(),
+                period1.getDiffInMinutes(),
+                period1.getDiffInHours(),
+                period1.getDiffInDays(),
+            );
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Circle</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Circle {
+                #radius;
+
+	            constructor(radius) {
+                    this.#radius = radius;
+                }
+
+                getArea() {
+                    return Math.PI * this.#radius ** 2;
+                }
+
+                getLength() {
+                    return Math.PI * this.#radius * 2;
+                }
+            }
+
+            const circle1 = new Circle(100);
+            console.log(circle1.getArea(), circle1.getLength());
+
+        </script>
+    </body>
+</html>
