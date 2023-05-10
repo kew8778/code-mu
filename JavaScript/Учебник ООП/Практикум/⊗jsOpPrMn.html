@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Month</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Month {
+                constructor(numOfMonth) {
+                    this.month = numOfMonth;
+                }
+
+                getMonth() {
+                    return this.month;
+                }
+
+                getNameOfMonth() {
+                    const months = [
+                        'January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+                        'July',
+                        'August',
+                        'September',
+                        'October',
+                        'November',
+                        'December',
+                    ];
+
+                    return months[this.month - 1];
+                }
+
+                getLastDay() {
+                    return new Date(new Date().getFullYear(), this.month, 0).getDate();
+                }
+
+                getNumOfDayOfWeekOfFirstDay() {
+                    return new Date(new Date().getFullYear(), this.month - 1, 0).getDay() + 1;
+                }
+
+                getNumOfDayOfWeekOfLastDay() {
+                    return new Date(new Date().getFullYear(), this.month, -1).getDay() + 1;
+                }
+            }
+
+            const month = new Month(8);
+
+            console.log(
+                month.getMonth(),
+                month.getNameOfMonth(),
+                month.getLastDay(),
+                month.getNumOfDayOfWeekOfFirstDay(),
+                month.getNumOfDayOfWeekOfLastDay(),
+            );
+
+        </script>
+    </body>
+</html>

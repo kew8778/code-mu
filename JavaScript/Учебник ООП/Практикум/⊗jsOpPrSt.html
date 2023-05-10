@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс Store</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Store {
+                set(key, data) {
+                    localStorage.setItem(key, JSON.stringify(data));
+                }
+
+                get(key) {
+                    if (/\./.test(key)) {
+                        const arr = key.split('.');
+
+                        return JSON.parse(localStorage.getItem(arr[0]))[arr[1]];
+                    } else {
+                        return JSON.parse(localStorage.getItem(key));
+                    }
+                }
+
+                edit(key, value) {
+                    if (/\./.test(key)) {
+                        const arr = key.split('.');
+
+                        const obj = JSON.parse(localStorage.getItem(arr[0]));
+                        obj[arr[1]] = value;
+
+                        localStorage.setItem(arr[0], JSON.stringify(obj));
+                    } else {
+                        localStorage.setItem(key, JSON.stringify(value));
+                    }
+                }
+
+                remove(key) {
+                    if (/\./.test(key)) {
+                        const arr = key.split('.');
+
+                        const obj = JSON.parse(localStorage.getItem(arr[0]));
+                        delete obj[arr[1]];
+
+                        localStorage.setItem(arr[0], JSON.stringify(obj));
+                    } else {
+                        localStorage.removeItem('key');
+                    }
+                }
+            }
+
+            let store = new Store;
+
+            store.set('key', {a: 1, b: 2, c: 3});
+
+            let res = store.get('key');
+            console.log(res); // {a: 1, b: 2, c: 3}
+
+            res = store.get('key.a');
+            console.log(res); // 1
+
+            res = store.get('key.b');
+            console.log(res); // 2
+
+            store.edit('key.a', 2);
+            console.log(store.get('key'));
+
+            store.remove('key.b');
+            console.log(store.get('key'));
+
+            store.remove('key');
+            console.log(store.get('key'));
+
+        </script>
+    </body>
+</html>

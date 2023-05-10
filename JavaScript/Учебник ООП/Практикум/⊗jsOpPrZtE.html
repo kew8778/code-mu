@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Класс ZateExt</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class Zate {
+                constructor(year, month, day) {
+                    this.year = year;
+                    this.month = month;
+                    this.day = day;
+                    this.date = new Date(year, month - 1, day);
+                }
+
+                getYear() {
+                    return this.year;
+                }
+
+                getMonth() {
+                    return this.month;
+                }
+
+                getDay() {
+                    return this.day;
+                }
+
+                getDayOfWeek() {
+                    const num = this.date.getDay();
+
+                    if (num === 0) {
+                        return 7;
+                    }
+
+                    return num;
+                }
+
+                getNameOfDayOfWeek() {
+                    const namesOfDays = [
+                        'Monday',
+                        'Tuesday',
+                        'Wednesday',
+                        'Thursday',
+                        'Friday',
+                        'Saturday',
+                        'Sunday',
+                    ];
+
+                    return namesOfDays[this.getDayOfWeek() - 1];
+                }
+
+                getNameOfMonth() {
+                    const months = [
+                        'January',
+                        'February',
+                        'March',
+                        'April',
+                        'May',
+                        'June',
+                        'July',
+                        'August',
+                        'September',
+                        'October',
+                        'November',
+                        'December',
+                    ];
+
+                    return months[this.month - 1];
+                }
+            }
+
+            class ZateExt extends Zate {
+                addYears(num) {
+                    this.date = new Date(this.year + num, this.month - 1, this.day);
+                    
+                    this.updateDate();
+                }
+
+                subtractYears(num) {
+                    this.date = new Date(this.year - num, this.month - 1, this.day);
+                    
+                    this.updateDate();
+                }
+
+                addMonth(num) {
+                    this.date = new Date(this.year, this.month + num - 1, this.day);
+                    
+                    this.updateDate();
+                }
+
+                subtractMonth(num) {
+                    this.date = new Date(this.year, this.month - num - 1, this.day);
+                    
+                    this.updateDate();
+                }
+
+                addDays(num) {
+                    this.date = new Date(this.year, this.month - 1, this.day + num);
+                    
+                    this.updateDate();
+                }
+
+                subtractDays(num) {
+                    this.date = new Date(this.year, this.month - 1, this.day - num);
+                    
+                    this.updateDate();
+                }
+
+                updateDate() {
+                    this.year = this.date.getFullYear();
+                    this.month = this.date.getMonth() + 1;
+                    this.day = this.date.getDate();
+                }
+            }
+
+            const data1 = new ZateExt(2023, 5, 10);
+
+            console.log(data1.getYear()); // 2023
+            data1.addYears(2);
+            console.log(data1.getYear()); // 2025
+            data1.subtractYears(2);
+            console.log(data1.getYear()); // 2023
+            
+            console.log(data1.year, data1.month); // 2023 5
+            data1.addMonth(20);
+            console.log(data1.year, data1.month); // 2025 6
+            data1.subtractMonth(20);
+            console.log(data1.year, data1.month); // 2023 5
+
+            console.log(data1.year, data1.month, data1.day); // 2023 5 10
+            data1.addDays(200);
+            console.log(data1.year, data1.month, data1.day); // 2023 11 26
+            data1.subtractDays(200);
+            console.log(data1.year, data1.month, data1.day); // 2023 5 10
+
+        </script>
+    </body>
+</html>
