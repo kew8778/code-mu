@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Наследование классов в ООП</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class User {
+	            #name;
+	            #surn;
+	
+	            setName(name) {
+		            this.#name = name;
+	            }
+	        
+                getName() {
+		            return this.#name;
+	            }
+	
+	            setSurn(surn) {
+		            this.#surn = surn;
+	            }
+	            
+                getSurn() {
+		            return this.#surn;
+	            }
+            }
+
+            class Employee extends User {
+                setName(name) {
+		            if (name.length > 0) {
+			            super.setName(name);
+		            }
+	            }
+
+                getFull() {
+	                return this.getName() + ' ' + this.getSurn();
+                }
+            }
+
+            const employee1 = new Employee();
+            employee1.setName('bro');
+            employee1.setSurn('friend');
+
+            console.log(employee1.getName());
+            console.log(employee1.getFull());
+
+        </script>
+    </body>
+</html>

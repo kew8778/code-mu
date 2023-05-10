@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Наследование классов в ООП</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            class User {
+	            constructor(name, surn) {
+		            this.name = name;
+		            this.surn = surn;
+	        }
+	
+	            getName() {
+		            return this.name;
+	            }
+	        
+                getSurn() {
+		            return this.surn;
+	            }
+            }
+
+            class Employee extends User {
+                constructor(name, surn, age, salary) {
+                    super(name, surn);
+                    this.age = age;
+                    this.salary = salary;
+                }
+
+                getAge() {
+                    return this.age;
+                }
+
+                getSalary() {
+                    return this.salary;
+                }
+            }
+
+            const employee1 = new Employee('Sasha', 'Jukov', 23, 40000);
+
+            console.log(
+                employee1.getName(), employee1.getSurn(),
+                employee1.getAge(), employee1.getSalary(),
+            );
+
+        </script>
+    </body>
+</html>
