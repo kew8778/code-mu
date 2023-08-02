@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 4.2</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            function removeZeros(num) {
+                num = String(num).replace(/0/g, '');
+
+                return +num;
+            }
+
+            console.log(removeZeros(100101)); // 111
+
+        </script>
+    </body>
+</html>

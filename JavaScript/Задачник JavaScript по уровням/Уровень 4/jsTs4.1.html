@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <title>Уровень 4.1</title>
+    </head>
+
+    <body>
+        <script>
+            "use strict";
+
+            // #1
+            function getDayOfWeek() {
+                const daysOfWeek = [
+                    'Воскресенье',
+                    'Понедельник',
+                    'Вторник',
+                    'Среда',
+                    'Четверг',
+                    'Пятница',
+                    'Суббота',
+                ];
+                
+                return daysOfWeek[new Date().getDay()];
+            }
+
+            console.log(getDayOfWeek());
+
+            // #2
+            let date = '19.06.1994';
+            console.log(getDayFromDate(date)); // 
+
+            function getDayFromDate(date) {
+                const daysOfWeek = [
+                    'Воскресенье',
+                    'Понедельник',
+                    'Вторник',
+                    'Среда',
+                    'Четверг',
+                    'Пятница',
+                    'Суббота',
+                ];
+
+                let arrDate = [];
+                
+                date.replace(/^(\d{2}).(\d{2}).(\d{4})$/, (found, day, month, year) => {
+                    arrDate[0] = +year;
+                    arrDate[1] = month - 1;
+                    arrDate[2] = +day;
+                })
+
+                return daysOfWeek[new Date(...arrDate).getDay()];
+            }
+
+            // #3
+            function get24Hours(sec) {
+                return Math.floor(sec / 3600 / 24);
+            }
+
+            console.log(get24Hours(300000)); // 3
+
+            // #4
+            function shortenStr(length, str) {
+                str = str.substr(0, length);
+
+                return str;
+            }
+
+            console.log(shortenStr(4, 'aaaaaaaa')); // aaaa
+
+            // #5
+            console.log(getZodiakSign('19-06')); // Близнецы
+
+            function getZodiakSign(date) {
+                const signs = [
+                    {sign: 'Козерог', start: '01.01', end: '01.20'},
+                    {sign: 'Водолей', start: '01.21', end: '02.19'},
+                    {sign: 'Рыбы', start: '02.20', end: '03.20'},
+                    {sign: 'Овен', start: '03.21', end: '04.20'},
+                    {sign: 'Телец', start: '04.21', end: '05.21'},
+                    {sign: 'Близнецы', start: '05.22', end: '06.21'},
+                    {sign: 'Рак', start: '06.22', end: '07.22'},
+                    {sign: 'Лев', start: '07.23', end: '08.21'},
+                    {sign: 'Дева', start: '08.22', end: '09.23'},
+                    {sign: 'Весы', start: '09.24', end: '10.23'},
+                    {sign: 'Скорпион', start: '10.24', end: '11.22'},
+                    {sign: 'Стрелец', start: '11.23', end: '12.22'},
+                    {sign: 'Козерог', start: '12.23', end: '12.31'},
+                ];
+
+                date = date.split(/\D/).reverse().join('.'); 
+
+                for (let obj of signs) {
+                    if (date > obj.start && date < obj.end) {
+                        return obj.sign;
+                    }
+                }
+            }
+
+            // #6, если в делители числа входит само число и 1
+            function getSumOfDivisors(num) {
+                let sum = 0;
+
+                for (let i = 1; i <= num; i++) {
+                    if (num % i === 0) {
+                        sum += i;
+                    }
+                }
+
+                return sum;
+            }
+
+            console.log(getSumOfDivisors(6)) // 12
+
+        </script>
+    </body>
+</html>
